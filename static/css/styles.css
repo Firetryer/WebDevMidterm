@@ -1,60 +1,145 @@
 @font-face {
-    font-family: 'Poppins';
-    src: url('/static/fonts/Poppins-Regular.ttf')  format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Poppins-Medium';
-    src: url('/static/fonts/Poppins-Medium.ttf')  format('truetype');
+	font-family: 'Poppins';
+	src: url('/static/fonts/Poppins-Regular.ttf') format('truetype');
 }
 
-html *
-{
-   font-family: 'Poppins';
+@font-face {
+	font-family: 'Poppins-Medium';
+	src: url('/static/fonts/Poppins-Medium.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+html * {
+	font-family: 'Poppins';
 }
 
 html {
-    background-color: #0C2D48;
+	background-color: #0c2d48;
 }
 
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.button{
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    padding: 0px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+
 .carousel_image {
-    height: 850px;
-    object-fit: cover;
+	height: 850px;
+	object-fit: cover;
 }
 
 .carousel_bottom {
-    color: #E1F7FF;
+	color: #e1f7ff;
 }
 
 .top_bar {
-   position: absolute;
-   z-index: 100;
-   padding-left: 155px;
-   padding-right: 155px;
-   background-color: #0C2D484D;
-   backdrop-filter: blur(25px);
+	position: absolute;
+	z-index: 100;
+	padding-left: 155px;
+	padding-right: 155px;
+	background-color: #0c2d484d;
+	backdrop-filter: blur(25px);
 }
 
 .top_bar * {
-    color: #E1F7FF;
+	color: #e1f7ff;
 }
 
 .main_container {
-    padding-left : 155px;
-    padding-right : 155px;
-    padding-top : 104px;
-    background-color: #0C2D48;
+	padding-left: 155px;
+	padding-right: 155px;
+	padding-top: 104px;
+	background-color: #0c2d48;
 }
 
-.section_header p{
-    color: #E1F7FF;
-    font-size: 38px;;
-    font-family: 'Poppins-Medium';
+.section_header p {
+	color: #e1f7ff;
+	font-size: 38px;
+	font-family: 'Poppins-Medium';
 }
 
-.section_header #header_box{
-    width: 11px;
-    height: 53px;
-    margin-right: 20px;
-    background-color: #B1D4E0;
+.section_header #header_box {
+	width: 11px;
+	height: 53px;
+	margin-right: 20px;
+	background-color: #b1d4e0;
 }
+
+.card {
+	width: 317px;
+	height: 380px;
+    padding: 0px;
+    margin-left: 10px;
+    border: 1px;
+}
+
+.card-img-top{
+    width: 317px;
+	height: 380px;
+    border: 1px;
+}
+
+.overlay {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.5); /* Black see-through */
+	transition: 0.5s ease;
+	opacity: 0;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 0px;
+}
+
+.card_container:hover .overlay{
+	opacity: 1;
+}
+
+.card:hover .card-img-overlay{
+    display: none;
+    transition: 0.5s ease;
+}
+
+.card-img-overlay {
+	top: 80%;
+    color: #000000;
+    display: block;
+}
+
+.game_title {
+	font-family: 'Poppins', sans-serif;
+}
+
+.overlay_link{
+    margin-top: 100px;
+}
+
+.buy_now{
+    margin-right: 10px;
+}
+
+.add_to_cart{
+    margin-left: 10px;
+}
+    
+
