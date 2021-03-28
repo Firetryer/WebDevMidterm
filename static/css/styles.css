@@ -28,20 +28,20 @@ a {
 	color: inherit;
 }
 
-.button{
-    background-color: #000000;
-    border: none;
-    color: #ffffff;
-    padding: 0px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 16px;
+.button {
+	background-color: #000000;
+	border: none;
+	color: #ffffff;
+	padding: 0px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 16px;
 }
 
-#go_up{
+#go_up {
 	margin-left: auto;
 }
 
@@ -53,14 +53,18 @@ a {
 	padding-bottom: 20px;
 }
 
-.footer	a{
+.footer a {
 	font-size: 18px;
 	margin-right: 12px;
 }
 
-.footer	i{
+.footer i {
 	font-size: 22px;
 	margin-right: 16px;
+}
+
+.carousel {
+	height: 850px;
 }
 
 .carousel_image {
@@ -69,32 +73,143 @@ a {
 }
 
 .carousel_bottom {
-	position:  relative;
-	background-color: #3b3b58;
+	position: absolute;
+	top: 860px;
+	left: 0px;
+	height: 117px;
+
+	background: #0c2d4866 0% 0% no-repeat padding-box;
+	box-shadow: 0px 15px 30px #00000029;
+	opacity: 1;
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
 }
 
-.carousel_bottom h1{
+.carousel_bottom a {
+	text-align: center;
+	letter-spacing: 0px;
+	opacity: 1;
+	font-size: 30px;
 	color: #e1f7ff;
 }
 
+.carousel_botom_link {
+	position: absolute;
+	top: 40px;
+	width: 185px;
+	height: 33px;
+}
+.link_a {
+	left: 60px;
+}
+
+.link_b {
+	left: 365px;
+}
+
+.link_c {
+	left: 627px;
+	width: 265px;
+}
+
+.link_d {
+	left: 963px;
+}
+
+.link_e {
+	left: 1268px;
+}
 #logo {
-	width:50px;
+	width: 50px;
 	height: 50px;
-	margin-right: 20px;
+}
+#top_nav_logo {
+	width: 106px;
+	height: 53px;
+	font-size: 36px;
+	left: 150px;
+	top: 21px;
+	position: absolute;
+
+	text-align: left;
+	letter-spacing: 0px;
+	color: #e1f7ff;
+	opacity: 1;
+}
+
+#exampleFormControlInput1 {
+	top: 27px;
+	left: 696px;
+	width: 416px;
+	height: 50px;
+
+	background: #363f5e 0% 0% no-repeat padding-box;
+	border-radius: 8px;
+	opacity: 1;
+}
+
+.signin_link {
+	top: 36px;
+	left: 1215px;
+	width: 62px;
+	height: 25px;
+	position: absolute;
+	font-size: 18px;
+
+	text-align: left;
+	letter-spacing: 0px;
+	color: #e1f7ff;
+	opacity: 1;
+}
+
+.bottom_bar_link_games,
+.bottom_bar_link_browse,
+.bottom_bar_link_support {
+	top: 90px;
+	width: 65px;
+	height: 25px;
+	position: absolute;
+	text-align: left;
+	font: normal normal normal 18px/27px Poppins;
+	letter-spacing: 0px;
+	color: #e1f7ff;
+	opacity: 1;
+}
+
+.bottom_bar_link_games {
+	left: 150px;
+}
+
+.bottom_bar_link_browse {
+	left: 275px;
+}
+
+.bottom_bar_link_support {
+	left: 400px;
+}
+
+.bi-cart {
+	top: 36px;
+	left: 1300px;
+	width: 26px;
+	height: 16px;
+	position: absolute;
 }
 
 .top_bar {
 	z-index: 100;
 	padding-left: 125px;
 	padding-right: 125px;
-	padding-top : 38px;
+	padding-top: 38px;
 	background-color: #2c3652;
 	backdrop-filter: blur(25px);
+	width: auto;
+	height: 126px;
 }
 
 .top_bar .inputs {
-	width:696px;
-	height: 50px
+	width: 696px;
+	height: 50px;
 }
 
 .bottom_bar {
@@ -113,35 +228,37 @@ a {
 .main_container {
 	padding-left: 155px;
 	padding-right: 155px;
-	padding-top: 104px;
+	padding-top: 50px;
 	background-color: #3b3b58;
 }
 
 .section_header p {
 	color: #e1f7ff;
-	font-size: 38px;
+	font-size: 28px;
 	font-family: 'Poppins-Medium';
+	margin-top: 5px;
 }
 
 .section_header #header_box {
-	width: 11px;
 	height: 53px;
 	margin-right: 20px;
 	background-color: #b1d4e0;
+	border: 4px solid #b1d4e0;
+	opacity: 1;
 }
 
 .card {
 	width: 317px;
 	height: 380px;
-    padding: 0px;
-    margin-left: 10px;
-    border: 1px;
+	padding: 0px;
+	margin-left: 10px;
+	border: 1px;
 }
 
-.card-img-top{
-    width: 317px;
+.card-img-top {
+	width: 317px;
 	height: 380px;
-    border: 1px;
+	border: 1px;
 }
 
 .overlay {
@@ -152,40 +269,52 @@ a {
 	color: white;
 	font-size: 20px;
 	text-align: center;
-    padding: 0px;
-    margin: 0px;
-    border-radius: 0px;
+	padding: 0px;
+	margin: 0px;
+	border-radius: 0px;
 }
 
-.card_container:hover .overlay{
+.card_container:hover .overlay {
 	opacity: 1;
 }
 
-.card:hover .card-img-overlay{
-    display: none;
-    transition: 0.5s ease;
+.card:hover .card-img-overlay {
+	display: none;
+	transition: 0.5s ease;
 }
 
 .card-img-overlay {
 	top: 80%;
-    color: #000000;
-    display: block;
+	color: #000000;
+	display: block;
 }
 
 .game_title {
 	font-family: 'Poppins', sans-serif;
 }
 
-.overlay_link{
-    margin-top: 100px;
+.overlay_link {
+	margin-top: 100px;
 }
 
-.buy_now{
-    margin-right: 10px;
+.buy_now {
+	margin-right: 10px;
 }
 
-.add_to_cart{
-    margin-left: 10px;
+.add_to_cart {
+	margin-left: 10px;
 }
-    
 
+.news_and_trending_container {
+	width: 350px;
+	height: 500px;
+
+	background: #ffffff 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	border-radius: 5px;
+	opacity: 1;
+	position: relative;
+	left: 12px;
+	margin-right: 30px;
+	margin-left: 0px;
+}
