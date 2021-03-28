@@ -87,38 +87,17 @@ a {
 
 .carousel_bottom a {
 	text-align: center;
-	letter-spacing: 0px;
 	opacity: 1;
 	font-size: 24px;
 	color: #e1f7ff;
 }
 
 .carousel_botom_link {
-	position: absolute;
-	top: 40px;
-	width: 185px;
+	margin-top: 40px;
+	width: 285px;
 	height: 33px;
 }
-.link_a {
-	left: 60px;
-}
 
-.link_b {
-	left: 340px;
-}
-
-.link_c {
-	left: 627px;
-	width: 265px;
-}
-
-.link_d {
-	left: 975px;
-}
-
-.link_e {
-	left: 1268px;
-}
 #logo {
 	width: 50px;
 	height: 50px;
