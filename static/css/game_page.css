@@ -1,0 +1,52 @@
+.main_content{
+    padding-left: 220px;
+	padding-right: 222px;
+	padding-top: 26px;
+	background-color: #3b3b58;
+}
+
+.main_content .row{
+    margin-bottom: 16px;
+}
+
+.trailer_container video{
+    width:1385px;
+    height: 479px;
+    margin-bottom: 64px;
+}
+
+.game_details{
+    background-color: white;
+    height: 312px;
+}
+
+.game_details img{
+    height:100%;
+    width: 100%;
+}
+
+
+.game_details #game_description{
+    max-width: 751px;
+    text-align:justify;
+}
+
+.game_about {
+    background-color: white;
+}
+
+.game_about .about_details{
+    padding-right:200px;
+}
+.game_about p{
+    font-size: 14px;
+}
+
+.about_detail_container {
+    max-width: 1078px;
+    height:376px;
+}
+
+.game_requirements {
+    background-color: white;
+}
