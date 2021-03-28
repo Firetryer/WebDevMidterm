@@ -15,7 +15,7 @@ html * {
 }
 
 html {
-	background-color: #0c2d48;
+	background-color: #3b3b58;
 }
 
 body {
@@ -41,6 +41,27 @@ a {
     border-radius: 16px;
 }
 
+#go_up{
+	margin-left: auto;
+}
+
+.footer {
+	background-color: white;
+	padding-left: 155px;
+	padding-right: 155px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.footer	a{
+	font-size: 18px;
+	margin-right: 12px;
+}
+
+.footer	i{
+	font-size: 22px;
+	margin-right: 16px;
+}
 
 .carousel_image {
 	height: 850px;
@@ -48,6 +69,11 @@ a {
 }
 
 .carousel_bottom {
+	position:  relative;
+	background-color: #3b3b58;
+}
+
+.carousel_bottom h1{
 	color: #e1f7ff;
 }
 
@@ -88,7 +114,7 @@ a {
 	padding-left: 155px;
 	padding-right: 155px;
 	padding-top: 104px;
-	background-color: #0c2d48;
+	background-color: #3b3b58;
 }
 
 .section_header p {
