@@ -1,11 +1,11 @@
 @font-face {
 	font-family: 'Poppins';
-	src: url('/static/fonts/Poppins-Regular.ttf') format('truetype');
+	src: url('../fonts/Poppins-Regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Poppins-Medium';
-	src: url('/static/fonts/Poppins-Medium.ttf') format('truetype');
+	src: url('../fonts/Poppins-Medium.ttf') format('truetype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
