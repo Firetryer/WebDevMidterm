@@ -52,12 +52,26 @@ a {
 }
 
 .top_bar {
-	position: absolute;
 	z-index: 100;
-	padding-left: 155px;
-	padding-right: 155px;
-	background-color: #0c2d484d;
+	padding-left: 125px;
+	padding-right: 125px;
+	padding-top : 38px;
+	background-color: #2c3652;
 	backdrop-filter: blur(25px);
+}
+
+.top_bar .inputs {
+	width:696px;
+	height: 50px
+}
+
+.bottom_bar {
+	padding-bottom: 5px;
+}
+
+.bottom_bar h5 {
+	font-size: 18px;
+	margin-right: 56px;
 }
 
 .top_bar * {
