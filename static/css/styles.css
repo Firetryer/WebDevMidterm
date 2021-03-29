@@ -15,6 +15,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
+:root {
+	--primary-color: #2d3753;
+	--text-color: #E1F7FF;
+	--max-width: 1100px;
+}
+
+.py-1 { padding: 1.5rem 0 }
+.py-2 { padding: 2rem 0 }
+.py-3 { padding: 3rem 0 }
+
+.p-1 { padding: 1.5rem }
+.p-2 { padding: 2rem }
+.p-3 { padding: 3rem }
+
 html {
 	box-sizing: border-box;
 	font-family: 'Poppins';
@@ -298,4 +312,47 @@ a {
 	opacity: 1;
 	margin-right: 30px;
 	margin-left: 0px;
+}
+.list li {
+    padding: 0.5rem 0;
+    border-bottom: #555 dotted 1px;
+    width: 90%;
+}
+
+/* --------------Style for footer------------------*/
+#main-footer {
+	background: var(--primary-color);
+	color: var(--text-color);
+}
+
+#main-footer img {
+	width: 150px;
+}
+
+#main-footer a {
+	color: var(--text-color);
+}
+
+#main-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+}
+
+#main-footer .footer-container > *:last-child {
+    background: var(--primary-color);
+    grid-column: 1 / span 4;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+#main-footer .footer-container input[type='email'] {
+    width: 90%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+#main-footer .footer-container input[type='submit'] {
+    width: 90%;
 }
