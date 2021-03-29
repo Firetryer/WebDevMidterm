@@ -2,45 +2,44 @@
 <html>
 	<head>
 		<link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
-		/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"/>
 		<link rel="stylesheet" href="static/css/styles.css" />
+        <link rel="stylesheet" href="static/css/nav_bar.css" />
         <link rel="stylesheet" href="static/css/game_page.css" />
 		<title>Je Games</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<div class="container-fluid w-100 no-padding top_bar">
-			<div class="container-fluid d-flex justify-content-between pb-3">
-				<div class="d-flex">
-					<!-- <img src="static/img/JE_GAMES.png" id="logo" alt=""> -->
-					<div id="top_nav_logo">LOGO</div>
-				</div>
-				<div class=" mx-auto">
-					<div class="d-flex justify-content-center inputs">
-						<input
-							type="email"
-							class="form-control w-50"
-							id="exampleFormControlInput1"
-							placeholder="Search"
-						/>
-					</div>
-				</div>
-				<div class="float-right d-flex flex-row-reverse align-items-center">
-					<i class="bi bi-cart"></i>
-					<a class="fw-bold me-4 text-decoration-none signin_link" href="#">Sign In</a>
-				</div>
-			</div>
-			<div class="bottom_bar">
-				<div class="d-flex flex-row">
-					<a href="#" class="bottom_bar_link_games">Games</a>
-					<a href="#" class="bottom_bar_link_browse">Browse</a>
-					<a href="#" class="bottom_bar_link_support">Support</a>
-				</div>
-			</div>
-		</div>
+		<nav class="navbar navbar-expand-lg navigation">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_items" aria-controls="navbar_items" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list text-white"></i>
+                </button>
+                <div class="w-100 collapse navbar-collapse px-0" id="navbar_items">
+                    <div class="container-fluid d-flex flex-column">
+                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
+                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
+                                <a class="top_nav_logo" href="#">LOGO</a>
+                            </div>
+                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 mx-lg-auto mx-md-0 mx-sm-0 d-flex inputs">
+                                <input class="mx-lg-auto mx-md-0 mx-sm-0  form-control w-50" placeholder="Search"/>
+                            </div>
+                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2  text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right">
+                                <i class="bi bi-cart"></i>
+                                <a class="fw-bold me-4 text-decoration-none" href="#">Sign In</a>
+                            </div>
+                        </div>
+                        <div class="container-fluid nav_bottom_bar">
+                            <div class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 ">
+                                <a href="#" class="">Games</a>
+                                <a href="#" class="">Browse</a>
+                                <a href="#" class="">Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
         <div class="container-fluid main_content">
             <div class="game_top_nav text-white">
@@ -53,35 +52,33 @@
                 </video> 
             </div>
 
+            <!-- ========= DESCRIPTION SECTION ======== -->
 
-            <div class="container-fluid d-flex flex-row game_details">
-                <div class="" id="game_poster">
+            <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column section_1 section_all">
+                <div class="d-flex justify-content-center text-lg-center text-md-center">
                     <img src="static/img/dota 2.jpg" alt="">
                 </div>
-                <div class="game_information">
-                    <div class="row">
-                        <p id="game_title">Dota 2</p>
-                    </div>
-                    <div class="row">
-                        <p id="game_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales tristique urna, et convallis enim volutpat vitae. Quisque eget turpis pharetra, pretium nunc non, varius urna. Morbi volutpat vitae erat vitae mattis. Cras dignissim lorem neque, sit amet aliquet nunc mattis lobortis. Donec sit amet efficitur nulla. Aenean vel magna est. Pellentesque venenatis lacus leo, eu euismod nisl aliquam vitae. Cras quam risus, pulvinar vitae euismod sed, facilisis viverra neque.</p>
-                    </div>
+                <div class="d-flex flex-column game_desc_container">
+                    <p id="game_title">Dota 2</p>
+                    <p class="overflow-auto" id="game_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales tristique urna, et convallis enim volutpat vitae. Quisque eget turpis pharetra, pretium nunc non, varius urna. Morbi volutpat vitae erat vitae mattis. Cras dignissim lorem neque, sit amet aliquet nunc mattis lobortis. Donec sit amet efficitur nulla. Aenean vel magna est. Pellentesque venenatis lacus leo, eu euismod nisl aliquam vitae. Cras quam risus, pulvinar vitae euismod sed, facilisis viverra neque.</p>
                 </div>
-                <div class="game_price">
-                    <div class="row">
-                        <p>Price</p>
+                <div class="game_price d-flex flex-column">
+                    <div >
+                        <p class="text-xl-end text-lg-center text-md-center text-sm-center ">Price</p>
                     </div>
-                    <div class="row">
-                        <button class="button">Buy Now</button>
+                    <div class="d-flex">
+                        <button class="btn btn-block mx-auto">Buy Now</button>
                     </div>
                 </div>
             </div>
 
+            <!-- ========= ABOUT SECTION ======== -->
 
-            <div class="container-fluid game_section d-flex">
+            <div class="container-fluid section_all section_2 d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
                 <div class="game_page_section_header">
                     <p>About</p>
                 </div>
-                <div class="about_detail_container">
+                <div class="section_container">
                    <div class="row">
                         <div class="col">
                             <p id="detail_header">Developer</p>
@@ -112,7 +109,7 @@
                             </div>
                         </div>
                    </div>
-                   <div class="row d-flex flex-row">
+                   <div class="row d-flex flex-row features">
                        <p id="detail_header">Features</p>
                        <p>* Lorem Ipsum</p>
                        <p>* Lorem Ipsum</p>
@@ -123,15 +120,17 @@
                    <div class="row d-flex flex-row">
                        <p id="detail_header">Other Details</p>
                        <p id="detail_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque non. Dictum non consectetur a erat nam at lectus urna duis. Elit sed vulputate mi sit amet mauris commodo. Massa tincidunt dui ut ornare lectus.</p>
-
                    </div>
                 </div>
             </div>
-            <div class="container-fluid game_section d-flex">
+
+            <!-- ========= SYSTEM REQUIREMENTS SECTION ======== -->
+
+            <div class="section_3 section_all d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
                 <div class="game_page_section_header">
                     <p>System Requirements</p>
                 </div>
-                <div class="about_detail_container">
+                <div class="section_container">
                     <ul class="nav nav-tabs">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="xbox-tab" data-bs-toggle="tab" data-bs-target="#Xbox" type="button" role="tab" aria-controls="Xbox" aria-selected="true">Xbox</button>
@@ -178,9 +177,11 @@
                                 </div>
 
                                 <div class="requirement_section d-flex flex-column">
-                                    <p id="detail_header">
-                                        Recommended
-                                    </p>
+                                    <div>
+                                        <p id="detail_header">
+                                            Recommended
+                                        </p>
+                                    </div>
                                     <div>
                                         <p id="detail_header">OS</p>
                                         <p id="detail_info"> Windows 10</p>
@@ -220,10 +221,203 @@
                     </div>
                 </div>
             </div>
+            <!-- ========= REVIEW SECTION ======== -->
+            <div class="section_4 section_all d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
+                <div class="game_page_section_header">
+                    <p>Reviews</p>
+                </div>
+                <div class="section_container">
+                    <div class="d-flex flex-column">
+                        <!-- Review Card -->
+                        <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column review_card">
+                            <div class="d-flex flex-lg-column flex-md-row review_user">
+                                <img src="static/img/default_profile_picture.jpg" alt="">
+                                <div class="d-flex flex-column ms-md-2 ms-lg-0">
+                                    <p class="review_user_username">Username</p>
+                                    <p class="review_user_other">Games: 10</p>
+                                    <p class="review_user_other">reviews: 1</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column review_review">
+                                <!-- Review Stars and Title -->
+                                <div class="d-flex flex-row">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <p class="review_title">Review Title</p>
+                                </div>
+                                <div>
+                                    <p>December 21st, 2014</p>
+                                </div>
+                                <div>
+                                    <p>Amet commodo elit fugiat laboris sunt voluptate veniam officia non culpa Lorem tempor. Dolore mollit laboris anim sit voluptate mollit ea eiusmod ullamco irure consectetur pariatur consectetur aute. Dolore labore dolor commodo mollit. Esse laboris laborum ipsum veniam est sit ipsum magna magna qui occaecat adipisicing incididunt reprehenderit. Ullamco officia Lorem labore cupidatat voluptate elit aliqua ut consectetur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column review_card">
+                            <div class="d-flex flex-lg-column flex-md-row review_user">
+                                <img src="static/img/default_profile_picture.jpg" alt="">
+                                <div class="d-flex flex-column ms-md-2 ms-lg-0">
+                                    <p class="review_user_username">Username</p>
+                                    <p class="review_user_other">Games: 10</p>
+                                    <p class="review_user_other">reviews: 1</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column review_review">
+                                <!-- Review Stars and Title -->
+                                <div class="d-flex flex-row">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <p class="review_title">Review Title</p>
+                                </div>
+                                <div>
+                                    <p>December 21st, 2014</p>
+                                </div>
+                                <div>
+                                    <p>Amet commodo elit fugiat laboris sunt voluptate veniam officia non culpa Lorem tempor. Dolore mollit laboris anim sit voluptate mollit ea eiusmod ullamco irure consectetur pariatur consectetur aute. Dolore labore dolor commodo mollit. Esse laboris laborum ipsum veniam est sit ipsum magna magna qui occaecat adipisicing incididunt reprehenderit. Ullamco officia Lorem labore cupidatat voluptate elit aliqua ut consectetur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column review_card">
+                            <div class="d-flex flex-lg-column flex-md-row review_user">
+                                <img src="static/img/default_profile_picture.jpg" alt="">
+                                <div class="d-flex flex-column ms-md-2 ms-lg-0">
+                                    <p class="review_user_username">Username</p>
+                                    <p class="review_user_other">Games: 10</p>
+                                    <p class="review_user_other">reviews: 1</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column review_review">
+                                <!-- Review Stars and Title -->
+                                <div class="d-flex flex-row">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <p class="review_title">Review Title</p>
+                                </div>
+                                <div>
+                                    <p>December 21st, 2014</p>
+                                </div>
+                                <div>
+                                    <p>Amet commodo elit fugiat laboris sunt voluptate veniam officia non culpa Lorem tempor. Dolore mollit laboris anim sit voluptate mollit ea eiusmod ullamco irure consectetur pariatur consectetur aute. Dolore labore dolor commodo mollit. Esse laboris laborum ipsum veniam est sit ipsum magna magna qui occaecat adipisicing incididunt reprehenderit. Ullamco officia Lorem labore cupidatat voluptate elit aliqua ut consectetur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- Review Card END -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= NEWS AND UPDATES SECTION ======== -->
+            <div class="section_all d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
+                <div class="game_page_section_header">
+                    <p>News and Updates</p>
+                </div>
+                <div class="section_container">
+                    <div class="d-flex flex-row overflow-auto">
+                        <!-- Update Cards -->
+                        <div class="d-flex flex-column update_card">
+                            <img src="" alt="">
+                            <p class="update_title" >Update Title</p>
+                            <p class="update_time">Time of Update</p>
+                        </div>
+
+                        <!-- Update Cards -->
+                        <div class="d-flex flex-column update_card">
+                            <img src="" alt="">
+                            <p class="update_title" >Update Title</p>
+                            <p class="update_time">Time of Update</p>
+                        </div>
+
+                        <!-- Update Cards -->
+                        <div class="d-flex flex-column update_card">
+                            <img src="" alt="">
+                            <p class="update_title" >Update Title</p>
+                            <p class="update_time">Time of Update</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= SUGGESTION SECTION ======== -->
+            <div class="section_all section_6 flex-column">
+                <div class="game_page_section_header">
+                    <p>You May Also Like This</p>
+                </div>
+                <div class="section_container">
+                    <div class="d-flex flex-row more_game_container overflow-auto">
+                        <div class="d-flex flex-column more_game_card">
+                            <img src="" alt="">
+                            <p class="more_game_title"> Game Title</p>
+                            <div class="d-flex flex-row more_game_price">
+
+                                <p class="striked_price align-center">Price</p>
+                                <p class="price">New Price</p>
+
+                                <div class="discount_tag">
+                                    <p>20%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column more_game_card">
+                            <img src="" alt="">
+                            <p class="more_game_title"> Game Title</p>
+                            <div class="d-flex flex-row more_game_price">
+
+                                <p class="striked_price align-center">Price</p>
+                                <p class="price">New Price</p>
+
+                                <div class="discount_tag">
+                                    <p>20%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column more_game_card">
+                            <img src="" alt="">
+                            <p class="more_game_title"> Game Title</p>
+                            <div class="d-flex flex-row more_game_price">
+
+                                <p class="striked_price align-center">Price</p>
+                                <p class="price">New Price</p>
+
+                                <div class="discount_tag">
+                                    <p>20%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column more_game_card">
+                            <img src="" alt="">
+                            <p class="more_game_title"> Game Title</p>
+                            <div class="d-flex flex-row more_game_price">
+
+                                <p class="striked_price align-center">Price</p>
+                                <p class="price">New Price</p>
+
+                                <div class="discount_tag">
+                                    <p>20%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
 
 
-		<div class="container-fluid d-flex footer">
+        <!-- FOOTER -->
+		<div class="d-flex footer">
 			<div class="container col-3">
 				<a href="">About</a>
 				<a href="">Developers</a>

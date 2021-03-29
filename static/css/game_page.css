@@ -1,107 +1,276 @@
+html{
+    font-size: 16px
+}
+
 .main_content{
-    padding-left: 220px;
-	padding-right: 222px;
+    padding-left: 11.8%;
+	padding-right: 11.8%;
 	padding-top: 26px;
 	background-color: #3b3b58;
 }
 
-.main_content>div{
-    margin-bottom: 38px;
-}
 
 .main_content p{
-    color: white
+    color: #E1F7FF
 }
 
 .trailer_container video{
-    width:1385px;
+    width:1480px;
+    min-width: 600px;
     height: 479px;
     margin-bottom: 64px;
+    background-color:black;
 }
 
-
-.game_details{
-    
-    height: 312px;
-}
-
-.game_details>div{
-    margin-right: 28px
-}
-
-.game_information #game_title{
-    font-size: 22px;
-    font-family: 'Poppins-Medium';
-}
-
-.game_information #game_desc{
-    font-size: 16px;
-    font-family: 'Poppins';
-}
-
-.game_information>div{
-    margin-bottom: 10px;
-}
-
-.game_price p{
-    font-size:20px;
-    text-align: right;
-}
-
-.game_price button{
-    width: 231px;
-    height: 52px;
-}
-
-#game_poster {
-    height: 313px;
-    width: 402px;
-}
-
-#game_poster img{
-    width:100%;
-    height: 100%
-}
-
-.game_section {
-    max-width: 1480px;
-    height: 434px;
+.section_all {
     margin-bottom: 70px !important;
+    max-width: 1480px !important;
 }
 
-.game_page_section_header p{
-    font-size: 24px;
-    text-align: left;
-}
-
-.game_section .game_page_section_header{
+.section_all .game_page_section_header{
     width: 440px;
 }
 
-.game_details .game_information{
+.section_all .game_page_section_header>p{
+    font-size: 1.5em;
+    font-family: 'Poppins';
+    text-align: left;
+}
+
+.section_1{
+    max-width: 1480px;
+}
+
+.section_1>div:not(:last-child){
+    margin-right: 28px
+}
+
+.section_1 .game_information{
     max-width: 751px;
     text-align:left;
 }
 
-
-.about_detail_container {
-    width: 1078px;
-    height:376px;
+.game_desc_container> #game_title{
+    font-size: 1.5em;
+    font-family: 'Poppins-Medium';
 }
 
-.about_detail_container p{
-    font-size: 14px;
+.game_desc_container{
+    max-height: 312px;
+    min-width: 200px;
+}
+
+#game_desc{
+    font-size: 1em;
+    font-family: 'Poppins';
+    overflow:auto;
+}
+
+.section_1>div{
     margin-bottom: 10px;
 }
 
-.about_detail_container #detail_header{
-    color:#646464;
+.game_price p{
+    font-size:1.25em;
 }
 
-.about_detail_container .row{
+.section_1 .game_price button{
+    width: 231px;
+    height: 52px;
+    background-color: #9AC100;
+}
+
+.section_1 img {
+    height: 313px;
+    width: 402px;
+}
+
+
+.section_2 {
+    max-width: 1480px;
+}
+
+.section_2>.section_container>div{
     margin-bottom: 25px;
+}
+
+.section_2 .features>p{
+    margin-bottom: 10px;
+}
+
+.section_3 {
+}
+
+.section_4 {
+
+}
+
+.section_container {
+    max-width: 1000px;
+}
+
+.section_container p{
+    font-size: 0.875em;
+}
+
+.section_container #detail_header{
+    color:#AEBABE;
+    margin-bottom: 10px;;
+}
+
+.section_container #detail_info{
+    margin-bottom: 0px;
+}
+
+.section_container>.row{
+    margin-bottom: 15px;
 }
 
 .requirement_section {
     width: 477px;
+}
+
+.requirement_container>div{
+    margin-bottom: 25px;
+
+}
+
+.requirement_section p:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.requirement_section div{
+    margin-bottom: 25px !important;
+}
+
+.section_6 {
+    margin-bottom: 0px !important;
+    padding-bottom: 70px;
+}
+
+.section_6>.section_container{
+    max-width: 100% !important;
+}
+
+.review_user {
+    width: 197px;
+}
+
+.review_user img {
+    width: 69px;
+    height: 69px;
+}
+
+.review_user *{
+    margin-bottom: 0px !important;
+}
+
+.review_review {
+    max-width: 844px;
+}
+
+.review_review i{
+    width: 25px;
+    color:yellow;
+}
+
+.review_user_username {
+    font-family: 'Poppins';
+    font-size: 1em;
+}
+
+.review_user_other {
+    font-family: 'Poppins-Light';
+    font-size: 0.875em;
+}
+
+.review_title {
+    font-size: 1.125em;
+    font-family: 'Poppins-Medium';
+}
+
+.update_card{
+    width:331px;
+    height:284px;
+    margin-right: 23px;
+}
+
+.update_card img{
+    width:331px;
+    height: 219px;
+    margin-bottom: 11px;
+}
+
+.update_card .update_title{
+    font-family: 'Poppins-Medium';
+    font-size: 1.125em;
+    margin-bottom: 9px;
+}
+
+.update_card .update_time{
+    font-size: 0.875em;
+}
+
+hr {
+    color: gray;
+}
+
+.more_game_card img{
+    height: 493px;
+    width: 357px;
+}
+
+.more_game_price *{
+    margin-right: 9px;
+    
+}
+
+.more_game_price>p{
+    padding-top: 5px;
+}
+
+.more_game_title{
+    font-size: 1.125em;
+    font-family: 'Poppins';
+    margin-top: 28px;
+}
+
+
+.discount_tag {
+    display: inline-block;
+    width: 69px;
+    height: 36px;
+    background: #4C6B22 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    height: fit-content;
+    margin:0px;
+    padding: 0px;
+}
+
+.discount_tag p{
+    color: #A4D015;
+    font-size: 1.5em;
+    margin:0px;
+    padding-bottom: 1px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.striked_price {
+    color: #D1CECE;
+    text-decoration: line-through;
+    font-size:1em;
+}
+
+.price {
+    color:#E1F7FF;
+    font-size:1em;
+}
+
+.more_game_container>div:not(:last-child){
+    margin-right:18px;
+}
+
+.more_game_container {
+    width: 100%;
 }
