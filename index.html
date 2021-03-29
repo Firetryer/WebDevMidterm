@@ -2,44 +2,43 @@
 <html>
 	<head>
 		<link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
-		/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" />
 		<link rel="stylesheet" href="static/css/styles.css" />
+		<link rel="stylesheet" href="static/css/nav_bar.css" />
 		<title>Je Games</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<div class="container-fluid w-100 no-padding top_bar">
-			<div class="container-fluid d-flex justify-content-between pb-3">
-				<div class="d-flex">
-					<!-- <img src="static/img/JE_GAMES.png" id="logo" alt=""> -->
-					<div id="top_nav_logo">LOGO</div>
-				</div>
-				<div class=" mx-auto">
-					<div class="d-flex justify-content-center inputs">
-						<input
-							type="email"
-							class="form-control w-50"
-							id="exampleFormControlInput1"
-							placeholder="Search"
-						/>
-					</div>
-				</div>
-				<div class="float-right d-flex flex-row-reverse align-items-center">
-					<i class="bi bi-cart"></i>
-					<a class="fw-bold me-4 text-decoration-none signin_link" href="#">Sign In</a>
-				</div>
-			</div>
-			<div class="bottom_bar">
-				<div class="d-flex flex-row">
-					<a href="#" class="bottom_bar_link_games">Games</a>
-					<a href="#" class="bottom_bar_link_browse">Browse</a>
-					<a href="#" class="bottom_bar_link_support">Support</a>
-				</div>
-			</div>
-		</div>
+		<nav class="navbar navbar-expand-lg navigation">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_items" aria-controls="navbar_items" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list text-white"></i>
+                </button>
+                <div class="w-100 collapse navbar-collapse px-0" id="navbar_items">
+                    <div class="container-fluid d-flex flex-column">
+                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
+                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
+                                <a class="top_nav_logo" href="#">LOGO</a>
+                            </div>
+                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 mx-lg-auto mx-md-0 mx-sm-0 d-flex inputs">
+                                <input class="mx-lg-auto mx-md-0 mx-sm-0  form-control w-50" placeholder="Search"/>
+                            </div>
+                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2  text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right">
+                                <i class="bi bi-cart"></i>
+                                <a class="fw-bold me-4 text-decoration-none" href="#">Sign In</a>
+                            </div>
+                        </div>
+                        <div class="container-fluid nav_bottom_bar">
+                            <div class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 ">
+                                <a href="#" class="">Games</a>
+                                <a href="#" class="">Browse</a>
+                                <a href="#" class="">Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
 		<div>
 			<div
