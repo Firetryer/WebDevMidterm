@@ -5,41 +5,55 @@
 	background-color: #3b3b58;
 }
 
-.main_content>div{
-    margin-bottom: 38px;
-}
 
 .main_content p{
-    color: white
+    color: #E1F7FF
 }
 
 .trailer_container video{
-    width:1385px;
+    width:1480px;
     height: 479px;
     margin-bottom: 64px;
 }
 
-
-.game_details{
-    
-    height: 312px;
+.section_all {
+    margin-bottom: 70px !important;
 }
 
-.game_details>div{
+.section_all .game_page_section_header{
+    width: 440px;
+}
+
+.section_all .game_page_section_header p{
+    font-size: 24px;
+    text-align: left;
+}
+
+.section_1{
+    height: 313px;
+    width: 1480px;
+}
+
+.section_1>div:not(:last-child){
     margin-right: 28px
 }
 
-.game_information #game_title{
+.section_1 .game_information{
+    max-width: 751px;
+    text-align:left;
+}
+
+.section_1> #game_title{
     font-size: 22px;
     font-family: 'Poppins-Medium';
 }
 
-.game_information #game_desc{
+.section_1 #game_desc{
     font-size: 16px;
     font-family: 'Poppins';
 }
 
-.game_information>div{
+.section_1>div{
     margin-bottom: 10px;
 }
 
@@ -48,60 +62,59 @@
     text-align: right;
 }
 
-.game_price button{
+.section_1 .game_price button{
     width: 231px;
     height: 52px;
+    background-color: #9AC100;
 }
 
-#game_poster {
+.section_1 img {
     height: 313px;
     width: 402px;
 }
 
-#game_poster img{
-    width:100%;
-    height: 100%
-}
 
-.game_section {
-    max-width: 1480px;
+.section_2 {
+    width: 1480px;
     height: 434px;
-    margin-bottom: 70px !important;
 }
 
-.game_page_section_header p{
-    font-size: 24px;
-    text-align: left;
+.section_3 {
+    height: 549px;
 }
 
-.game_section .game_page_section_header{
-    width: 440px;
+.section_4 {
+
 }
 
-.game_details .game_information{
-    max-width: 751px;
-    text-align:left;
+.section_container {
+    max-width: 1000px;
 }
 
-
-.about_detail_container {
-    width: 1078px;
-    height:376px;
-}
-
-.about_detail_container p{
+.section_container p{
     font-size: 14px;
+}
+.section_container p:not(:last-child){
     margin-bottom: 10px;
 }
 
-.about_detail_container #detail_header{
-    color:#646464;
+.section_container #detail_header{
+    color:#AEBABE;
 }
 
-.about_detail_container .row{
-    margin-bottom: 25px;
+.section_container>.row{
+    margin-bottom: 15px;
 }
 
 .requirement_section {
     width: 477px;
+}
+
+.requirement_container>div{
+    margin-bottom: 25px;
+
+}
+
+.section_6 {
+    margin-bottom: 0px !important;
 }
