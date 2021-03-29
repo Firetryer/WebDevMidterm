@@ -9,14 +9,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navigation">
+		<nav class="navbar navbar-expand-lg navigation pb-0">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_items" aria-controls="navbar_items" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list text-white"></i>
                 </button>
-                <div class="w-100 collapse navbar-collapse px-0" id="navbar_items">
-                    <div class="container-fluid d-flex flex-column">
-                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
+                <div class="w-100 collapse navbar-collapse " id="navbar_items">
+                    <div class="container-fluid d-flex flex-column p-0 m-0">
+                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0">
                             <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
                                 <a class="top_nav_logo" href="#">LOGO</a>
                             </div>
@@ -30,9 +30,54 @@
                         </div>
                         <div class="container-fluid nav_bottom_bar">
                             <div class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 ">
-                                <a href="#" class="">Games</a>
-                                <a href="#" class="">Browse</a>
-                                <a href="#" class="">Support</a>
+                                <div class="bottom_bar_links_first">
+                                    <a class="btn btn-custom-1" >
+                                      Games
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="btn btn-custom-1 dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Browse
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-start p-5" aria-labelledby="dropdownMenuButton1">
+                                        <div class="d-flex flex-row">
+                                            <div class="d-flex me-5 flex-column">
+                                                <div class="d-flex flex-column">
+                                                    <p class="browse_category_header">Browse By Price</p>
+                                                    <p>New Releases</p>
+                                                    <p>Best Sellers</p>
+                                                    <p>On Sale Now</p>
+                                                    <p>Limited Offers</p>
+                                                    <p>Free</p>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <p class="browse_category_header">Browse By Platform</p>
+                                                    <p>Xbox</p>
+                                                    <p>Play Station</p>
+                                                    <p>Linux</p>
+                                                    <p>iOS</p>
+                                                    <p>Windows</p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="browse_category_header">Browse By Tags</p>
+                                                <p>Action</p>
+                                                <p>Adventure</p>
+                                                <p>Casual</p>
+                                                <p>Racing</p>
+                                                <p>RPG</p>
+                                                <p>Sports</p>
+                                                <p>Simulation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div>
+                                    <a class="btn btn-custom-1" >
+                                        Support
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
