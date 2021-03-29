@@ -98,6 +98,16 @@ html{
     margin-bottom: 10px;
 }
 
+.nav-tabs button{
+    background-color: #3b3b58;
+    color: #AEBABE;
+}
+.nav-tabs button.active{
+    background-color: #3b3b58;
+    border-width: 0px;
+    color: #AEBABE;
+}
+
 .section_3 {
 }
 
@@ -126,13 +136,9 @@ html{
     margin-bottom: 15px;
 }
 
-.requirement_section {
-    width: 477px;
-}
 
 .requirement_container>div{
     margin-bottom: 25px;
-
 }
 
 .requirement_section p:not(:last-child){
