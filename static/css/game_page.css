@@ -19,6 +19,7 @@
 
 .section_all {
     margin-bottom: 70px !important;
+    max-width: 1480px !important;
 }
 
 .section_all .game_page_section_header{
@@ -31,8 +32,7 @@
 }
 
 .section_1{
-    height: 313px;
-    width: 1480px;
+    max-width: 1480px;
 }
 
 .section_1>div:not(:last-child){
@@ -49,9 +49,10 @@
     font-family: 'Poppins-Medium';
 }
 
-.section_1 #game_desc{
+#game_desc{
     font-size: 16px;
     font-family: 'Poppins';
+    overflow:auto;
 }
 
 .section_1>div{
@@ -60,7 +61,6 @@
 
 .game_price p{
     font-size:20px;
-    text-align: right;
 }
 
 .section_1 .game_price button{
@@ -76,8 +76,7 @@
 
 
 .section_2 {
-    width: 1480px;
-    height: 434px;
+    max-width: 1480px;
 }
 
 .section_2>.section_container>div{
@@ -89,7 +88,6 @@
 }
 
 .section_3 {
-    height: 549px;
 }
 
 .section_4 {
@@ -137,6 +135,10 @@
 .section_6 {
     margin-bottom: 0px !important;
     padding-bottom: 70px;
+}
+
+.section_6>.section_container{
+    max-width: 100% !important;
 }
 
 .review_user {
@@ -256,4 +258,8 @@ hr {
 
 .more_game_container>div:not(:last-child){
     margin-right:18px;
+}
+
+.more_game_container {
+    width: 100%;
 }
