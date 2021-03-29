@@ -44,7 +44,7 @@
 
         <div class="container-fluid main_content">
             <div class="game_top_nav text-white">
-                <p>Browse > Game</p>
+                <p>Browse > New Release > Game Title</p>
             </div>
             <div class="justify-content-center d-flex trailer_container">
                 <video controls>
@@ -52,69 +52,178 @@
                 Your browser does not support the video tag.
                 </video> 
             </div>
-            <div class="container-fluid row game_details">
-                <div class="col-3" id="game_poster">
+
+
+            <div class="container-fluid d-flex flex-row game_details">
+                <div class="" id="game_poster">
                     <img src="static/img/dota 2.jpg" alt="">
                 </div>
-                <div class="col" id="game_description">
+                <div class="game_information">
                     <div class="row">
-                        <p>Dota 2</p>
+                        <p id="game_title">Dota 2</p>
                     </div>
                     <div class="row">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales tristique urna, et convallis enim volutpat vitae. Quisque eget turpis pharetra, pretium nunc non, varius urna. Morbi volutpat vitae erat vitae mattis. Cras dignissim lorem neque, sit amet aliquet nunc mattis lobortis. Donec sit amet efficitur nulla. Aenean vel magna est. Pellentesque venenatis lacus leo, eu euismod nisl aliquam vitae. Cras quam risus, pulvinar vitae euismod sed, facilisis viverra neque.</p>
+                        <p id="game_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales tristique urna, et convallis enim volutpat vitae. Quisque eget turpis pharetra, pretium nunc non, varius urna. Morbi volutpat vitae erat vitae mattis. Cras dignissim lorem neque, sit amet aliquet nunc mattis lobortis. Donec sit amet efficitur nulla. Aenean vel magna est. Pellentesque venenatis lacus leo, eu euismod nisl aliquam vitae. Cras quam risus, pulvinar vitae euismod sed, facilisis viverra neque.</p>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="row">Price</div>
+                <div class="game_price">
+                    <div class="row">
+                        <p>Price</p>
+                    </div>
                     <div class="row">
                         <button class="button">Buy Now</button>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid game_about row">
-                <div class="col-3">
+
+
+            <div class="container-fluid game_section d-flex">
+                <div class="game_page_section_header">
                     <p>About</p>
                 </div>
-                <div class="col d-flex justify-content-evenly flex-wrap about_detail_container">
-                    <div class="flex-column about_details">
-                        <p>Developer</p>
-                        <p>Developer Name</p>
-                    </div>
-                    <div class="flex-column about_details">
-                        <p>Developer</p>
-                        <p>Developer Name</p>
-                    </div>
-                    <div class="flex-column about_details">
-                        <p>Developer</p>
-                        <p>Developer Name</p>
-                    </div>
-                    <div class="flex-column about_details">
-                        <p>Developer</p>
-                        <p>Developer Name</p>
-                    </div>
-                    <div class="flex-column about_details">
-                        <p>Developer</p>
-                        <p>Developer Name</p>
-                    </div>
-                    <div class="flex-column about_details">
-                        <p>Developer</p>
-                        <p>Developer Name</p>
-                    </div>
+                <div class="about_detail_container">
+                   <div class="row">
+                        <div class="col">
+                            <p id="detail_header">Developer</p>
+                            <p id="detail_info"> Developer Name</p>
+                        </div>
+                        <div class="col">
+                            <p id="detail_header">Publusher</p>
+                            <p id="detail_info"> Publusher Name</p>
+                        </div>
+                        <div class="col">
+                            <p id="detail_header">Status</p>
+                            <p id="detail_info"> Coming Soon</p>
+                        </div>
+                   </div>
+                   <div class="row">
+                        <div class="col">
+                            <p id="detail_header">Tags</p>
+                            <p id="detail_info"> Genres</p>
+                        </div>
+                        <div class="col">
+                            <p id="detail_header">Rating</p>
+                            <p id="detail_info"> 9.6</p>
+                        </div>
+                        <div class="col">
+                            <p id="detail_header">Platforms</p>
+                            <div class="d-flex">
+
+                            </div>
+                        </div>
+                   </div>
+                   <div class="row d-flex flex-row">
+                       <p id="detail_header">Features</p>
+                       <p>* Lorem Ipsum</p>
+                       <p>* Lorem Ipsum</p>
+                       <p>* Lorem Ipsum</p>
+                       <p>* Lorem Ipsum</p>
+                       <p>* Lorem Ipsum</p>
+                   </div>
+                   <div class="row d-flex flex-row">
+                       <p id="detail_header">Other Details</p>
+                       <p id="detail_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque non. Dictum non consectetur a erat nam at lectus urna duis. Elit sed vulputate mi sit amet mauris commodo. Massa tincidunt dui ut ornare lectus.</p>
+
+                   </div>
                 </div>
             </div>
-            <div class="container-fluid row game_requirements">
-                <div class="col-3">
+            <div class="container-fluid game_section d-flex">
+                <div class="game_page_section_header">
                     <p>System Requirements</p>
                 </div>
-                <div class="col">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales tristique urna, et convallis enim volutpat vitae. Quisque eget turpis pharetra, pretium nunc non, varius urna. Morbi volutpat vitae erat vitae mattis. Cras dignissim lorem neque, sit amet aliquet nunc mattis lobortis. Donec sit amet efficitur nulla. Aenean vel magna est. Pellentesque venenatis lacus leo, eu euismod nisl aliquam vitae. Cras quam risus, pulvinar vitae euismod sed, facilisis viverra neque.
+                <div class="about_detail_container">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="xbox-tab" data-bs-toggle="tab" data-bs-target="#Xbox" type="button" role="tab" aria-controls="Xbox" aria-selected="true">Xbox</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="windows-tab" data-bs-toggle="tab" data-bs-target="#Windows" type="button" role="tab" aria-controls="Windows" aria-selected="false">Windows</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="linux-tab" data-bs-toggle="tab" data-bs-target="#Linux" type="button" role="tab" aria-controls="Linux" aria-selected="false">Linux</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="macos-tab" data-bs-toggle="tab" data-bs-target="#MacOS" type="button" role="tab" aria-controls="MacOS" aria-selected="false">MacOS</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="requirements-content">
+                        <div class="tab-pane fade show active" id="Xbox" role="tabpanel" aria-labelledby="xbox-tab">
+                            <div class="d-flex">
+                                <div class="requirement_section d-flex flex-column">
+                                    <div>
+                                        <p id="detail_header">
+                                            Minimum
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">OS</p>
+                                        <p id="detail_info"> Windows 7 Or Later</p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">Processor</p>
+                                        <p id="detail_info"> Intel Core I5</p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">Memory</p>
+                                        <p id="detail_info"> 2GB</p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">Storage</p>
+                                        <p id="detail_info"> 745MB</p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">Graphics</p>
+                                        <p id="detail_info"> Nvidia Geforce GTX 550/equivalent or higher</p>
+                                    </div>
+                                </div>
+
+                                <div class="requirement_section d-flex flex-column">
+                                    <p id="detail_header">
+                                        Recommended
+                                    </p>
+                                    <div>
+                                        <p id="detail_header">OS</p>
+                                        <p id="detail_info"> Windows 10</p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">Processor</p>
+                                        <p id="detail_info"> High-range Intel Core i5</p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">Memory</p>
+                                        <p id="detail_info"> 4GB</p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">Storage</p>
+                                        <p id="detail_info"> 3GB</p>
+                                    </div>
+                                    <div>
+                                        <p id="detail_header">Graphics</p>
+                                        <p id="detail_info"> Nvidia Geforce GTX 760/equivalent or higher</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p id="detail_header">Languages Supported</p>
+                                <p id="detail_info"> AUDIO: English, French, German, Japanese, Polish, Russian, Chinese - Simplified, TEXT: English, French, German, Japanese, Polish, Russian, Chinese - Simplified</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="Windows" role="tabpanel" aria-labelledby="windows-tab">
+                            <p>This is windows</p>
+                        </div>
+                        <div class="tab-pane fade show" id="Linux" role="tabpanel" aria-labelledby="linux-tab">
+                            <p>Linux</p>
+                        </div>
+                        <div class="tab-pane fade show" id="MacOS" role="tabpanel" aria-labelledby="macos-tab">
+                            <p>This is macos</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
 
 
-		<div class="container-fluid row footer">
+		<div class="container-fluid d-flex footer">
 			<div class="container col-3">
 				<a href="">About</a>
 				<a href="">Developers</a>
