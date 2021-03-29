@@ -8,6 +8,11 @@
 	src: url('../fonts/Poppins-Medium.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'Poppins-Light';
+	src: url('../fonts/Poppins-Light.ttf') format('truetype');
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 html {
