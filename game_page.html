@@ -15,9 +15,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_items" aria-controls="navbar_items" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list text-white"></i>
                 </button>
-                <div class="w-100 collapse navbar-collapse px-0" id="navbar_items">
-                    <div class="container-fluid d-flex flex-column">
-                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
+                <div class="w-100 collapse navbar-collapse " id="navbar_items">
+                    <div class="container-fluid d-flex flex-column p-0 m-0">
+                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0">
                             <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
                                 <a class="top_nav_logo" href="#">LOGO</a>
                             </div>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="container-fluid nav_bottom_bar">
                             <div class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 ">
-                                <div>
+                                <div class="bottom_bar_links_first">
                                     <a class="btn btn-custom-1" >
                                       Games
                                     </a>
@@ -85,11 +85,11 @@
                 </div>
             </div>
         </nav>
-
+        <div class="game_top_nav text-white">
+            <p>Browse > New Release > Game Title</p>
+        </div>
         <div class="container-fluid main_content">
-            <div class="game_top_nav text-white">
-                <p>Browse > New Release > Game Title</p>
-            </div>
+            
             <div class="justify-content-center d-flex trailer_container">
                 <video controls>
                     <source src="static/videos/Dota2_Trailer.mp4" type="video/mp4">
@@ -106,14 +106,19 @@
                 <div class="d-flex flex-column game_desc_container">
                     <p id="game_title">Dota 2</p>
                     <p class="overflow-auto" id="game_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales tristique urna, et convallis enim volutpat vitae. Quisque eget turpis pharetra, pretium nunc non, varius urna. Morbi volutpat vitae erat vitae mattis. Cras dignissim lorem neque, sit amet aliquet nunc mattis lobortis. Donec sit amet efficitur nulla. Aenean vel magna est. Pellentesque venenatis lacus leo, eu euismod nisl aliquam vitae. Cras quam risus, pulvinar vitae euismod sed, facilisis viverra neque.</p>
+
                 </div>
                 <div class="game_price d-flex flex-column">
                     <div >
                         <p class="text-lg-center text-md-center text-sm-center ">Price</p>
                     </div>
                     <div class="d-flex">
-                        <button class="btn btn-block mx-auto">Buy Now</button>
+                        <button class="btn btn-block mx-auto">
+                            Buy Now
+                            <i class="bi bi-plus text-end"></i>
+                        </button>
                     </div>
+                    
                 </div>
             </div>
 
@@ -156,11 +161,11 @@
                    </div>
                    <div class="row d-flex flex-row features">
                        <p id="detail_header">Features</p>
-                       <p>* Lorem Ipsum</p>
-                       <p>* Lorem Ipsum</p>
-                       <p>* Lorem Ipsum</p>
-                       <p>* Lorem Ipsum</p>
-                       <p>* Lorem Ipsum</p>
+                       <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
+                       <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
+                       <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
+                       <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
+                       <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
                    </div>
                    <div class="row d-flex flex-row">
                        <p id="detail_header">Other Details</p>
@@ -462,25 +467,56 @@
 
 
         <!-- FOOTER -->
-		<div class="d-flex footer">
-			<div class="container col-3">
-				<a href="">About</a>
-				<a href="">Developers</a>
-				<a href="">Privacy</a>
+		<footer id="main-footer" class="py-2">
+			<div class="container footer-container">
+				<div>
+					<img src="static/img/JE_GAMES.png" alt="JE GAMES">
+					<p>Follow Our Accounts</p>
+					<ul class="container col">
+						<i class="bi bi-twitter"></i>
+						<i class="bi bi-discord"></i>
+						<i class="bi bi-facebook"></i>
+						<i class="bi bi-instagram"></i>
+					</ul>
+				</div>
+				<div>
+					<h3>Career Opportunities</h3>
+          			<p>Send us a letter.</p>
+					<form>
+						<input type="email" placeholder="Enter Email" />
+						<input type="submit" value="Subscribe" class="btn btn-primary" />
+					</form>
+				</div>
+				<div>
+					<h3>Site Links</h3>
+					<ul class="list">
+						<li><a href="#">Help & Support</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Developers</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3>Community Rules</h3>
+					<p>
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
+						eos?
+					</p>
+					<a href="#" class="btn btn-secondary">Read More</a>
+				</div>
+				<div>
+					<p>
+						Copyright &copy; 2021, All Rights Reserved
+					</p>
+				</div>
 			</div>
-			<div class="container col">
-				<i class="bi bi-twitter"></i>
-				<i class="bi bi-discord"></i>
-				<i class="bi bi-facebook"></i>
-				<i class="bi bi-instagram"></i>
-			</div>
-			<div class="container col ">
+			
+			<!-- <div class="container col ">
 				<div class="d-flex">
 					<i id="go_up" class="bi bi-arrow-up-square"></i>
 				</div>
-			</div>
-
-		</div>
+			</div> -->
+		</footer>
 		
 
 		<script src="static/js/bootstrap.bundle.min.js"></script>

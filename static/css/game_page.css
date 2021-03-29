@@ -1,12 +1,30 @@
-html{
-    font-size: 16px
+body {
+    font-size: 16px;
+    background-color: #3b3b58;
+}
+
+@media (max-width: 640px) {
+    .main_content {
+        padding-left: 1% !important;
+        padding-right: 1% !important;
+    }
 }
 
 .main_content{
     padding-left: 11.8%;
 	padding-right: 11.8%;
-	padding-top: 26px;
+	padding-top: 1.625rem;
 	background-color: #3b3b58;
+}
+
+.game_top_nav {
+    margin-left: 10.1875rem;
+    margin-top: 1.8125rem;
+}
+
+.game_top_nav p{
+    font-size: 1rem;
+    font-family: 'Poppins';
 }
 
 
@@ -15,87 +33,91 @@ html{
 }
 
 .trailer_container video{
-    width:1480px;
-    min-width: 600px;
-    height: 479px;
-    margin-bottom: 64px;
+    width:92.5rem;
+    min-width: 37.5rem;
+    height: 29.9375rem;
+    margin-bottom: 4rem;
     background-color:black;
 }
 
 .section_all {
-    margin-bottom: 70px !important;
-    max-width: 1480px !important;
+    margin-bottom: 4.4375em !important;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 92.5em !important;
 }
 
 .section_all .game_page_section_header{
-    width: 440px;
+    width: 27.5rem;
 }
 
 .section_all .game_page_section_header>p{
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-family: 'Poppins';
     text-align: left;
 }
 
 .section_1{
-    max-width: 1480px;
+    max-width: 1492.5rem;
 }
 
 .section_1>div:not(:last-child){
-    margin-right: 28px
+    margin-right: 1.75em
 }
 
 .section_1 .game_information{
-    max-width: 751px;
+    max-width: 46.9375rem;
     text-align:left;
 }
 
 .game_desc_container> #game_title{
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-family: 'Poppins-Medium';
 }
 
 .game_desc_container{
-    max-height: 312px;
-    min-width: 200px;
+    max-height: 19.5rem;
+    min-width: 12.5rem;
 }
 
 #game_desc{
-    font-size: 1em;
+    font-size: 1rem;
     font-family: 'Poppins';
     overflow:auto;
 }
 
 .section_1>div{
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .game_price p{
-    font-size:1.25em;
+    font-size: 1.25rem;
+    font-family: 'Poppins';
 }
 
 .section_1 .game_price button{
-    width: 231px;
-    height: 52px;
+    width: 14.4375rem;
+    height: 3.25rem;
+    color: #E1F7FF;
     background-color: #9AC100;
 }
 
 .section_1 img {
-    height: 313px;
-    width: 402px;
+    height: 19.5625rem;
+    width: 25.125rem;
 }
 
 
 .section_2 {
-    max-width: 1480px;
+    max-width: 92.5rem;
 }
 
 .section_2>.section_container>div{
-    margin-bottom: 25px;
+    margin-bottom: 1.5625rem;
 }
 
 .section_2 .features>p{
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .nav-tabs button{
@@ -116,16 +138,17 @@ html{
 }
 
 .section_container {
-    max-width: 1000px;
+    max-width: 62.5rem;
 }
 
 .section_container p{
-    font-size: 0.875em;
+    font-size: 0.875rem;
+    font-family: 'Poppins';
 }
 
 .section_container #detail_header{
     color:#AEBABE;
-    margin-bottom: 10px;;
+    margin-bottom: 0.625rem;
 }
 
 .section_container #detail_info{
@@ -133,25 +156,25 @@ html{
 }
 
 .section_container>.row{
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
 }
 
 
 .requirement_container>div{
-    margin-bottom: 25px;
+    margin-bottom: 1.5625rem;
 }
 
 .requirement_section p:not(:last-child){
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .requirement_section div{
-    margin-bottom: 25px !important;
+    margin-bottom: 1.5625em !important;
 }
 
 .section_6 {
     margin-bottom: 0px !important;
-    padding-bottom: 70px;
+    padding-bottom: 4.4375rem;
 }
 
 .section_6>.section_container{
@@ -159,12 +182,12 @@ html{
 }
 
 .review_user {
-    width: 197px;
+    width: 12.3125rem;
 }
 
 .review_user img {
-    width: 69px;
-    height: 69px;
+    width: 4.3125rem;
+    height: 4.3125rem;
 }
 
 .review_user *{
@@ -172,49 +195,49 @@ html{
 }
 
 .review_review {
-    max-width: 844px;
+    max-width: 52.75rem;
 }
 
 .review_review i{
-    width: 25px;
+    width: 1.5625rem;
     color:yellow;
 }
 
 .review_user_username {
     font-family: 'Poppins';
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 .review_user_other {
     font-family: 'Poppins-Light';
-    font-size: 0.875em;
+    font-size: 0.875rem;
 }
 
 .review_title {
-    font-size: 1.125em;
+    font-size: 1.125rem;
     font-family: 'Poppins-Medium';
 }
 
 .update_card{
-    width:331px;
-    height:284px;
-    margin-right: 23px;
+    width:20.6875rem;
+    height:17.75rem;
+    margin-right: 1.4375rem;
 }
 
 .update_card img{
-    width:331px;
-    height: 219px;
-    margin-bottom: 11px;
+    width: 20.6875rem;
+    height: 13.6875rem;
+    margin-bottom: 0.6875rem;
 }
 
 .update_card .update_title{
     font-family: 'Poppins-Medium';
-    font-size: 1.125em;
-    margin-bottom: 9px;
+    font-size: 1.125rem;
+    margin-bottom: 0.5625rem;
 }
 
 .update_card .update_time{
-    font-size: 0.875em;
+    font-size: 0.875rem;
 }
 
 hr {
@@ -222,32 +245,32 @@ hr {
 }
 
 .more_game_card img{
-    height: 493px;
-    width: 357px;
+    height: 30.8125rem;
+    width: 22.3125rem;
 }
 
 .more_game_price *{
-    margin-right: 9px;
+    margin-right: 0.5625rem;
     
 }
 
 .more_game_price>p{
-    padding-top: 5px;
+    padding-top: 0.3125rem;
 }
 
 .more_game_title{
-    font-size: 1.125em;
+    font-size: 1.125rem;
     font-family: 'Poppins';
-    margin-top: 28px;
+    margin-top: 1.75rem;
 }
 
 
 .discount_tag {
     display: inline-block;
-    width: 69px;
-    height: 36px;
+    width: 4.3125rem;
+    height: 2.25rem;
     background: #4C6B22 0% 0% no-repeat padding-box;
-    border: 1px solid #707070;
+    border: 0.0625em solid #707070;
     height: fit-content;
     margin:0px;
     padding: 0px;
@@ -255,26 +278,26 @@ hr {
 
 .discount_tag p{
     color: #A4D015;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin:0px;
-    padding-bottom: 1px;
-    padding-left: 11px;
-    padding-right: 11px;
+    padding-bottom: 0.0625rem;
+    padding-left: 0.6875rem;
+    padding-right: 0.6875rem;
 }
 
 .striked_price {
     color: #D1CECE;
     text-decoration: line-through;
-    font-size:1em;
+    font-size:1rem;
 }
 
 .price {
     color:#E1F7FF;
-    font-size:1em;
+    font-size:1rem;
 }
 
 .more_game_container>div:not(:last-child){
-    margin-right:18px;
+    margin-right:1.125rem;
 }
 
 .more_game_container {
