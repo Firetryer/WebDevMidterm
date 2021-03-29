@@ -1,6 +1,10 @@
+html{
+    font-size: 16px
+}
+
 .main_content{
-    padding-left: 220px;
-	padding-right: 222px;
+    padding-left: 11.8%;
+	padding-right: 11.8%;
 	padding-top: 26px;
 	background-color: #3b3b58;
 }
@@ -12,6 +16,7 @@
 
 .trailer_container video{
     width:1480px;
+    min-width: 600px;
     height: 479px;
     margin-bottom: 64px;
     background-color:black;
@@ -26,8 +31,9 @@
     width: 440px;
 }
 
-.section_all .game_page_section_header p{
-    font-size: 24px;
+.section_all .game_page_section_header>p{
+    font-size: 1.5em;
+    font-family: 'Poppins';
     text-align: left;
 }
 
@@ -44,13 +50,18 @@
     text-align:left;
 }
 
-.section_1> #game_title{
-    font-size: 22px;
+.game_desc_container> #game_title{
+    font-size: 1.5em;
     font-family: 'Poppins-Medium';
 }
 
+.game_desc_container{
+    max-height: 312px;
+    min-width: 200px;
+}
+
 #game_desc{
-    font-size: 16px;
+    font-size: 1em;
     font-family: 'Poppins';
     overflow:auto;
 }
@@ -60,7 +71,7 @@
 }
 
 .game_price p{
-    font-size:20px;
+    font-size:1.25em;
 }
 
 .section_1 .game_price button{
@@ -99,7 +110,7 @@
 }
 
 .section_container p{
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 .section_container #detail_header{
@@ -165,16 +176,16 @@
 
 .review_user_username {
     font-family: 'Poppins';
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .review_user_other {
     font-family: 'Poppins-Light';
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 .review_title {
-    font-size: 18px;
+    font-size: 1.125em;
     font-family: 'Poppins-Medium';
 }
 
@@ -192,12 +203,12 @@
 
 .update_card .update_title{
     font-family: 'Poppins-Medium';
-    font-size: 18px;
+    font-size: 1.125em;
     margin-bottom: 9px;
 }
 
 .update_card .update_time{
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 hr {
@@ -219,7 +230,7 @@ hr {
 }
 
 .more_game_title{
-    font-size: 18px;
+    font-size: 1.125em;
     font-family: 'Poppins';
     margin-top: 28px;
 }
@@ -238,7 +249,7 @@ hr {
 
 .discount_tag p{
     color: #A4D015;
-    font-size: 24px;
+    font-size: 1.5em;
     margin:0px;
     padding-bottom: 1px;
     padding-left: 11px;
@@ -248,12 +259,12 @@ hr {
 .striked_price {
     color: #D1CECE;
     text-decoration: line-through;
-    font-size:16px;
+    font-size:1em;
 }
 
 .price {
     color:#E1F7FF;
-    font-size:16px;
+    font-size:1em;
 }
 
 .more_game_container>div:not(:last-child){
