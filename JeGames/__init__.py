@@ -9,8 +9,7 @@ import os
 use_database="mysql" #mysql or mssql
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = 'f5418130a27f18abe557d61201c31d60'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://rewelcabiles:1539274@localhost/LoggingSystem'
+
 app.config['UPLOAD_FOLDER'] = '/uploads'
 app.db_type = 'mysql'
 
@@ -24,4 +23,4 @@ login_manager.login_message_category = 'info'
 
 
 
-from LoggingSystem import routes
+from JeGames import routes
