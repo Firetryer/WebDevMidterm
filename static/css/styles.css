@@ -24,40 +24,15 @@
 	--Poppins-Regular: 'Poppins';
 }
 
-.py-1 {
-	padding: 1.5rem 0;
-}
-.py-2 {
-	padding: 2rem 0;
-}
-.py-3 {
-	padding: 3rem 0;
-}
-
-.p-1 {
-	padding: 1.5rem;
-}
-.p-2 {
-	padding: 2rem;
-}
-.p-3 {
-	padding: 3rem;
+* {
+	margin: 0;
+	padding: 0;
 }
 
 html {
 	box-sizing: border-box;
 	font-family: 'Poppins';
 	background-color: #3b3b58;
-}
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-}
-
-body {
-	margin: 0px;
-	padding: 0px;
 }
 
 a {
@@ -78,45 +53,18 @@ a {
 	border-radius: 16px;
 }
 
-#go_up {
-	margin-left: auto;
-}
-
-.footer {
-	background-color: #2d3753;
-	height: 96px;
-	padding-left: 217px;
-	padding-right: 217px;
-	padding-top: 36px;
-	padding-bottom: 36px;
-}
-
-.footer a {
-	font-size: 18px;
-	margin-right: 12px;
-	color: #e1f7ff;
-}
-
-.footer i {
-	font-size: 22px;
-	margin-right: 16px;
-	color: #e1f7ff;
-}
-
 .carousel {
-	height: 850px;
+	height: 80%;
 }
 
 .carousel_image {
-	height: 850px;
 	object-fit: cover;
 }
 
 .carousel_bottom {
 	position: absolute;
-	top: 860px;
-	left: 0px;
-	height: 117px;
+	margin-top: -10vh;
+	height: 10%;
 	background: #0c2d4866 0% 0% no-repeat padding-box;
 	box-shadow: 0px 15px 30px #00000029;
 	opacity: 1;
@@ -135,202 +83,6 @@ a {
 	margin-top: 40px;
 	width: 285px;
 	height: 33px;
-}
-
-#logo {
-	width: 50px;
-	height: 50px;
-}
-#top_nav_logo {
-	width: 106px;
-	height: 53px;
-	font-size: 36px;
-	left: 150px;
-	top: 21px;
-	position: absolute;
-	text-align: left;
-	letter-spacing: 0px;
-	color: #e1f7ff;
-	opacity: 1;
-}
-
-#exampleFormControlInput1 {
-	top: 27px;
-	left: 696px;
-	width: 416px;
-	height: 50px;
-
-	background: #363f5e 0% 0% no-repeat padding-box;
-	border-radius: 8px;
-	opacity: 1;
-}
-
-.signin_link {
-	font-size: 18px;
-	text-align: left;
-	letter-spacing: 0px;
-	color: #e1f7ff;
-	opacity: 1;
-}
-
-.bottom_bar_link_games,
-.bottom_bar_link_browse,
-.bottom_bar_link_support {
-	top: 90px;
-	width: 65px;
-	height: 25px;
-	position: absolute;
-	text-align: left;
-	font: normal normal normal 18px/27px Poppins;
-	letter-spacing: 0px;
-	color: #e1f7ff;
-	opacity: 1;
-}
-
-.bottom_bar_link_games {
-	left: 150px;
-}
-
-.bottom_bar_link_browse {
-	left: 275px;
-}
-
-.bottom_bar_link_support {
-	left: 400px;
-}
-
-.top_bar {
-	z-index: 100;
-	padding-left: 125px;
-	padding-right: 125px;
-	padding-top: 38px;
-	background-color: #2c3652;
-	backdrop-filter: blur(25px);
-	width: auto;
-	height: 126px;
-}
-
-.top_bar i {
-	font-size: 26px;
-	margin-left: 44.69px;
-}
-
-.top_bar .inputs {
-	width: 696px;
-	height: 50px;
-}
-
-.bottom_bar {
-	padding-bottom: 5px;
-}
-
-.bottom_bar h5 {
-	font-size: 18px;
-	margin-right: 56px;
-}
-
-.top_bar * {
-	color: #e1f7ff;
-}
-
-.main_container {
-	padding-left: 222px;
-	padding-right: 222px;
-	padding-top: 50px;
-	background-color: #3b3b58;
-}
-
-.section_header {
-	margin-bottom: 32px;
-}
-
-.section_header p {
-	color: #e1f7ff;
-	font-size: 28px;
-	font-family: 'Poppins-Medium';
-	margin-top: 5px;
-}
-
-.section_header #header_box {
-	height: 53px;
-	margin-right: 20px;
-	background-color: #b1d4e0;
-	border: 4px solid #b1d4e0;
-	opacity: 1;
-}
-
-.card {
-	width: 317px;
-	height: 380px;
-	padding: 0px;
-	margin-left: 10px;
-	border: 1px;
-}
-
-.card-img-top {
-	width: 317px;
-	height: 380px;
-	border: 1px;
-}
-
-.overlay {
-	position: absolute;
-	background: rgba(0, 0, 0, 0.5); /* Black see-through */
-	transition: 0.5s ease;
-	opacity: 0;
-	color: white;
-	font-size: 20px;
-	text-align: center;
-	padding: 0px;
-	margin: 0px;
-	border-radius: 0px;
-}
-
-.card_container:hover .overlay {
-	opacity: 1;
-}
-
-.card:hover .card-img-overlay {
-	display: none;
-	transition: 0.5s ease;
-}
-
-.card-img-overlay {
-	top: 80%;
-	color: #000000;
-	display: block;
-}
-
-.game_title {
-	font-family: 'Poppins', sans-serif;
-}
-
-.overlay_link {
-	margin-top: 100px;
-}
-
-.buy_now {
-	margin-right: 10px;
-}
-
-.add_to_cart {
-	margin-left: 10px;
-}
-
-.news_and_trending_container {
-	width: 363px;
-	height: 580px;
-	background: rgb(32, 32, 32) 0% 0% no-repeat padding-box;
-	border: 1px solid #707070;
-	border-radius: 5px;
-	opacity: 1;
-	margin-right: 30px;
-	margin-left: 0px;
-}
-.list li {
-	padding: 0.5rem 0;
-	border-bottom: #555 dotted 1px;
-	width: 90%;
 }
 
 /* --------------Style for footer------------------*/
@@ -369,4 +121,25 @@ a {
 
 #main-footer .footer-container input[type='submit'] {
 	width: 90%;
+}
+
+.footer {
+	background-color: #2d3753;
+	height: 96px;
+	padding-left: 217px;
+	padding-right: 217px;
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+
+.footer a {
+	font-size: 18px;
+	margin-right: 12px;
+	color: #e1f7ff;
+}
+
+.footer i {
+	font-size: 22px;
+	margin-right: 16px;
+	color: #e1f7ff;
 }
