@@ -2,93 +2,222 @@
 <html>
 	<head>
 		<link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+		/>
 		<link rel="stylesheet" href="static/css/styles.css" />
 		<link rel="stylesheet" href="static/css/nav_bar.css" />
 		<title>Je Games</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navigation pb-0">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_items" aria-controls="navbar_items" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi bi-list text-white"></i>
-                </button>
-                <div class="w-100 collapse navbar-collapse " id="navbar_items">
-                    <div class="container-fluid d-flex flex-column p-0 m-0">
-                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0">
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
-                                <a class="top_nav_logo" href="#">LOGO</a>
-                            </div>
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 mx-lg-auto mx-md-0 mx-sm-0 d-flex inputs">
-                                <input class="mx-lg-auto mx-md-0 mx-sm-0  form-control w-50" placeholder="Search"/>
-                            </div>
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2  text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right">
-                                <i class="bi bi-cart"></i>
-                                <a class="fw-bold me-4 text-decoration-none" href="#">Sign In</a>
-                            </div>
-                        </div>
-                        <div class="container-fluid nav_bottom_bar">
-                            <div class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 ">
-                                <div class="bottom_bar_links_first">
-                                    <a class="btn btn-custom-1" >
-                                      Games
-                                    </a>
-                                </div>
-                                <div class="dropdown">
-                                    <a class="btn btn-custom-1 dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                      Browse
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-start p-5" aria-labelledby="dropdownMenuButton1">
-                                        <div class="d-flex flex-row">
-                                            <div class="d-flex me-5 flex-column">
-                                                <div class="d-flex flex-column">
-                                                    <p class="browse_category_header">Browse By Price</p>
-                                                    <p>New Releases</p>
-                                                    <p>Best Sellers</p>
-                                                    <p>On Sale Now</p>
-                                                    <p>Limited Offers</p>
-                                                    <p>Free</p>
-                                                </div>
-                                                <div class="d-flex flex-column">
-                                                    <p class="browse_category_header">Browse By Platform</p>
-                                                    <p>Xbox</p>
-                                                    <p>Play Station</p>
-                                                    <p>Linux</p>
-                                                    <p>iOS</p>
-                                                    <p>Windows</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-column">
-                                                <p class="browse_category_header">Browse By Tags</p>
-                                                <p>Action</p>
-                                                <p>Adventure</p>
-                                                <p>Casual</p>
-                                                <p>Racing</p>
-                                                <p>RPG</p>
-                                                <p>Sports</p>
-                                                <p>Simulation</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div>
-                                    <a class="btn btn-custom-1" >
-                                        Support
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
+			<div class="container-fluid">
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbar_items"
+					aria-controls="navbar_items"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<i class="bi bi-list text-white"></i>
+				</button>
+				<div class="w-100 collapse navbar-collapse" id="navbar_items">
+					<div class="container-fluid d-flex flex-column p-0 m-0">
+						<div
+							class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0"
+						>
+							<div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
+								<a class="top_nav_logo" href="#">LOGO</a>
+							</div>
+							<div
+								class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 mx-lg-auto mx-md-0 mx-sm-0 d-flex inputs"
+							>
+								<input
+									class="mx-lg-auto mx-md-0 mx-sm-0 form-control w-50"
+									placeholder="Search"
+								/>
+							</div>
+							<div
+								class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right"
+							>
+								<i class="bi bi-cart"></i>
+								<a class="fw-bold me-4 text-decoration-none" href="#">Sign In</a>
+							</div>
+						</div>
+						<div class="container-fluid nav_bottom_bar">
+							<div
+								class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2"
+							>
+								<div class="bottom_bar_links_first">
+									<a class="btn btn-custom-1"> Games </a>
+								</div>
+								<div class="dropdown">
+									<a
+										class="btn btn-custom-1 dropdown-toggle"
+										id="dropdownMenuButton1"
+										data-bs-toggle="dropdown"
+										aria-expanded="false"
+									>
+										Browse
+									</a>
+									<div
+										class="dropdown-menu dropdown-menu-start p-5"
+										aria-labelledby="dropdownMenuButton1"
+									>
+										<div class="d-flex flex-row">
+											<div class="d-flex me-5 flex-column">
+												<div class="d-flex flex-column">
+													<p class="browse_category_header">Browse By Price</p>
+													<p>New Releases</p>
+													<p>Best Sellers</p>
+													<p>On Sale Now</p>
+													<p>Limited Offers</p>
+													<p>Free</p>
+												</div>
+												<div class="d-flex flex-column">
+													<p class="browse_category_header">Browse By Platform</p>
+													<p>Xbox</p>
+													<p>Play Station</p>
+													<p>Linux</p>
+													<p>iOS</p>
+													<p>Windows</p>
+												</div>
+											</div>
+											<div class="d-flex flex-column">
+												<p class="browse_category_header">Browse By Tags</p>
+												<p>Action</p>
+												<p>Adventure</p>
+												<p>Casual</p>
+												<p>Racing</p>
+												<p>RPG</p>
+												<p>Sports</p>
+												<p>Simulation</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<a class="btn btn-custom-1"> Support </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div>
+			<div
+				id="featuredGamesCarousel"
+				class="carousel slide"
+				data-bs-ride="carousel"
+			>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img
+							src="static/img/half_life_3_banner.jpg"
+							class="d-block w-100 carousel_image"
+							alt="..."
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							src="static/img/valheim_banner.jpg"
+							class="d-block w-100 carousel_image"
+							alt="..."
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							src="static/img/dbd_banner.jpg"
+							class="d-block w-100 carousel_image"
+							alt="..."
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							src="static/img/dota 2.jpg"
+							class="d-block w-100 carousel_image"
+							alt="..."
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							src="static/img/valorant.jpg"
+							class="d-block w-100 carousel_image"
+							alt="..."
+						/>
+					</div>
+				</div>
+				<button
+					class="carousel-control-prev"
+					type="button"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide="prev"
+				>
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button
+					class="carousel-control-next"
+					type="button"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide="next"
+				>
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+			<div class="container-fluid d-flex justify-content-evenly carousel_bottom">
+				<a
+					class="text-decoration-none carousel_botom_link link_a"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="0"
+					href=""
+				>
+					Half Life 3</a
+				>
+				<a
+					class="text-decoration-none carousel_botom_link link_b"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="1"
+					href=""
+				>
+					Valheim</a
+				>
+				<a
+					class="text-decoration-none carousel_botom_link link_c"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="2"
+					href=""
+				>
+					Dead by Daylight</a
+				>
+				<a
+					class="text-decoration-none carousel_botom_link link_d"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="3"
+					href=""
+				>
+					Dota 2</a
+				>
+				<a
+					class="text-decoration-none carousel_botom_link link_e"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="4"
+					href=""
+				>
+					Valorant</a
+				>
+			</div>
+		</div>
 		<footer id="main-footer" class="py-2">
 			<div class="container footer-container">
 				<div>
-					<img src="static/img/JE_GAMES.png" alt="JE GAMES">
+					<img src="static/img/JE_GAMES.png" alt="JE GAMES" />
 					<p>Follow Our Accounts</p>
 					<ul class="container col">
 						<i class="bi bi-twitter"></i>
@@ -99,7 +228,7 @@
 				</div>
 				<div>
 					<h3>Career Opportunities</h3>
-          			<p>Send us a letter.</p>
+					<p>Send us a letter.</p>
 					<form>
 						<input type="email" placeholder="Enter Email" />
 						<input type="submit" value="Subscribe" class="btn btn-primary" />
@@ -117,25 +246,21 @@
 				<div>
 					<h3>Community Rules</h3>
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
-						eos?
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, eos?
 					</p>
 					<a href="#" class="btn btn-secondary">Read More</a>
 				</div>
 				<div>
-					<p>
-						Copyright &copy; 2021, All Rights Reserved
-					</p>
+					<p>Copyright &copy; 2021, All Rights Reserved</p>
 				</div>
 			</div>
-			
+
 			<!-- <div class="container col ">
 				<div class="d-flex">
 					<i id="go_up" class="bi bi-arrow-up-square"></i>
 				</div>
-			</div> -->
+			</div>
 		</footer>
-		
 
 		<script src="static/js/bootstrap.bundle.min.js"></script>
 		<script src="static/js/script.js"></script>
