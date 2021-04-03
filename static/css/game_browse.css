@@ -140,3 +140,27 @@ body {
 hr {
     color: ivory;
 }
+
+.custom_paginator {
+    display: inline-block;
+    margin-top: 5.1875em
+}
+
+.custom_paginator a {
+    color: var(--text-color);
+    font-family: var(--Poppins-Regular);
+    font-size: 1.125em;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.custom_paginator a.active {
+    border-bottom: 1px solid var(--text-color);
+    color: white;
+}
+
+.custom_paginator a:hover:not(.active) {
+    border-bottom: 1px solid #ddd;
+}
