@@ -32,7 +32,7 @@
 html {
 	box-sizing: border-box;
 	font-family: 'Poppins';
-	background-color: #3b3b58;
+	background-color: var(--main-background-color);
 }
 
 a {
