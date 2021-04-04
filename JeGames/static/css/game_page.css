@@ -1,6 +1,6 @@
 body {
     font-size: 16px;
-    background-color: #3b3b58;
+    background-color: var(--main-background-color);
 }
 
 @media (max-width: 640px) {
@@ -14,7 +14,7 @@ body {
     padding-left: 11.8%;
 	padding-right: 11.8%;
 	padding-top: 1.625rem;
-	background-color: #3b3b58;
+	background-color: var(--main-background-color);
 }
 
 .game_top_nav {

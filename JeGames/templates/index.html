@@ -2,93 +2,1375 @@
 <html>
 	<head>
 		<link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" />
-		<link rel="stylesheet" href="static/css/styles.css" />
-		<link rel="stylesheet" href="static/css/nav_bar.css" />
+		<!-- <link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+		/> -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+		/>
+		<!-- <link rel="stylesheet" href="static/css/styles.css" />
+		<link rel="stylesheet" href="static/css/nav_bar.css" /> -->
+		<link rel="stylesheet" href="static/css/index.css" />
 		<title>Je Games</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+			integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+			crossorigin="anonymous"
+		/>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navigation pb-0">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_items" aria-controls="navbar_items" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi bi-list text-white"></i>
-                </button>
-                <div class="w-100 collapse navbar-collapse " id="navbar_items">
-                    <div class="container-fluid d-flex flex-column p-0 m-0">
-                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0">
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
-                                <a class="top_nav_logo" href="#">LOGO</a>
-                            </div>
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 mx-lg-auto mx-md-0 mx-sm-0 d-flex inputs">
-                                <input class="mx-lg-auto mx-md-0 mx-sm-0  form-control w-50" placeholder="Search"/>
-                            </div>
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2  text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right">
-                                <i class="bi bi-cart"></i>
-                                <a class="fw-bold me-4 text-decoration-none" href="#">Sign In</a>
-                            </div>
-                        </div>
-                        <div class="container-fluid nav_bottom_bar">
-                            <div class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 ">
-                                <div class="bottom_bar_links_first">
-                                    <a class="btn btn-custom-1" >
-                                      Games
-                                    </a>
-                                </div>
-                                <div class="dropdown">
-                                    <a class="btn btn-custom-1 dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                      Browse
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-start p-5" aria-labelledby="dropdownMenuButton1">
-                                        <div class="d-flex flex-row">
-                                            <div class="d-flex me-5 flex-column">
-                                                <div class="d-flex flex-column">
-                                                    <p class="browse_category_header">Browse By Price</p>
-                                                    <p>New Releases</p>
-                                                    <p>Best Sellers</p>
-                                                    <p>On Sale Now</p>
-                                                    <p>Limited Offers</p>
-                                                    <p>Free</p>
-                                                </div>
-                                                <div class="d-flex flex-column">
-                                                    <p class="browse_category_header">Browse By Platform</p>
-                                                    <p>Xbox</p>
-                                                    <p>Play Station</p>
-                                                    <p>Linux</p>
-                                                    <p>iOS</p>
-                                                    <p>Windows</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-column">
-                                                <p class="browse_category_header">Browse By Tags</p>
-                                                <p>Action</p>
-                                                <p>Adventure</p>
-                                                <p>Casual</p>
-                                                <p>Racing</p>
-                                                <p>RPG</p>
-                                                <p>Sports</p>
-                                                <p>Simulation</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div>
-                                    <a class="btn btn-custom-1" >
-                                        Support
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+		<div class="header">
+			<div class="container-fluid p-0">
+				<nav class="navbar navbar-expand-lg">
+					<a class="navbar-brand" href="#">LOGO</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="form-inline">
+						<input
+							class="form-control"
+							type="search"
+							placeholder="Search"
+							aria-label="Search"
+						/>
+					</div>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">SIGN IN</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"> <i class="fas fa-shopping-cart"></i> </a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="nav">
+					<a class="nav-link active" href="#">Store</a>
+					<a class="nav-link" href="#">Browse</a>
+					<a class="nav-link" href="#">Support</a>
+				</nav>
+			</div>
+
+			<div
+				id="carouselExampleIndicators"
+				class="carousel slide"
+				data-ride="carousel"
+			>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img
+							class="d-block w-100"
+							src="static/img/dbd_banner.jpg"
+							alt="First slide"
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							class="d-block w-100"
+							src="static/img/dota 2.jpg"
+							alt="Second slide"
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							class="d-block w-100"
+							src="static/img/half_life_3_banner.jpg"
+							alt="Third slide"
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							class="d-block w-100"
+							src="static/img/valheim.jfif"
+							alt="Fourth slide"
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							class="d-block w-100"
+							src="static/img/valorant.jpg"
+							alt="Fifth slide"
+						/>
+					</div>
+				</div>
+				<a
+					class="carousel-control-prev"
+					href="#carouselExampleIndicators"
+					role="button"
+					data-slide="prev"
+				>
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a
+					class="carousel-control-next"
+					href="#carouselExampleIndicators"
+					role="button"
+					data-slide="next"
+				>
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			<div class="carousel-bottom-nav text-decoration-none">
+				<a
+					href="#"
+					data-target="#carouselExampleIndicators"
+					data-slide-to="0"
+					class="active"
+				>
+					Dead By Daylight
+				</a>
+				<a href="" data-target="#carouselExampleIndicators" data-slide-to="1"
+					>Dota 2</a
+				>
+				<a href="" data-target="#carouselExampleIndicators" data-slide-to="2"
+					>Half Life</a
+				>
+				<a href="" data-target="#carouselExampleIndicators" data-slide-to="3"
+					>Valheim</a
+				>
+				<a href="" data-target="#carouselExampleIndicators" data-slide-to="4"
+					>Valorant</a
+				>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="section-1 mb-2 mt-5">
+				<div class="container-fluid">
+					<div class="section_header d-flex">
+						<div id="header_box"></div>
+						<p>New and Trending</p>
+					</div>
+					<div class="row">
+						<div class="container ml-0">
+							<div class="row mt-2">
+								<div class="col-md-8 mt-2">New Releases</div>
+								<div class="col-md-4">
+									<button type="button" class="btn btn-outline-light">View More</button>
+								</div>
+							</div>
+
+							<div class="games">
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="container">
+							<div class="row mt-2">
+								<div class="col-md-8 mt-2">Top Selling</div>
+								<div class="col-md-4">
+									<button type="button" class="btn btn-outline-light">View More</button>
+								</div>
+							</div>
+							<div class="games">
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="container mr-0">
+							<div class="row mt-2">
+								<div class="col-md-8 mt-2">Coming Soon</div>
+								<div class="col-md-4">
+									<button type="button" class="btn btn-outline-light">View More</button>
+								</div>
+							</div>
+							<div class="games">
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+								<div class="media">
+									<svg
+										class="mr-3"
+										xmlns="http://www.w3.org/2000/svg"
+										width="81"
+										height="89"
+										viewBox="0 0 81 89"
+									>
+										<g
+											id="container_-_game_picture"
+											data-name="container - game picture"
+											fill="#fff"
+											stroke="#707070"
+											stroke-width="1"
+										>
+											<rect width="81" height="89" stroke="none" />
+											<rect x="0.5" y="0.5" width="80" height="88" fill="none" />
+										</g>
+									</svg>
+
+									<div class="media-body">
+										<h5 class="mt-0">Game Title</h5>
+										<span>price</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section-2 my-5">
+				<div class="container-fluid">
+					<div class="section_header d-flex">
+						<div id="header_box"></div>
+						<p>Top Games</p>
+					</div>
+					<div class="row px-2">
+						<div class="col-md-6">
+							<div class="media featured-game-highlight">
+								<img
+									class="mr-3"
+									src="static/img/photo placeholder.png"
+									alt="Generic placeholder image"
+								/>
+								<div class="media-body">
+									<div class="featured-game-details">
+										<h5 class="mt-0">RATING</h5>
+										<div class="featured-game-star">
+											&#9734; &#9734; &#9734; &#9734; &#9734;
+										</div>
+										<div class="featured-game-title">Game Title</div>
+										<div class="featured-game-price">Price</div>
+									</div>
+									<span
+										><svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="174.058"
+											height="20.537"
+											viewBox="0 0 174.058 20.537"
+										>
+											<g id="platforms" transform="translate(37.732)">
+												<path
+													id="xbox_icon"
+													data-name="xbox icon"
+													d="M14.4,12.418c1.693,2.076,2.473,3.777,2.079,4.537a8.348,8.348,0,0,1-3.54,2.137,10.405,10.405,0,0,1-3.838.39,9.507,9.507,0,0,1-4.209-1.491c-1.066-.7-1.307-.982-1.307-1.552,0-1.143,1.258-3.146,3.41-5.432A17.145,17.145,0,0,1,10.1,8.233,30.079,30.079,0,0,1,14.4,12.418ZM7.467,5.752a11.111,11.111,0,0,0-3.3-2.423c-.581-.195-.623-.183-1.1.31a9.475,9.475,0,0,0-2.3,4.679A7.387,7.387,0,0,0,.6,10.63,9.785,9.785,0,0,0,2.15,15.251c.363.558.463.661.355.378a4.512,4.512,0,0,1,.363-2.446,29.206,29.206,0,0,1,4.6-7.431ZM19.378,8.179C18.732,5.121,16.8,3.2,16.527,3.2a3.567,3.567,0,0,0-1.376.531,16.553,16.553,0,0,0-2.458,2.018c1.621,2.037,3.907,5.329,4.7,7.733a4.58,4.58,0,0,1,.283,2c-.065.325-.065.325.054.176a11.587,11.587,0,0,0,.971-1.663,11.22,11.22,0,0,0,.711-2.244,12.417,12.417,0,0,0-.031-3.57ZM5.659,1.9c1.823-.1,4.193,1.319,4.369,1.353a7.607,7.607,0,0,0,.826-.371,7.029,7.029,0,0,1,4.105-.963,9.465,9.465,0,0,0-8.941-.447c-.894.424-.917.455-.359.428Z"
+													transform="translate(6.703 -0.559)"
+													fill="#e1f7ff"
+												/>
+												<g
+													id="windows_icon"
+													data-name="windows icon"
+													transform="translate(45.268 0)"
+												>
+													<path
+														id="Path_6"
+														data-name="Path 6"
+														d="M27.284,18.633H16.313v7.919l10.972,1.593V18.633Z"
+														transform="translate(-7.464 -8.325)"
+														fill="#e1f7ff"
+													/>
+													<path
+														id="Path_7"
+														data-name="Path 7"
+														d="M10.39,18.633H2.25v6.636l8.14,1.181V18.633Z"
+														transform="translate(-2.25 -8.325)"
+														fill="#e1f7ff"
+													/>
+													<path
+														id="Path_8"
+														data-name="Path 8"
+														d="M27.284,2.25,16.313,3.816V11.85H27.284V2.25Z"
+														transform="translate(-7.464 -2.25)"
+														fill="#e1f7ff"
+													/>
+													<path
+														id="Path_9"
+														data-name="Path 9"
+														d="M10.39,4.9,2.25,6.064v6.769h8.14V4.9Z"
+														transform="translate(-2.25 -3.233)"
+														fill="#e1f7ff"
+													/>
+												</g>
+												<path
+													id="linux_icon"
+													data-name="linux icon"
+													d="M8.6,4.566c.037.019.067.063.111.063s.1-.015.107-.056-.07-.085-.119-.107a.245.245,0,0,0-.2,0c-.015.007-.03.026-.022.041.011.048.085.041.126.063Zm-.811.063c.044,0,.074-.044.111-.063s.115-.015.13-.059c.007-.015-.007-.033-.022-.041a.245.245,0,0,0-.2,0c-.048.022-.126.056-.119.107s.067.056.1.052Zm8.188,10.325a1.8,1.8,0,0,1-.267-.73,1.435,1.435,0,0,0-.389-.83,1,1,0,0,0-.148-.107.822.822,0,0,0-.152-.074,4.288,4.288,0,0,0-.137-2.929,9.881,9.881,0,0,0-1.722-2.755,4.143,4.143,0,0,1-1.237-2.666C11.943,3.163,12.113,0,9.117,0,5.325-.007,6.273,3.829,6.232,5.007A4.3,4.3,0,0,1,5.4,7.4a11.826,11.826,0,0,0-2.152,3.581,4.257,4.257,0,0,0-.23,1.974c-.241.215-.422.544-.615.748a1.59,1.59,0,0,1-.63.307,1.146,1.146,0,0,0-.685.537.949.949,0,0,0-.1.459,2.913,2.913,0,0,0,.044.437,1.918,1.918,0,0,1,.03.77,1.5,1.5,0,0,0-.081,1.174,1,1,0,0,0,.744.456,7.824,7.824,0,0,1,2.2.463,3.1,3.1,0,0,0,2.07.385,1.342,1.342,0,0,0,.959-.748c.463,0,.974-.2,1.789-.244.552-.044,1.244.2,2.041.152a1.176,1.176,0,0,0,.093.248v0a1.485,1.485,0,0,0,1.492.852,2.7,2.7,0,0,0,1.789-1.033,6.485,6.485,0,0,1,1.885-1.192.9.9,0,0,0,.515-.678A1.672,1.672,0,0,0,15.976,14.954ZM8.706,3.233a.851.851,0,0,1,1.63-.015,1.474,1.474,0,0,1-.159,1.5,4.58,4.58,0,0,0-.467-.181.662.662,0,0,0,.144-.17c.178-.437-.007-1-.337-1.011-.27-.019-.515.4-.437.852A2.638,2.638,0,0,0,8.6,4.04a1.475,1.475,0,0,1,.107-.807ZM7.2,2.807c.374,0,.77.526.707,1.241a1.332,1.332,0,0,0-.378.17c.044-.33-.122-.744-.356-.726-.311.026-.363.785-.067,1.041.037.03.07-.007-.219.2C6.31,4.2,6.5,2.807,7.2,2.807ZM6.7,5.055c.23-.17.5-.37.522-.389A1.478,1.478,0,0,1,8.251,4.14a1.782,1.782,0,0,1,.959.33,6.2,6.2,0,0,0,.837.344c.311.13.507.359.389.674a1.288,1.288,0,0,1-.841.67c-.411.133-.733.593-1.415.552a1.032,1.032,0,0,1-.356-.078c-.3-.13-.452-.385-.741-.556a1.078,1.078,0,0,1-.544-.567A.4.4,0,0,1,6.7,5.055Zm.122,12.369c-.1,1.3-1.626,1.274-2.789.667-1.107-.585-2.541-.241-2.833-.811a1.292,1.292,0,0,1,.1-.978v-.007a1.989,1.989,0,0,0-.022-.885,1.247,1.247,0,0,1,.033-.741.848.848,0,0,1,.548-.418,1.665,1.665,0,0,0,.726-.367c.2-.211.352-.478.53-.667a.67.67,0,0,1,.656-.256,1.3,1.3,0,0,1,.811.593L5.3,14.873c.352.737,1.6,1.792,1.518,2.552Zm-.052-.959a7.949,7.949,0,0,0-.533-.726.6.6,0,0,0,.618-.33,1.04,1.04,0,0,0-.274-.922,5.444,5.444,0,0,0-1.418-1.2,2,2,0,0,1-.911-1.107,2.508,2.508,0,0,1-.011-1.3A7.7,7.7,0,0,1,5.244,8.681c.085-.063.03.119-.322.77a2.919,2.919,0,0,0-.1,3.052,6.4,6.4,0,0,1,.511-2.278A13.734,13.734,0,0,0,6.792,6.051c.041.03.17.119.23.152a4.3,4.3,0,0,1,.467.381,1.356,1.356,0,0,0,1.57.044A4.085,4.085,0,0,1,9.647,6.3a1.582,1.582,0,0,0,.826-.556A19.129,19.129,0,0,0,11.85,9.284a8.334,8.334,0,0,1,.874,2.392,1.473,1.473,0,0,1,.4.052,3.233,3.233,0,0,0-.863-3.144c-.174-.17-.181-.244-.1-.241a4.57,4.57,0,0,1,1.3,2.185,2.8,2.8,0,0,1,.015,1.322c.607.252,1.33.663,1.137,1.289-.081,0-.119,0-.156,0,.119-.374-.144-.652-.844-.967-.726-.318-1.333-.318-1.418.463a1.3,1.3,0,0,0-.793,1.011,8.175,8.175,0,0,0-.163,1.478A5.8,5.8,0,0,1,11,16.2a3.653,3.653,0,0,1-4.233.267Zm9.533-.426c-.033.622-1.526.737-2.341,1.722a2.473,2.473,0,0,1-1.615.944,1.211,1.211,0,0,1-1.248-.715,2.054,2.054,0,0,1,.041-1.344,9.178,9.178,0,0,0,.367-1.5,8.334,8.334,0,0,1,.156-1.433,1.119,1.119,0,0,1,.507-.781c.011-.007.026-.011.037-.019A1.135,1.135,0,0,0,12.9,14a1.736,1.736,0,0,0,1.422-.6,1.048,1.048,0,0,1,.837.189c.367.315.263,1.122.633,1.541C16.183,15.558,16.309,15.851,16.3,16.039ZM6.84,5.507c.074.07.174.167.3.263a1.638,1.638,0,0,0,1.011.393,2.625,2.625,0,0,0,1.178-.4,3.293,3.293,0,0,0,.548-.385c.144-.126.219-.233.115-.244s-.1.1-.222.189c-.163.119-.359.274-.515.363a2.524,2.524,0,0,1-1.107.378A1.485,1.485,0,0,1,7.221,5.7c-.115-.093-.211-.185-.285-.256-.056-.052-.07-.17-.159-.181-.052,0-.067.137.063.241Z"
+													transform="translate(83.377 0)"
+													fill="#e1f7ff"
+												/>
+												<path
+													id="apple_icon"
+													data-name="apple icon"
+													d="M14.543,12.845a4.171,4.171,0,0,1,2.266-3.8,4.886,4.886,0,0,0-3.839-2C11.362,6.928,9.6,7.98,8.96,7.98,8.28,7.98,6.721,7.1,5.5,7.1,2.969,7.138.281,9.09.281,13.06a11.033,11.033,0,0,0,.653,3.635c.58,1.643,2.674,5.671,4.858,5.6,1.142-.027,1.949-.8,3.435-.8,1.441,0,2.189.8,3.462.8,2.2-.031,4.1-3.693,4.65-5.34a4.428,4.428,0,0,1-2.8-4.114ZM11.978,5.5A4.18,4.18,0,0,0,13.066,2.25,4.826,4.826,0,0,0,9.989,3.812a4.251,4.251,0,0,0-1.16,3.218A3.823,3.823,0,0,0,11.978,5.5Z"
+													transform="translate(118.987 -2.25)"
+													fill="#e1f7ff"
+												/>
+												<path
+													id="FontAwsome_playstation_"
+													data-name="FontAwsome (playstation)"
+													d="M25.2,47.04a4.771,4.771,0,0,1-1.715,1.074l-9.065,3.253v-2.4l6.669-2.378c.756-.27.875-.654.256-.857a4.47,4.47,0,0,0-2.484.128l-4.442,1.569V44.936a15.669,15.669,0,0,1,3.346-.743,13.181,13.181,0,0,1,5.754.685C25.478,45.5,25.7,46.413,25.2,47.04Zm-9.918-4.088V36.809c0-.72-.133-1.383-.809-1.573-.517-.168-.84.314-.84,1.034V51.646L9.492,50.328V32a49.944,49.944,0,0,1,5.71,1.565c3.514,1.207,4.7,2.709,4.7,6.09,0,3.293-2.033,4.543-4.619,3.3Zm-13.4,5.763C-.125,48.15-.461,46.969.454,46.293a9.808,9.808,0,0,1,2.285-1.1L8.683,43.08v2.409L4.405,47.018c-.756.27-.871.654-.256.857a4.47,4.47,0,0,0,2.484-.128L8.683,47v2.157a13.448,13.448,0,0,1-6.8-.442Z"
+													transform="translate(-37.702 -31.108)"
+													fill="#e1f7ff"
+												/>
+											</g>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-outline-light float-right">
+								View More
+							</button>
+
+							<div class="media">
+								<div class="media-body">
+									<h5 class="mt-0 mb-1 d-inline">Media object</h5>
+									<div class="d-inline">Rating</div>
+									<img class="d-inline" src="..." alt="Generic placeholder image" />
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-body">
+									<h5 class="mt-0 mb-1 d-inline">Media object</h5>
+									<div class="d-inline">Rating</div>
+									<img class="d-inline" src="..." alt="Generic placeholder image" />
+								</div>
+							</div>
+							<div class="media">
+								<div class="media-body">
+									<h5 class="mt-0 mb-1 d-inline">Media object</h5>
+									<div class="d-inline">Rating</div>
+									<img class="d-inline" src="..." alt="Generic placeholder image" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="section-3 my-2">
+				<div class="container-fluid">
+					<div class="section_header d-flex">
+						<div id="header_box"></div>
+						<p>Limited Offers</p>
+					</div>
+					<div class="row px-2">
+						<div class="card" style="width: 18rem">
+							<img class="card-img-top" src="..." alt="Card image cap" />
+							<div class="card-body">
+								<h5 class="card-title">Game Title</h5>
+								<div class="card-text">
+									<span>Discount</span>
+									<span>original price</span>
+									<span>discounted price</span>
+								</div>
+							</div>
+						</div>
+						<div class="card" style="width: 18rem">
+							<img class="card-img-top" src="..." alt="Card image cap" />
+							<div class="card-body">
+								<h5 class="card-title">Game Title</h5>
+								<div class="card-text">
+									<span>Discount</span>
+									<span>original price</span>
+									<span>discounted price</span>
+								</div>
+							</div>
+						</div>
+						<div class="card" style="width: 18rem">
+							<img class="card-img-top" src="..." alt="Card image cap" />
+							<div class="card-body">
+								<h5 class="card-title">Game Title</h5>
+								<div class="card-text">
+									<span>Discount</span>
+									<span>original price</span>
+									<span>discounted price</span>
+								</div>
+							</div>
+						</div>
+						<div class="card" style="width: 18rem">
+							<img class="card-img-top" src="..." alt="Card image cap" />
+							<div class="card-body">
+								<h5 class="card-title">Game Title</h5>
+								<div class="card-text">
+									<span>Discount</span>
+									<span>original price</span>
+									<span>discounted price</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section-3 my-2">
+				<div class="container-fluid">
+					<div class="section_header d-flex">
+						<div id="header_box"></div>
+						<p>Discounted</p>
+					</div>
+					<div class="row px-2">
+						<div class="card" style="width: 18rem">
+							<img class="card-img-top" src="..." alt="Card image cap" />
+							<div class="card-body">
+								<h5 class="card-title">Game Title</h5>
+								<div class="card-text">
+									<span>Discount</span>
+									<span>original price</span>
+									<span>discounted price</span>
+								</div>
+							</div>
+						</div>
+						<div class="card" style="width: 18rem">
+							<img class="card-img-top" src="..." alt="Card image cap" />
+							<div class="card-body">
+								<h5 class="card-title">Game Title</h5>
+								<div class="card-text">
+									<span>Discount</span>
+									<span>original price</span>
+									<span>discounted price</span>
+								</div>
+							</div>
+						</div>
+						<div class="card" style="width: 18rem">
+							<img class="card-img-top" src="..." alt="Card image cap" />
+							<div class="card-body">
+								<h5 class="card-title">Game Title</h5>
+								<div class="card-text">
+									<span>Discount</span>
+									<span>original price</span>
+									<span>discounted price</span>
+								</div>
+							</div>
+						</div>
+						<div class="card" style="width: 18rem">
+							<img class="card-img-top" src="..." alt="Card image cap" />
+							<div class="card-body">
+								<h5 class="card-title">Game Title</h5>
+								<div class="card-text">
+									<span>Discount</span>
+									<span>original price</span>
+									<span>discounted price</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<footer></footer>
+
+		<script
+			src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"
+		></script>
+		<!-- <nav class="navbar navbar-expand-lg navigation pb-0">
+			<div class="container-fluid">
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbar_items"
+					aria-controls="navbar_items"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<i class="bi bi-list text-white"></i>
+				</button>
+				<div class="w-100 collapse navbar-collapse" id="navbar_items">
+					<div class="container-fluid d-flex flex-column p-0 m-0">
+						<div
+							class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0"
+						>
+							<div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
+								<a class="top_nav_logo" href="#">LOGO</a>
+							</div>
+							<div
+								class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 mx-lg-auto mx-md-0 mx-sm-0 d-flex inputs"
+							>
+								<input
+									class="mx-lg-auto mx-md-0 mx-sm-0 form-control w-50"
+									placeholder="Search"
+								/>
+							</div>
+							<div
+								class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right"
+							>
+								<i class="bi bi-cart"></i>
+								<a class="fw-bold me-4 text-decoration-none" href="signin.html"
+									>Sign In</a
+								>
+							</div>
+						</div>
+						<div class="container-fluid nav_bottom_bar">
+							<div
+								class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2"
+							>
+								<div class="nav_bar_links">
+									<a class="" href="index.html"> Games </a>
+								</div>
+								<div class="dropdown_container nav_bar_links">
+									<a class="nav_hover_dropdown_button active" href=""> Browse </a>
+									<div class="nav_hover_dropdown_content nav_bar_dropdown">
+										<div class="d-flex flex-row">
+											<div class="d-flex me-5 flex-column">
+												<div class="d-flex flex-column">
+													<p class="browse_category_header">Browse By Price</p>
+													<p>New Releases</p>
+													<p>Best Sellers</p>
+													<p>On Sale Now</p>
+													<p>Limited Offers</p>
+													<p>Free</p>
+												</div>
+												<div class="d-flex flex-column">
+													<p class="browse_category_header">Browse By Platform</p>
+													<p>Xbox</p>
+													<p>Play Station</p>
+													<p>Linux</p>
+													<p>iOS</p>
+													<p>Windows</p>
+												</div>
+											</div>
+											<div class="d-flex flex-column">
+												<p class="browse_category_header">Browse By Tags</p>
+												<p>Action</p>
+												<p>Adventure</p>
+												<p>Casual</p>
+												<p>Racing</p>
+												<p>RPG</p>
+												<p>Sports</p>
+												<p>Simulation</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="nav_bar_links">
+									<a class=""> Support </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div>
+			<div
+				id="featuredGamesCarousel"
+				class="carousel slide"
+				data-bs-ride="carousel"
+			>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img
+							src="static/img/half_life_3_banner.jpg"
+							class="d-block w-100"
+							alt="..."
+						/>
+					</div>
+					<div class="carousel-item">
+						<img src="static/img/valheim.jfif" class="d-block w-100" alt="..." />
+					</div>
+					<div class="carousel-item">
+						<img src="static/img/dbd_banner.jpg" class="d-block w-100" alt="..." />
+					</div>
+					<div class="carousel-item">
+						<img src="static/img/dota 2.jpg" class="d-block w-100" alt="..." />
+					</div>
+					<div class="carousel-item">
+						<img src="static/img/valorant.jpg" class="d-block w-100" alt="..." />
+					</div>
+				</div>
+				<button
+					class="carousel-control-prev"
+					type="button"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide="prev"
+				>
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button
+					class="carousel-control-next"
+					type="button"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide="next"
+				>
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+			<div class="container-fluid d-flex justify-content-evenly carousel_bottom">
+				<a
+					class="text-decoration-none carousel_botom_link link_a"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="0"
+					href=""
+				>
+					Half Life 3</a
+				>
+				<a
+					class="text-decoration-none carousel_botom_link link_b"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="1"
+					href=""
+				>
+					Valheim</a
+				>
+				<a
+					class="text-decoration-none carousel_botom_link link_c"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="2"
+					href=""
+				>
+					Dead by Daylight</a
+				>
+				<a
+					class="text-decoration-none carousel_botom_link link_d"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="3"
+					href=""
+				>
+					Dota 2</a
+				>
+				<a
+					class="text-decoration-none carousel_botom_link link_e"
+					data-bs-target="#featuredGamesCarousel"
+					data-bs-slide-to="4"
+					href=""
+				>
+					Valorant</a
+				>
+			</div>
+		</div>
+
+		<section class="section-1 my-2">
+			<div class="container-fluid">
+				<div class="section_header d-flex">
+					<div id="header_box"></div>
+					<p>New and Trending</p>
+				</div>
+				<div class="row">
+					<div class="container col-md-4">
+						<div class="row">
+							<div class="col-md-8 mt-2">New Releases</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-outline-dark">View More</button>
+							</div>
+						</div>
+						<div class="games">
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container col-md-4">
+						<div class="row">
+							<div class="col-md-8 mt-2">Top Selling</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-outline-dark">View More</button>
+							</div>
+						</div>
+						<div class="games">
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container col-md-4">
+						<div class="row">
+							<div class="col-md-8 mt-2">Coming Soon</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-outline-dark">View More</button>
+							</div>
+						</div>
+						<div class="games">
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+							<div class="media">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="26.992"
+									height="30.849"
+									viewBox="0 0 26.992 30.849"
+								>
+									<g id="picture" transform="translate(0 0)">
+										<path
+											id="picture-2"
+											data-name="picture"
+											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
+											transform="translate(-4.499 -1.928)"
+										/>
+									</g>
+								</svg>
+								<div class="media-body">
+									<h5 class="mt-0">Game Title</h5>
+									<span>price</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<footer id="main-footer" class="py-2">
 			<div class="container footer-container">
 				<div>
-					<img src="static/img/JE_GAMES.png" alt="JE GAMES">
+					<img src="static/img/JE_GAMES.png" alt="JE GAMES" />
 					<p>Follow Our Accounts</p>
 					<ul class="container col">
 						<i class="bi bi-twitter"></i>
@@ -99,7 +1381,7 @@
 				</div>
 				<div>
 					<h3>Career Opportunities</h3>
-          			<p>Send us a letter.</p>
+					<p>Send us a letter.</p>
 					<form>
 						<input type="email" placeholder="Enter Email" />
 						<input type="submit" value="Subscribe" class="btn btn-primary" />
@@ -117,27 +1399,23 @@
 				<div>
 					<h3>Community Rules</h3>
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam,
-						eos?
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, eos?
 					</p>
 					<a href="#" class="btn btn-secondary">Read More</a>
 				</div>
 				<div>
-					<p>
-						Copyright &copy; 2021, All Rights Reserved
-					</p>
+					<p>Copyright &copy; 2021, All Rights Reserved</p>
 				</div>
 			</div>
-			
-			<!-- <div class="container col ">
+
+			<div class="container col ">
 				<div class="d-flex">
 					<i id="go_up" class="bi bi-arrow-up-square"></i>
 				</div>
-			</div> -->
+			</div> 
 		</footer>
-		
 
 		<script src="static/js/bootstrap.bundle.min.js"></script>
-		<script src="static/js/script.js"></script>
+		<script src="static/js/script.js"></script> -->
 	</body>
 </html>

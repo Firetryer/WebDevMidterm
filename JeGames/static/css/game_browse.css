@@ -7,7 +7,7 @@
 
 body {
     font-size: 16px;
-    background-color: #3b3b58;
+    background-color: var(--main-background-color);
 }
 
 .main_content{
@@ -15,7 +15,6 @@ body {
 	padding-right: 13.8em;
 	padding-top: 1.625rem;
     padding-bottom: 8.75em;
-	background-color: #3b3b58;
 }
 
 .game_top_nav {
@@ -49,7 +48,7 @@ body {
 }
 
 .accordion-item {
-    background-color: #3b3b58;
+    background-color: var(--main-background-color);
     border-width: 0px;
 }
 
@@ -57,7 +56,7 @@ body {
     font-size: 1rem;
     font-family: 'Poppins';
     padding: 0px;
-    background-color: #3b3b58;
+    background-color: var(--main-background-color);
     color: #E1F7FF;
 }
 
@@ -153,7 +152,6 @@ hr {
     float: left;
     padding: 8px 16px;
     text-decoration: none;
-    transition: background-color .3s;
 }
 
 .custom_paginator a.active {

@@ -11,439 +11,439 @@
 {% endblock %}
 
 {% block main_content %}
-    <div class="d-flex flex-row">
-        <!-- Filter Section -->
-        <div class="d-flex flex-column filter_container">
-            <p>Filters</p>
-            <div class="d-flex flex-column">
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Price
-                        </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_free">
-                                <label class="form-check-label" for="filter_free">
-                                    Free
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_limited_offer">
-                                <label class="form-check-label" for="filter_limited_offer">
-                                    Limited Offer
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_on_sale">
-                                <label class="form-check-label" for="filter_on_sale">
-                                    On Sale Now
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_400">
-                                <label class="form-check-label" for="filter_under_400">
-                                    Under PHP 400
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    Under PHP 200
-                                </label>
-                            </div>
+<div class="d-flex flex-row">
+    <!-- Filter Section -->
+    <div class="d-flex flex-column filter_container">
+        <p>Filters</p>
+        <div class="d-flex flex-column">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Price
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_free">
+                            <label class="form-check-label" for="filter_free">
+                                Free
+                            </label>
                         </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_limited_offer">
+                            <label class="form-check-label" for="filter_limited_offer">
+                                Limited Offer
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_on_sale">
+                            <label class="form-check-label" for="filter_on_sale">
+                                On Sale Now
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_400">
+                            <label class="form-check-label" for="filter_under_400">
+                                Under PHP 400
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                Under PHP 200
+                            </label>
                         </div>
                     </div>
-                    <hr>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Tags
-                        </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_free">
-                                <label class="form-check-label" for="filter_free">
-                                    Action
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_limited_offer">
-                                <label class="form-check-label" for="filter_limited_offer">
-                                    Adventure
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_on_sale">
-                                <label class="form-check-label" for="filter_on_sale">
-                                    Casual
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_400">
-                                <label class="form-check-label" for="filter_under_400">
-                                    Racing
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    RPG
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    Simulation
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    Sports
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    Strategy
-                                </label>
-                            </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Tags
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_free">
+                            <label class="form-check-label" for="filter_free">
+                                Action
+                            </label>
                         </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_limited_offer">
+                            <label class="form-check-label" for="filter_limited_offer">
+                                Adventure
+                            </label>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Platform
-                        </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_400">
-                                <label class="form-check-label" for="filter_under_400">
-                                    Xbox
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    Play Station
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    iOS
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    Linux
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
-                                <label class="form-check-label" for="filter_under_200">
-                                    Windows
-                                </label>
-                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_on_sale">
+                            <label class="form-check-label" for="filter_on_sale">
+                                Casual
+                            </label>
                         </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_400">
+                            <label class="form-check-label" for="filter_under_400">
+                                Racing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                RPG
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                Simulation
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                Sports
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                Strategy
+                            </label>
                         </div>
                     </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Platform
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_400">
+                            <label class="form-check-label" for="filter_under_400">
+                                Xbox
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                Play Station
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                iOS
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                Linux
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="filter_under_200">
+                            <label class="form-check-label" for="filter_under_200">
+                                Windows
+                            </label>
+                        </div>
                     </div>
-            </div>
-            <div class="d-flex flex-column">
-                
-            </div>
-            <div class="d-flex flex-column">
-                
-            </div>
+                  </div>
+                </div>
+              </div>
         </div>
-        <!-- Games Section -->
-        <div class="d-flex flex-wrap game_container align-content-start ">
-            <!-- Game Card -->
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
+        <div class="d-flex flex-column">
+            
         </div>
-        
-    </div>
-    <div class="d-flex">
-        <div class="custom_paginator mx-auto">
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">&raquo;</a>
+        <div class="d-flex flex-column">
+            
         </div>
     </div>
+    <!-- Games Section -->
+    <div class="d-flex flex-wrap game_container align-content-start ">
+        <!-- Game Card -->
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column more_game_card">
+            <img src="" alt="">
+            <p class="more_game_title"> Game Title</p>
+            <div class="d-flex flex-row more_game_price">
+
+                <p class="striked_price align-center">Price</p>
+                <p class="price">New Price</p>
+
+                <div class="discount_tag">
+                    <p>20%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="d-flex">
+    <div class="custom_paginator mx-auto">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,152 @@
+/*Google Font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--Color2);
+}
+
+.header,
+section {
+	overflow-x: hidden;
+}
+
+:root {
+	--Poppins: 'Poppins', san-serif;
+	--Color1: #0c2d48;
+	--Color2: #1b262c;
+	--Color3: #2b363b;
+	--Color4: #4c6b22;
+	--Color5: #ffda1e;
+	--textColor: #e1f7ff;
+}
+/* Navigation */
+
+.header a {
+	font-family: var(--Poppins);
+	font-size: 0.9em;
+	color: var(--textColor);
+}
+
+.header {
+	background: var(--Color1);
+}
+
+.navbar-brand {
+	margin-left: 11vw;
+	font-size: 2.5em;
+}
+
+.form-control {
+	background: #3d445a 0% 0% no-repeat padding-box;
+	border-radius: 8px;
+	opacity: 1;
+	margin-left: 25vw;
+	margin-right: 25vw;
+}
+
+.nav {
+	margin-left: 11vw;
+}
+
+/* end of nav */
+
+/* carousel */
+.carousel-item img {
+	height: 80%;
+}
+.carousel-bottom-nav {
+	height: 10vh;
+	background: #0c2d4866 0% 0% no-repeat padding-box;
+	box-shadow: 0px 15px 30px #00000029;
+	opacity: 1;
+	backdrop-filter: blur(5px);
+	margin-top: -10vh;
+	-webkit-backdrop-filter: blur(5px);
+	padding-top: 3vh;
+}
+
+.carousel-bottom-nav a {
+	/* text-align: center; */
+	height: 3.3125em;
+	width: 11.5625em;
+	opacity: 1;
+	font-size: 1.7em;
+	color: var(--textColor);
+	margin: 5vw;
+	text-align: left;
+}
+
+/* main */
+
+.main {
+	font-family: var(--Poppins);
+	margin-left: 8vw;
+	margin-right: 8vw;
+	color: var(--textColor);
+	background: var(--Color2);
+}
+
+.section_header p {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.col-md-8 {
+	font-size: 1.2rem;
+}
+
+.games .media {
+	margin-top: 1vh;
+	height: 113px;
+}
+
+.games .media-body {
+	font-size: 1vh;
+}
+
+/* section 1 */
+.section-1 .container {
+	border: 2px solid;
+	border-radius: 5px;
+	height: 648px;
+	width: 463px;
+	/* margin-left: 1rem;
+	margin-right: 1rem; */
+}
+
+/* section 2 */
+
+.featured-game-highlight img {
+	height: 28.6875em;
+	width: 23.3125em;
+}
+
+.featured-game-details {
+	width: 7.8125em;
+	height: 14.375em;
+	text-align: center;
+	margin-left: 10vh;
+	margin-top: 10vh;
+}
+
+.featured-game-details h5 {
+	font-size: 2.375em;
+	color: var(--Color5);
+}
+
+.featured-game-star {
+	color: var(--Color5);
+}
+
+.featured-game-title {
+	margin-top: 5.75em;
+}
+
+.featured-game-highlight span {
+	margin-left: 7.5vh;
+}
