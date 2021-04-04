@@ -21,6 +21,7 @@ section {
 	--Color2: #1b262c;
 	--Color3: #2b363b;
 	--Color4: #4c6b22;
+	--Color5: #ffda1e;
 	--textColor: #e1f7ff;
 }
 /* Navigation */
@@ -70,11 +71,14 @@ section {
 }
 
 .carousel-bottom-nav a {
-	text-align: center;
+	/* text-align: center; */
+	height: 3.3125em;
+	width: 11.5625em;
 	opacity: 1;
 	font-size: 1.7em;
 	color: var(--textColor);
-	margin: 6vw;
+	margin: 5vw;
+	text-align: left;
 }
 
 /* main */
@@ -118,6 +122,31 @@ section {
 /* section 2 */
 
 .featured-game-highlight img {
-	height: 50vh;
-	width: 25vw;
+	height: 28.6875em;
+	width: 23.3125em;
+}
+
+.featured-game-details {
+	width: 7.8125em;
+	height: 14.375em;
+	text-align: center;
+	margin-left: 10vh;
+	margin-top: 10vh;
+}
+
+.featured-game-details h5 {
+	font-size: 2.375em;
+	color: var(--Color5);
+}
+
+.featured-game-star {
+	color: var(--Color5);
+}
+
+.featured-game-title {
+	margin-top: 5.75em;
+}
+
+.featured-game-highlight span {
+	margin-left: 7.5vh;
 }
