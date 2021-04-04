@@ -6,6 +6,11 @@
 	opacity: 1;
 }
 
+.search_bar {
+	background-color: var(--main-background-color);
+	border-width: 0px;
+}
+
 .navigation {
 	background-color: var(--nav-color);
 	padding-left: 7.8%;
