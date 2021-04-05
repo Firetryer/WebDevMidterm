@@ -150,3 +150,61 @@ section {
 .featured-game-highlight span {
 	margin-left: 7.5vh;
 }
+
+.more_game_card img {
+	height: 30.8125rem;
+	width: 22.3125rem;
+}
+
+.more_game_price * {
+	margin-right: 0.5625rem;
+}
+
+.more_game_price > p {
+	padding-top: 0.3125rem;
+}
+
+.more_game_title {
+	font-size: 1.125rem;
+	font-family: 'Poppins';
+	margin-top: 1.75rem;
+}
+
+.discount_tag {
+	display: inline-block;
+	width: 4.3125rem;
+	height: 2.25rem;
+	background: #4c6b22 0% 0% no-repeat padding-box;
+	border: 0.0625em solid #707070;
+	height: fit-content;
+	margin: 0px;
+	padding: 0px;
+}
+
+.discount_tag p {
+	color: #a4d015;
+	font-size: 1.5rem;
+	margin: 0px;
+	padding-bottom: 0.0625rem;
+	padding-left: 0.6875rem;
+	padding-right: 0.6875rem;
+}
+
+.striked_price {
+	color: #d1cece;
+	text-decoration: line-through;
+	font-size: 1rem;
+}
+
+.price {
+	color: #e1f7ff;
+	font-size: 1rem;
+}
+
+.more_game_container > div:not(:last-child) {
+	margin-right: 1.125rem;
+}
+
+.more_game_container {
+	width: 100%;
+}
