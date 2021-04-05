@@ -40,19 +40,6 @@ a {
 	color: inherit;
 }
 
-.button {
-	background-color: #000000;
-	border: none;
-	color: #ffffff;
-	padding: 0px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	margin: 4px 2px;
-	cursor: pointer;
-	border-radius: 16px;
-}
-
 /* --------------Style for footer------------------*/
 #main-footer {
 	background: var(--primary-color);
