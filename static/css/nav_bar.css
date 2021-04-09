@@ -62,9 +62,10 @@
 	outline: 0px !important;
 }
 
-.nav_hover_dropdown_button.active {
+a.active {
 	border-bottom: 1px solid lightblue;
 }
+
 
 .nav_hover_dropdown_button:hover,
 .dropdown_container:hover .nav_hover_dropdown_button {
