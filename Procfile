@@ -1,1 +1,1 @@
-web: gunicorn app:JeGames
+web: gunicorn JeGames:app
