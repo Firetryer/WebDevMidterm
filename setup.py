@@ -14,6 +14,8 @@ setup(
             'flask-login',
             'flask_sqlalchemy',
             'flask_bcrypt',
-            'pymysql'
+            'gunicorn',
+            'pymysql',
+            'psycopg2'
             ]
         )

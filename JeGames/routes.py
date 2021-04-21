@@ -6,7 +6,6 @@ from JeGames import app, db, bcrypt
 def index():
     return render_template("index.html")
 
-
 @app.route("/browse_games")
 def browse_page():
     return render_template("game_browse.html")
