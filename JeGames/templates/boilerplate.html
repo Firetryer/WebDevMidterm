@@ -12,79 +12,85 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navigation pb-0">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_items" aria-controls="navbar_items" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="bi bi-list text-white"></i>
-                </button>
-                <div class="w-100 collapse navbar-collapse " id="navbar_items">
-                    <div class="container-fluid d-flex flex-column p-0 m-0">
-                        <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0">
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
-                                <a class="top_nav_logo" href="#">LOGO</a>
-                            </div>
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 mx-lg-auto mx-md-0 mx-sm-0 d-flex inputs">
-                                <input class="mx-lg-auto mx-md-0 mx-sm-0 search_bar form-control w-50" placeholder="Search"/>
-                            </div>
-                            <div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2  text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right">
-                                <i class="bi bi-cart"></i>
-                                <a class="fw-bold me-4 text-decoration-none" href="#">Sign In</a>
-                            </div>
-                        </div>
-                        <div class="container-fluid nav_bottom_bar">
-                            <div class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 ">
-                                <div class="nav_bar_links">
-                                    <a class="" href="{{ url_for('index') }}">
-                                      Games
-                                    </a>
-                                </div>
-                                <div class="dropdown_container nav_bar_links">
-                                    <a class="nav_hover_dropdown_button active" href="">
-                                      Browse
-                                    </a>
-                                    <div class="nav_hover_dropdown_content nav_bar_dropdown" >
-                                        <div class="d-flex flex-row">
-                                            <div class="d-flex me-5 flex-column">
-                                                <div class="d-flex flex-column">
-                                                    <p class="browse_category_header">Browse By Price</p>
-                                                    <p>New Releases</p>
-                                                    <p>Best Sellers</p>
-                                                    <p>On Sale Now</p>
-                                                    <p>Limited Offers</p>
-                                                    <p>Free</p>
-                                                </div>
-                                                <div class="d-flex flex-column">
-                                                    <p class="browse_category_header">Browse By Platform</p>
-                                                    <p>Xbox</p>
-                                                    <p>Play Station</p>
-                                                    <p>Linux</p>
-                                                    <p>iOS</p>
-                                                    <p>Windows</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-column">
-                                                <p class="browse_category_header">Browse By Tags</p>
-                                                <p>Action</p>
-                                                <p>Adventure</p>
-                                                <p>Casual</p>
-                                                <p>Racing</p>
-                                                <p>RPG</p>
-                                                <p>Sports</p>
-                                                <p>Simulation</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="nav_bar_links">
-                                    <a class="" >
-                                        Support
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+			<div class="container-fluid">
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbar_items"
+					aria-controls="navbar_items"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<i class="bi bi-list text-white"></i>
+				</button>
+				<div class="w-100 collapse navbar-collapse" id="navbar_items">
+					<div class="container-fluid d-flex flex-column p-0 m-0">
+						<div class="container-fluid d-flex  flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0 nav-stuff justify-content-between">
+							<div class="d-flex">
+								<a class="top_nav_logo" href="index.html">
+									<img class="top_nav_img" src="static/img/JE_GAMES.png" alt="">	
+									Je Games</a>
+							</div>
+							<div class="d-flex inputs">
+								<input class="mx-auto search_bar form-control" placeholder="Search" />
+							</div>
+							<div class="text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right" >
+								<i class="bi bi-cart"></i>
+								<a class="fw-bold me-4 text-decoration-none" href="signin.html">Sign In</a>
+							</div>
+						</div>
+						<div class="container-fluid nav_bottom_bar">
+							<div
+								class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2"
+							>
+								<div class="nav_bar_links">
+									<a class="" href="index.html"> Games </a>
+								</div>
+								<div class="dropdown_container nav_bar_links">
+									<a class="nav_hover_dropdown_button active" href="game_browse.html"> Browse </a>
+									<div class="nav_hover_dropdown_content nav_bar_dropdown">
+										<div class="d-flex flex-row">
+											<div class="d-flex me-5 flex-column">
+												<div class="d-flex flex-column">
+													<p class="browse_category_header">Browse By Price</p>
+													<p>New Releases</p>
+													<p>Best Sellers</p>
+													<p>On Sale Now</p>
+													<p>Limited Offers</p>
+													<p>Free</p>
+												</div>
+												<div class="d-flex flex-column">
+													<p class="browse_category_header">Browse By Platform</p>
+													<p>Xbox</p>
+													<p>Play Station</p>
+													<p>Linux</p>
+													<p>iOS</p>
+													<p>Windows</p>
+												</div>
+											</div>
+											<div class="d-flex flex-column">
+												<p class="browse_category_header">Browse By Tags</p>
+												<p>Action</p>
+												<p>Adventure</p>
+												<p>Casual</p>
+												<p>Racing</p>
+												<p>RPG</p>
+												<p>Sports</p>
+												<p>Simulation</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="nav_bar_links">
+									<a href="support.html"> Support </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
 
         {% block above_main_content %}{% endblock %}
 

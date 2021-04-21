@@ -2,18 +2,18 @@
 <html>
 	<head>
 		<link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<!-- <link
+		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
-		/> -->
+		/>
 		<link
 			rel="stylesheet"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 			crossorigin="anonymous"
 		/>
-		<!-- <link rel="stylesheet" href="static/css/styles.css" />
-		<link rel="stylesheet" href="static/css/nav_bar.css" /> -->
+		<link rel="stylesheet" href="static/css/styles.css" />
+		<link rel="stylesheet" href="static/css/nav_bar.css" />
 		<link rel="stylesheet" href="static/css/index.css" />
 		<title>Je Games</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,46 +25,87 @@
 		/>
 	</head>
 	<body>
-		<div class="header">
-			<div class="container-fluid p-0">
-				<nav class="navbar navbar-expand-lg">
-					<a class="navbar-brand" href="#">LOGO</a>
-					<button
-						class="navbar-toggler"
-						type="button"
-						data-toggle="collapse"
-						data-target="#navbarSupportedContent"
-						aria-controls="navbarSupportedContent"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-
-					<div class="form-inline">
-						<input
-							class="form-control"
-							type="search"
-							placeholder="Search"
-							aria-label="Search"
-						/>
+		<nav class="navbar navbar-expand-lg navigation pb-0">
+			<div class="container-fluid">
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbar_items"
+					aria-controls="navbar_items"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<i class="bi bi-list text-white"></i>
+				</button>
+				<div class="w-100 collapse navbar-collapse" id="navbar_items">
+					<div class="container-fluid d-flex flex-column p-0 m-0">
+						<div class="container-fluid d-flex  flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0 nav-stuff justify-content-between">
+							<div class="d-flex">
+								<a class="top_nav_logo" href="index.html">
+									<img class="top_nav_img" src="static/img/JE_GAMES.png" alt="">	
+									Je Games</a>
+							</div>
+							<div class="d-flex inputs">
+								<input class="mx-auto search_bar form-control" placeholder="Search" />
+							</div>
+							<div class="text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right" >
+								<i class="bi bi-cart"></i>
+								<a class="fw-bold me-4 text-decoration-none" href="signin.html">Sign In</a>
+							</div>
+						</div>
+						<div class="container-fluid nav_bottom_bar">
+							<div
+								class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2"
+							>
+								<div class="nav_bar_links">
+									<a class="active" href="index.html"> Games </a>
+								</div>
+								<div class="dropdown_container nav_bar_links">
+									<a class="nav_hover_dropdown_button " href="game_browse.html"> Browse </a>
+									<div class="nav_hover_dropdown_content nav_bar_dropdown">
+										<div class="d-flex flex-row">
+											<div class="d-flex me-5 flex-column">
+												<div class="d-flex flex-column">
+													<p class="browse_category_header">Browse By Price</p>
+													<p>New Releases</p>
+													<p>Best Sellers</p>
+													<p>On Sale Now</p>
+													<p>Limited Offers</p>
+													<p>Free</p>
+												</div>
+												<div class="d-flex flex-column">
+													<p class="browse_category_header">Browse By Platform</p>
+													<p>Xbox</p>
+													<p>Play Station</p>
+													<p>Linux</p>
+													<p>iOS</p>
+													<p>Windows</p>
+												</div>
+											</div>
+											<div class="d-flex flex-column">
+												<p class="browse_category_header">Browse By Tags</p>
+												<p>Action</p>
+												<p>Adventure</p>
+												<p>Casual</p>
+												<p>Racing</p>
+												<p>RPG</p>
+												<p>Sports</p>
+												<p>Simulation</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="nav_bar_links">
+									<a href="support.html"> Support </a>
+								</div>
+							</div>
+						</div>
 					</div>
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link" href="#">SIGN IN</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#"> <i class="fas fa-shopping-cart"></i> </a>
-						</li>
-					</ul>
-				</nav>
-				<nav class="nav">
-					<a class="nav-link active" href="#">Store</a>
-					<a class="nav-link" href="#">Browse</a>
-					<a class="nav-link" href="#">Support</a>
-				</nav>
+				</div>
 			</div>
-
+		</nav>
+		<div class="header">
 			<div
 				id="carouselExampleIndicators"
 				class="carousel slide"
@@ -126,12 +167,12 @@
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
-			<div class="carousel-bottom-nav text-decoration-none">
+			<div class="carousel-bottom-nav w-100">
 				<a
 					href="#"
 					data-target="#carouselExampleIndicators"
 					data-slide-to="0"
-					class="active"
+					class="" 
 				>
 					Dead By Daylight
 				</a>
@@ -151,13 +192,13 @@
 		</div>
 
 		<div class="main">
-			<div class="section-1 mb-2 mt-5">
-				<div class="container-fluid">
+			<div class="section-1">
+				<div>
 					<div class="section_header d-flex">
-						<div id="header_box"></div>
-						<p>New and Trending</p>
+						<div class="header_box"></div>
+						<p class="align-middle">New and Trending</p>
 					</div>
-					<div class="row">
+					<div class="d-flex flex-row">
 						<div class="container ml-0">
 							<div class="row mt-2">
 								<div class="col-md-8 mt-2">New Releases</div>
@@ -567,30 +608,26 @@
 					</div>
 				</div>
 			</div>
-			<div class="section-2 my-5">
-				<div class="container-fluid">
+			<div class="section-2">
+				<div>
 					<div class="section_header d-flex">
-						<div id="header_box"></div>
+						<div class="header_box"></div>
 						<p>Top Games</p>
 					</div>
 					<div class="row px-2">
 						<div class="col-md-6">
-							<div class="media featured-game-highlight">
-								<img
-									class="mr-3"
-									src="static/img/photo placeholder.png"
-									alt="Generic placeholder image"
-								/>
-								<div class="media-body">
-									<div class="featured-game-details">
-										<h5 class="mt-0">RATING</h5>
-										<div class="featured-game-star">
+							<div class="d-flex flex-row featured-game-highlight">
+								<img class="mr-3" src="" alt=""/>
+								<div class="d-flex flex-column mx-auto pt-5">
+									<div class="featured-game-details mx-auto">
+										<h5 class="mt-0 mx-auto">RATING</h5>
+										<div class="featured-game-star mb-5">
 											&#9734; &#9734; &#9734; &#9734; &#9734;
 										</div>
 										<div class="featured-game-title">Game Title</div>
 										<div class="featured-game-price">Price</div>
 									</div>
-									<span
+									<span class="mx-auto"
 										><svg
 											xmlns="http://www.w3.org/2000/svg"
 											width="174.058"
@@ -663,709 +700,162 @@
 											</g>
 										</svg>
 									</span>
+									<button class="btn btn-block mx-auto mt-auto buy_button">
+										Buy Now
+										<i class="bi bi-plus text-end"></i>
+									</button>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6">
-							<button type="button" class="btn btn-outline-light float-right">
-								View More
-							</button>
-
-							<div class="media">
-								<div class="media-body">
-									<h5 class="mt-0 mb-1 d-inline">Media object</h5>
-									<div class="d-inline">Rating</div>
-									<img class="d-inline" src="..." alt="Generic placeholder image" />
+							<button type="button" class="button">View More</button>
+							<div class="small_top_game_container">
+								<div class="small_top_game">
+									<div class="rating">Rating</div>
+									<img
+										class="small_top_game_img"
+										src=""
+										alt=""
+									/>
 								</div>
-							</div>
-							<div class="media">
-								<div class="media-body">
-									<h5 class="mt-0 mb-1 d-inline">Media object</h5>
-									<div class="d-inline">Rating</div>
-									<img class="d-inline" src="..." alt="Generic placeholder image" />
+								<div class="small_top_game">
+									<div class="rating">Rating</div>
+									<img
+										class="small_top_game_img"
+										src=""
+										alt=""
+									/>
 								</div>
-							</div>
-							<div class="media">
-								<div class="media-body">
-									<h5 class="mt-0 mb-1 d-inline">Media object</h5>
-									<div class="d-inline">Rating</div>
-									<img class="d-inline" src="..." alt="Generic placeholder image" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<section class="section-3 my-2">
-				<div class="container-fluid">
-					<div class="section_header d-flex">
-						<div id="header_box"></div>
-						<p>Limited Offers</p>
-					</div>
-					<div class="row px-2">
-						<div class="card" style="width: 18rem">
-							<img class="card-img-top" src="..." alt="Card image cap" />
-							<div class="card-body">
-								<h5 class="card-title">Game Title</h5>
-								<div class="card-text">
-									<span>Discount</span>
-									<span>original price</span>
-									<span>discounted price</span>
-								</div>
-							</div>
-						</div>
-						<div class="card" style="width: 18rem">
-							<img class="card-img-top" src="..." alt="Card image cap" />
-							<div class="card-body">
-								<h5 class="card-title">Game Title</h5>
-								<div class="card-text">
-									<span>Discount</span>
-									<span>original price</span>
-									<span>discounted price</span>
-								</div>
-							</div>
-						</div>
-						<div class="card" style="width: 18rem">
-							<img class="card-img-top" src="..." alt="Card image cap" />
-							<div class="card-body">
-								<h5 class="card-title">Game Title</h5>
-								<div class="card-text">
-									<span>Discount</span>
-									<span>original price</span>
-									<span>discounted price</span>
-								</div>
-							</div>
-						</div>
-						<div class="card" style="width: 18rem">
-							<img class="card-img-top" src="..." alt="Card image cap" />
-							<div class="card-body">
-								<h5 class="card-title">Game Title</h5>
-								<div class="card-text">
-									<span>Discount</span>
-									<span>original price</span>
-									<span>discounted price</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="section-3 my-2">
-				<div class="container-fluid">
-					<div class="section_header d-flex">
-						<div id="header_box"></div>
-						<p>Discounted</p>
-					</div>
-					<div class="row px-2">
-						<div class="card" style="width: 18rem">
-							<img class="card-img-top" src="..." alt="Card image cap" />
-							<div class="card-body">
-								<h5 class="card-title">Game Title</h5>
-								<div class="card-text">
-									<span>Discount</span>
-									<span>original price</span>
-									<span>discounted price</span>
-								</div>
-							</div>
-						</div>
-						<div class="card" style="width: 18rem">
-							<img class="card-img-top" src="..." alt="Card image cap" />
-							<div class="card-body">
-								<h5 class="card-title">Game Title</h5>
-								<div class="card-text">
-									<span>Discount</span>
-									<span>original price</span>
-									<span>discounted price</span>
-								</div>
-							</div>
-						</div>
-						<div class="card" style="width: 18rem">
-							<img class="card-img-top" src="..." alt="Card image cap" />
-							<div class="card-body">
-								<h5 class="card-title">Game Title</h5>
-								<div class="card-text">
-									<span>Discount</span>
-									<span>original price</span>
-									<span>discounted price</span>
-								</div>
-							</div>
-						</div>
-						<div class="card" style="width: 18rem">
-							<img class="card-img-top" src="..." alt="Card image cap" />
-							<div class="card-body">
-								<h5 class="card-title">Game Title</h5>
-								<div class="card-text">
-									<span>Discount</span>
-									<span>original price</span>
-									<span>discounted price</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<footer></footer>
-
-		<script
-			src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-			crossorigin="anonymous"
-		></script>
-		<!-- <nav class="navbar navbar-expand-lg navigation pb-0">
-			<div class="container-fluid">
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbar_items"
-					aria-controls="navbar_items"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<i class="bi bi-list text-white"></i>
-				</button>
-				<div class="w-100 collapse navbar-collapse" id="navbar_items">
-					<div class="container-fluid d-flex flex-column p-0 m-0">
-						<div
-							class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0"
-						>
-							<div class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2">
-								<a class="top_nav_logo" href="#">LOGO</a>
-							</div>
-							<div
-								class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 mx-lg-auto mx-md-0 mx-sm-0 d-flex inputs"
-							>
-								<input
-									class="mx-lg-auto mx-md-0 mx-sm-0 form-control w-50"
-									placeholder="Search"
-								/>
-							</div>
-							<div
-								class="mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2 text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right"
-							>
-								<i class="bi bi-cart"></i>
-								<a class="fw-bold me-4 text-decoration-none" href="signin.html"
-									>Sign In</a
-								>
-							</div>
-						</div>
-						<div class="container-fluid nav_bottom_bar">
-							<div
-								class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2"
-							>
-								<div class="nav_bar_links">
-									<a class="" href="index.html"> Games </a>
-								</div>
-								<div class="dropdown_container nav_bar_links">
-									<a class="nav_hover_dropdown_button active" href=""> Browse </a>
-									<div class="nav_hover_dropdown_content nav_bar_dropdown">
-										<div class="d-flex flex-row">
-											<div class="d-flex me-5 flex-column">
-												<div class="d-flex flex-column">
-													<p class="browse_category_header">Browse By Price</p>
-													<p>New Releases</p>
-													<p>Best Sellers</p>
-													<p>On Sale Now</p>
-													<p>Limited Offers</p>
-													<p>Free</p>
-												</div>
-												<div class="d-flex flex-column">
-													<p class="browse_category_header">Browse By Platform</p>
-													<p>Xbox</p>
-													<p>Play Station</p>
-													<p>Linux</p>
-													<p>iOS</p>
-													<p>Windows</p>
-												</div>
-											</div>
-											<div class="d-flex flex-column">
-												<p class="browse_category_header">Browse By Tags</p>
-												<p>Action</p>
-												<p>Adventure</p>
-												<p>Casual</p>
-												<p>Racing</p>
-												<p>RPG</p>
-												<p>Sports</p>
-												<p>Simulation</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="nav_bar_links">
-									<a class=""> Support </a>
+								<div class="small_top_game">
+									<div class="rating">Rating</div>
+									<img
+										class="small_top_game_img"
+										src=""
+										alt=""
+									/>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</nav>
-		<div>
-			<div
-				id="featuredGamesCarousel"
-				class="carousel slide"
-				data-bs-ride="carousel"
-			>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img
-							src="static/img/half_life_3_banner.jpg"
-							class="d-block w-100"
-							alt="..."
-						/>
-					</div>
-					<div class="carousel-item">
-						<img src="static/img/valheim.jfif" class="d-block w-100" alt="..." />
-					</div>
-					<div class="carousel-item">
-						<img src="static/img/dbd_banner.jpg" class="d-block w-100" alt="..." />
-					</div>
-					<div class="carousel-item">
-						<img src="static/img/dota 2.jpg" class="d-block w-100" alt="..." />
-					</div>
-					<div class="carousel-item">
-						<img src="static/img/valorant.jpg" class="d-block w-100" alt="..." />
-					</div>
-				</div>
-				<button
-					class="carousel-control-prev"
-					type="button"
-					data-bs-target="#featuredGamesCarousel"
-					data-bs-slide="prev"
-				>
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button
-					class="carousel-control-next"
-					type="button"
-					data-bs-target="#featuredGamesCarousel"
-					data-bs-slide="next"
-				>
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div>
-			<div class="container-fluid d-flex justify-content-evenly carousel_bottom">
-				<a
-					class="text-decoration-none carousel_botom_link link_a"
-					data-bs-target="#featuredGamesCarousel"
-					data-bs-slide-to="0"
-					href=""
-				>
-					Half Life 3</a
-				>
-				<a
-					class="text-decoration-none carousel_botom_link link_b"
-					data-bs-target="#featuredGamesCarousel"
-					data-bs-slide-to="1"
-					href=""
-				>
-					Valheim</a
-				>
-				<a
-					class="text-decoration-none carousel_botom_link link_c"
-					data-bs-target="#featuredGamesCarousel"
-					data-bs-slide-to="2"
-					href=""
-				>
-					Dead by Daylight</a
-				>
-				<a
-					class="text-decoration-none carousel_botom_link link_d"
-					data-bs-target="#featuredGamesCarousel"
-					data-bs-slide-to="3"
-					href=""
-				>
-					Dota 2</a
-				>
-				<a
-					class="text-decoration-none carousel_botom_link link_e"
-					data-bs-target="#featuredGamesCarousel"
-					data-bs-slide-to="4"
-					href=""
-				>
-					Valorant</a
-				>
-			</div>
-		</div>
-
-		<section class="section-1 my-2">
-			<div class="container-fluid">
+			<section class="section-3">
 				<div class="section_header d-flex">
-					<div id="header_box"></div>
-					<p>New and Trending</p>
+					<div class="header_box"></div>
+					<p>Limited Offers</p>
 				</div>
-				<div class="row">
-					<div class="container col-md-4">
-						<div class="row">
-							<div class="col-md-8 mt-2">New Releases</div>
-							<div class="col-md-4">
-								<button type="button" class="btn btn-outline-dark">View More</button>
-							</div>
-						</div>
-						<div class="games">
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
+				<div class="section_container">
+					<div class="d-flex flex-row more_game_container overflow-auto">
+						<div class="d-flex flex-column more_game_card">
+							<img src="" alt="" />
+							<p class="more_game_title">Game Title</p>
+							<div class="d-flex flex-row more_game_price">
+								<p class="striked_price align-center">Price</p>
+								<p class="price">New Price</p>
 
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
+								<div class="discount_tag">
+									<p>20%</p>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="container col-md-4">
-						<div class="row">
-							<div class="col-md-8 mt-2">Top Selling</div>
-							<div class="col-md-4">
-								<button type="button" class="btn btn-outline-dark">View More</button>
-							</div>
-						</div>
-						<div class="games">
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
+						<div class="d-flex flex-column more_game_card">
+							<img src="" alt="" />
+							<p class="more_game_title">Game Title</p>
+							<div class="d-flex flex-row more_game_price">
+								<p class="striked_price align-center">Price</p>
+								<p class="price">New Price</p>
 
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
+								<div class="discount_tag">
+									<p>20%</p>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="container col-md-4">
-						<div class="row">
-							<div class="col-md-8 mt-2">Coming Soon</div>
-							<div class="col-md-4">
-								<button type="button" class="btn btn-outline-dark">View More</button>
+						<div class="d-flex flex-column more_game_card">
+							<img src="" alt="" />
+							<p class="more_game_title">Game Title</p>
+							<div class="d-flex flex-row more_game_price">
+								<p class="striked_price align-center">Price</p>
+								<p class="price">New Price</p>
+
+								<div class="discount_tag">
+									<p>20%</p>
+								</div>
 							</div>
 						</div>
-						<div class="games">
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
+						<div class="d-flex flex-column more_game_card">
+							<img src="" alt="" />
+							<p class="more_game_title">Game Title</p>
+							<div class="d-flex flex-row more_game_price">
+								<p class="striked_price align-center">Price</p>
+								<p class="price">New Price</p>
 
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
-								</div>
-							</div>
-							<div class="media">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="26.992"
-									height="30.849"
-									viewBox="0 0 26.992 30.849"
-								>
-									<g id="picture" transform="translate(0 0)">
-										<path
-											id="picture-2"
-											data-name="picture"
-											d="M27.635,28.921H8.355V25.064l5.784-9.64,7.923,9.64,5.573-3.856Zm0-12.532A2.892,2.892,0,1,1,24.743,13.5,2.892,2.892,0,0,1,27.635,16.388ZM30.22,8.829a27.316,27.316,0,0,0-2.626-3,27.323,27.323,0,0,0-3-2.626c-1.554-1.139-2.307-1.271-2.739-1.271H6.909A2.413,2.413,0,0,0,4.5,4.338V30.367a2.413,2.413,0,0,0,2.41,2.41H29.081a2.413,2.413,0,0,0,2.41-2.41v-18.8c0-.432-.132-1.185-1.271-2.739Zm-3.99-1.64A26.3,26.3,0,0,1,28.417,9.64H23.779V5a26.268,26.268,0,0,1,2.451,2.186Zm3.333,23.178a.489.489,0,0,1-.482.482H6.909a.489.489,0,0,1-.482-.482V4.338a.489.489,0,0,1,.482-.482H21.851V10.6a.964.964,0,0,0,.964.964h6.748Z"
-											transform="translate(-4.499 -1.928)"
-										/>
-									</g>
-								</svg>
-								<div class="media-body">
-									<h5 class="mt-0">Game Title</h5>
-									<span>price</span>
+								<div class="discount_tag">
+									<p>20%</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+			<section class="section-4">
+				<div class="section_header d-flex">
+					<div class="header_box"></div>
+					<p>Discounted</p>
+				</div>
+				<div class="section_container">
+					<div class="d-flex flex-row more_game_container overflow-auto">
+						<div class="d-flex flex-column more_game_card">
+							<img src="" alt="" />
+							<p class="more_game_title">Game Title</p>
+							<div class="d-flex flex-row more_game_price">
+								<p class="striked_price align-center">Price</p>
+								<p class="price">New Price</p>
+
+								<div class="discount_tag">
+									<p>20%</p>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex flex-column more_game_card">
+							<img src="" alt="" />
+							<p class="more_game_title">Game Title</p>
+							<div class="d-flex flex-row more_game_price">
+								<p class="striked_price align-center">Price</p>
+								<p class="price">New Price</p>
+
+								<div class="discount_tag">
+									<p>20%</p>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex flex-column more_game_card">
+							<img src="" alt="" />
+							<p class="more_game_title">Game Title</p>
+							<div class="d-flex flex-row more_game_price">
+								<p class="striked_price align-center">Price</p>
+								<p class="price">New Price</p>
+
+								<div class="discount_tag">
+									<p>20%</p>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex flex-column more_game_card">
+							<img src="" alt="" />
+							<p class="more_game_title">Game Title</p>
+							<div class="d-flex flex-row more_game_price">
+								<p class="striked_price align-center">Price</p>
+								<p class="price">New Price</p>
+
+								<div class="discount_tag">
+									<p>20%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 
 		<footer id="main-footer" class="py-2">
 			<div class="container footer-container">
@@ -1408,14 +898,27 @@
 				</div>
 			</div>
 
-			<div class="container col ">
+			<div class="container col">
 				<div class="d-flex">
 					<i id="go_up" class="bi bi-arrow-up-square"></i>
 				</div>
-			</div> 
+			</div>
 		</footer>
-
-		<script src="static/js/bootstrap.bundle.min.js"></script>
-		<script src="static/js/script.js"></script> -->
+		<script
+			src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"
+		></script>
+		<script src="static/js/script.js"></script>
 	</body>
 </html>
