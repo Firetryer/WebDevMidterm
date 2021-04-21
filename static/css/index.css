@@ -71,7 +71,6 @@ section {
 }
 
 .carousel-bottom-nav a {
-	/* text-align: center; */
 	height: 3.3125em;
 	width: 11.5625em;
 	opacity: 1;
@@ -115,8 +114,6 @@ section {
 	border-radius: 5px;
 	height: 648px;
 	width: 463px;
-	/* margin-left: 1rem;
-	margin-right: 1rem; */
 }
 
 /* section 2 */
@@ -207,4 +204,37 @@ section {
 
 .more_game_container {
 	width: 100%;
+}
+
+/* small top games */
+.col-md-6 .button {
+	width: 9.8125em;
+	height: 2.625em;
+	border-radius: 5px;
+	background-color: var(--Color3);
+	color: var(--textColor);
+	border: none;
+	margin-left: 30.375em;
+	margin-bottom: 0.875em;
+}
+.small_top_game {
+	width: 39.8125em;
+	height: 6.5em;
+	object-fit: cover;
+}
+
+.small_top_game .rating {
+	color: var(--Color5);
+	position: absolute;
+	margin-top: 2.625em;
+	margin-left: 1.6875em;
+}
+
+.small_top_game .small_top_game_img {
+	width: 39.8125em;
+	height: 6.5em;
+}
+
+.small_top_game_container .small_top_game:not(:last-child) {
+	margin-bottom: 1.875em;
 }
