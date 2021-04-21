@@ -24,34 +24,7 @@ section {
 	--Color5: #ffda1e;
 	--textColor: #e1f7ff;
 }
-/* Navigation */
 
-.header a {
-	font-family: var(--Poppins);
-	font-size: 0.9em;
-	color: var(--textColor);
-}
-
-.header {
-	background: var(--Color1);
-}
-
-.navbar-brand {
-	margin-left: 11vw;
-	font-size: 2.5em;
-}
-
-.form-control {
-	background: #3d445a 0% 0% no-repeat padding-box;
-	border-radius: 8px;
-	opacity: 1;
-	margin-left: 25vw;
-	margin-right: 25vw;
-}
-
-.nav {
-	margin-left: 11vw;
-}
 
 .header_box {
 	height: 2.75em;
@@ -61,7 +34,6 @@ section {
 
 }
 
-/* end of nav */
 
 /* carousel */
 .carousel-item img {
