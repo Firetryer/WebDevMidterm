@@ -53,6 +53,14 @@ section {
 	margin-left: 11vw;
 }
 
+.header_box {
+	height: 2.75em;
+	width: 0.5em;
+	margin-right: 0.625em;
+	background-color: #477F92;
+
+}
+
 /* end of nav */
 
 /* carousel */
@@ -84,15 +92,20 @@ section {
 
 .main {
 	font-family: var(--Poppins);
-	margin-left: 8vw;
-	margin-right: 8vw;
+	margin-left: 12vw;
+	margin-right: 12vw;
 	color: var(--textColor);
 	background: var(--Color2);
 }
 
+
 .section_header p {
-	font-size: 1.5rem;
-	font-weight: bold;
+	font-size: 1.75em;
+	font-family: "Poppins-Medium";
+}
+
+.section_header{
+	margin-bottom: 1.5em;
 }
 
 .col-md-8 {
@@ -110,13 +123,22 @@ section {
 
 /* section 1 */
 .section-1 .container {
-	border: 2px solid;
+	background-color: #2B363B;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 	border-radius: 5px;
 	height: 648px;
 	width: 463px;
 }
 
+.section-1 {
+	margin-top: 3.290625em;
+}
+
 /* section 2 */
+
+.section-2 {
+	margin-top: 3.290625em;
+}
 
 .featured-game-highlight img {
 	height: 28.6875em;
@@ -124,11 +146,7 @@ section {
 }
 
 .featured-game-details {
-	width: 7.8125em;
-	height: 14.375em;
 	text-align: center;
-	margin-left: 10vh;
-	margin-top: 10vh;
 }
 
 .featured-game-details h5 {
@@ -141,12 +159,14 @@ section {
 }
 
 .featured-game-title {
-	margin-top: 5.75em;
+	margin-top: 5em;
+	font-size: 1.5em
 }
 
-.featured-game-highlight span {
-	margin-left: 7.5vh;
+.featured-game-price {
+	font-size: 1em;
 }
+
 
 .more_game_card img {
 	height: 30.8125rem;
@@ -205,6 +225,26 @@ section {
 .more_game_container {
 	width: 100%;
 }
+
+.buy_button{
+    width: 14em;
+    height: 2.875em;
+    color: #E1F7FF;
+    background-color: #9AC100;
+}
+
+/* Section 3*/
+.section-3 {
+	margin-top: 3.290625em;
+}
+
+/* Section 4*/
+.section-4{
+	margin-top: 3.290625em;
+	margin-bottom: 16em
+}
+
+
 
 /* small top games */
 .col-md-6 .button {

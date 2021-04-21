@@ -4,6 +4,10 @@
 		<link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
 		<link
 			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+		/>
+		<link
+			rel="stylesheet"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 			crossorigin="anonymous"
@@ -195,13 +199,13 @@
 		</div>
 
 		<div class="main">
-			<div class="section-1 mb-2 mt-5">
-				<div class="container-fluid">
+			<div class="section-1">
+				<div>
 					<div class="section_header d-flex">
-						<div id="header_box"></div>
-						<p>New and Trending</p>
+						<div class="header_box"></div>
+						<p class="align-middle">New and Trending</p>
 					</div>
-					<div class="row">
+					<div class="d-flex flex-row">
 						<div class="container ml-0">
 							<div class="row mt-2">
 								<div class="col-md-8 mt-2">New Releases</div>
@@ -611,30 +615,26 @@
 					</div>
 				</div>
 			</div>
-			<div class="section-2 my-5">
-				<div class="container-fluid">
+			<div class="section-2">
+				<div>
 					<div class="section_header d-flex">
-						<div id="header_box"></div>
+						<div class="header_box"></div>
 						<p>Top Games</p>
 					</div>
 					<div class="row px-2">
 						<div class="col-md-6">
-							<div class="media featured-game-highlight">
-								<img
-									class="mr-3"
-									src="static/img/broken_image_white_48dp.svg"
-									alt="Generic placeholder image"
-								/>
-								<div class="media-body">
-									<div class="featured-game-details">
-										<h5 class="mt-0">RATING</h5>
-										<div class="featured-game-star">
+							<div class="d-flex flex-row featured-game-highlight">
+								<img class="mr-3" src="" alt=""/>
+								<div class="d-flex flex-column mx-auto pt-5">
+									<div class="featured-game-details mx-auto">
+										<h5 class="mt-0 mx-auto">RATING</h5>
+										<div class="featured-game-star mb-5">
 											&#9734; &#9734; &#9734; &#9734; &#9734;
 										</div>
 										<div class="featured-game-title">Game Title</div>
 										<div class="featured-game-price">Price</div>
 									</div>
-									<span
+									<span class="mx-auto"
 										><svg
 											xmlns="http://www.w3.org/2000/svg"
 											width="174.058"
@@ -707,6 +707,10 @@
 											</g>
 										</svg>
 									</span>
+									<button class="btn btn-block mx-auto mt-auto buy_button">
+										Buy Now
+										<i class="bi bi-plus text-end"></i>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -717,24 +721,24 @@
 									<div class="rating">Rating</div>
 									<img
 										class="small_top_game_img"
-										src="static/img/broken_image_white_48dp.svg"
-										alt="Generic placeholder image"
+										src=""
+										alt=""
 									/>
 								</div>
 								<div class="small_top_game">
 									<div class="rating">Rating</div>
 									<img
 										class="small_top_game_img"
-										src="static/img/broken_image_white_48dp.svg"
-										alt="Generic placeholder image"
+										src=""
+										alt=""
 									/>
 								</div>
 								<div class="small_top_game">
 									<div class="rating">Rating</div>
 									<img
 										class="small_top_game_img"
-										src="static/img/broken_image_white_48dp.svg"
-										alt="Generic placeholder image"
+										src=""
+										alt=""
 									/>
 								</div>
 							</div>
@@ -742,9 +746,9 @@
 					</div>
 				</div>
 			</div>
-			<section class="section-3 my-2">
+			<section class="section-3">
 				<div class="section_header d-flex">
-					<div id="header_box"></div>
+					<div class="header_box"></div>
 					<p>Limited Offers</p>
 				</div>
 				<div class="section_container">
@@ -800,9 +804,9 @@
 					</div>
 				</div>
 			</section>
-			<section class="section-4 my-2">
+			<section class="section-4">
 				<div class="section_header d-flex">
-					<div id="header_box"></div>
+					<div class="header_box"></div>
 					<p>Discounted</p>
 				</div>
 				<div class="section_container">
