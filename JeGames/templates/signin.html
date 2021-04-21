@@ -1,122 +1,29 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
-		/>
-		<link rel="stylesheet" href="static/css/styles.css" />
-		<link rel="stylesheet" href="static/css/nav_bar.css" />
-		<link rel="stylesheet" href="static/css/signup.css" />
-		<title>Je Games</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg navigation pb-0">
-			<div class="container-fluid">
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbar_items"
-					aria-controls="navbar_items"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<i class="bi bi-list text-white"></i>
-				</button>
-				<div class="w-100 collapse navbar-collapse" id="navbar_items">
-					<div class="container-fluid d-flex flex-column p-0 m-0">
-						<div class="container-fluid d-flex  flex-lg-row flex-md-column flex-sm-column flex-xs-column p-0 nav-stuff justify-content-between">
-							<div class="d-flex">
-								<a class="top_nav_logo" href="index.html">
-									<img class="top_nav_img" src="static/img/JE_GAMES.png" alt="">	
-									Je Games</a>
-							</div>
-							<div class="d-flex inputs">
-								<input class="mx-auto search_bar form-control" placeholder="Search" />
-							</div>
-							<div class="text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right" >
-								<i class="bi bi-cart"></i>
-								<a class="fw-bold me-4 text-decoration-none" href="signin.html">Sign In</a>
-							</div>
-						</div>
-						<div class="container-fluid nav_bottom_bar">
-							<div
-								class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2"
-							>
-								<div class="nav_bar_links">
-									<a class="" href="index.html"> Games </a>
-								</div>
-								<div class="dropdown_container nav_bar_links">
-									<a class="nav_hover_dropdown_button " href="game_browse.html"> Browse </a>
-									<div class="nav_hover_dropdown_content nav_bar_dropdown">
-										<div class="d-flex flex-row">
-											<div class="d-flex me-5 flex-column">
-												<div class="d-flex flex-column">
-													<p class="browse_category_header">Browse By Price</p>
-													<p>New Releases</p>
-													<p>Best Sellers</p>
-													<p>On Sale Now</p>
-													<p>Limited Offers</p>
-													<p>Free</p>
-												</div>
-												<div class="d-flex flex-column">
-													<p class="browse_category_header">Browse By Platform</p>
-													<p>Xbox</p>
-													<p>Play Station</p>
-													<p>Linux</p>
-													<p>iOS</p>
-													<p>Windows</p>
-												</div>
-											</div>
-											<div class="d-flex flex-column">
-												<p class="browse_category_header">Browse By Tags</p>
-												<p>Action</p>
-												<p>Adventure</p>
-												<p>Casual</p>
-												<p>Racing</p>
-												<p>RPG</p>
-												<p>Sports</p>
-												<p>Simulation</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="nav_bar_links">
-									<a href="support.html"> Support </a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<div class="container main_content d-flex">
-            <div class="mx-auto container signin_container">
-                <p id="signin_header" class="mx-auto text-center" >Sign In</p>
-                <div class="d-flex input_container">
-                    <i class="bi bi-person"></i>
-                    <input type="text" class="input_fields" placeholder="Username">
-                </div>
-                <div class="d-flex input_container">
-                    <i class="bi bi-lock"></i>
-                    <input type="text" class="input_fields" placeholder="Password">
-                </div>
-                <div class="d-grid gap-2">
-                    <button type="button" class="btn btn-outline-primary">Sign In</button>
-                </div>
-                <a href="signup.html">
-                    <p>Don't have an account? Sign Up Here!</p>
-                </a>
-                
-            </div>
-		</div>
+{% extends "boilerplate.html" %}
 
-	
+{% block head %}
+    <link rel="stylesheet" href="static/css/signup.css" />
+{% endblock %}
 
-		<script src="static/js/bootstrap.bundle.min.js"></script>
-		<script src="static/js/script.js"></script>
-	</body>
-</html>
+{% block above_main_content %}
+{% endblock %}
+
+{% block main_content %}
+<div class="mx-auto container signin_container">
+	<p id="signin_header" class="mx-auto text-center" >Sign In</p>
+	<div class="d-flex input_container">
+		<i class="bi bi-person"></i>
+		<input type="text" class="input_fields" placeholder="Username">
+	</div>
+	<div class="d-flex input_container">
+		<i class="bi bi-lock"></i>
+		<input type="text" class="input_fields" placeholder="Password">
+	</div>
+	<div class="d-grid gap-2">
+		<button type="button" class="btn btn-outline-primary">Sign In</button>
+	</div>
+	<a href="signup.html">
+		<p>Don't have an account? Sign Up Here!</p>
+	</a>
+</div>
+
+{% endblock %}
