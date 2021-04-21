@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-from app import db
+from JeGames import db
 
 # Helpers
 def create_account(username, password):
@@ -20,6 +20,6 @@ class User(db.Model):
 class Game(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(60), unique=False, nullable=False)
-    description = db.Column(db.Text(360), unique=False, nullable=False)
+    description = db.Column(db.Text(), unique=False, nullable=False)
     price = db.Column(db.Numeric(2, 2), unique=False, nullable=False)
     

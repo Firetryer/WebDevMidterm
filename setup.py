@@ -16,6 +16,7 @@ setup(
             'flask_bcrypt',
             'gunicorn',
             'pymysql',
-            'psycopg2'
+            'psycopg2',
+            'Flask-Migrate'
             ]
         )
