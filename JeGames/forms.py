@@ -1,7 +1,7 @@
 from flask_wtf import Form
 from wtforms import TextField, PasswordField, TextAreaField
 from wtforms.validators import Required, Email, EqualTo, ValidationError
-from JeGames.models import User
+from JeGames.models import AppUser
 
 
 class Unique(object):
@@ -26,11 +26,11 @@ class LoginForm(Form):
 class RegisterForm(Form):
     username = TextField('Username', [
         Required(message='Username Required'),
-        Unique(User, User.username, "Username taken")])
+        Unique(AppUser, AppUser.username, "Username taken")])
     email = TextField('Email', [
         Required(message='Email Required'),
         Email(message="Valid Email required"),
-        Unique(User, User.email, "Email already in use")])
+        Unique(AppUser, AppUser.email, "Email already in use")])
     password = PasswordField('Password', [
         Required(message='Password Required'),
         EqualTo('confirm_password',

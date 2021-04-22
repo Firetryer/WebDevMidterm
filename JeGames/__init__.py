@@ -29,5 +29,5 @@ bcrypt = Bcrypt(app)
 CSRFProtect(app)
 
 from JeGames import routes
-from JeGames.models import User, Game
+from JeGames.models import AppUser, Game
 migrate = Migrate(app, db)

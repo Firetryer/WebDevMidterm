@@ -1,7 +1,7 @@
 import datetime
 from flask import render_template, url_for, flash, redirect, request, session
 from JeGames.forms import RegisterForm, LoginForm
-from JeGames.models import User
+from JeGames.models import AppUser
 from JeGames import app, db, bcrypt 
 
 
@@ -17,7 +17,7 @@ def browse_page():
 def login_page():
     form = LoginForm(request.form)
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
+        user = AppUser.query.filter_by(username=form.username.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             session['username'] = user.username
             return redirect(url_for('index'))
@@ -35,7 +35,7 @@ def create_account_page():
         register_date = datetime.datetime.now()
         hashed = bcrypt.generate_password_hash(form.password.data)
 
-        new_user = User(
+        new_user = AppUser(
             username = username,
             password = hashed,
             email = email,

@@ -10,7 +10,7 @@ def create_account(username, password):
 	db.session.commit()
 
 # Models
-class User(db.Model):
+class AppUser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), unique=True, nullable=False)
     password = db.Column(db.LargeBinary(90), unique=False, nullable=False)
