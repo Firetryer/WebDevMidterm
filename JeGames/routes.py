@@ -1,5 +1,6 @@
 import datetime
 from flask import render_template, url_for, flash, redirect, request, session
+from flask_login import login_user, logout_user, current_user, login_required
 from JeGames.forms import RegisterForm, LoginForm
 from JeGames.models import AppUser
 from JeGames import app, db, bcrypt 
@@ -16,19 +17,34 @@ def browse_page():
 @app.route("/login", methods=["POST", "GET"])
 def login_page():
     form = LoginForm(request.form)
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+
     if form.validate_on_submit():
         user = AppUser.query.filter_by(username=form.username.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
-            session['username'] = user.username
-            return redirect(url_for('index'))
+            login_user(user)
+            next_page = request.args.get('next')
+            if next_page == "logout":
+                next_page = "index"
+            return redirect(next_page) if next_page else redirect(url_for('index'))
         else:
             flash("You have entered an invalid username or password", "flash_error")
-            return redirect(url_for('login_page'))
+
     return render_template("signin.html", form=form)
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('login_page'))
+
 
 @app.route("/create_account", methods=["POST", "GET"])
 def create_account_page():
     form = RegisterForm(request.form)
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+
     if form.validate_on_submit():
         username = form.username.data
         email = form.email.data

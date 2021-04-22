@@ -132,3 +132,24 @@ a.active {
 	font-size: 1.05em !important;
 	font-family: 'Poppins-Medium' !important;
 }
+
+
+#logout{
+	color:red !important;
+
+}
+
+.top_right_text a, .top_right_text  p{
+	color: var(--text-color);
+	font-family: "Poppins";
+	font-size: 1em;
+	margin-bottom: 0px;
+}
+
+.profileDropdown {
+	background-color: var(--main-background-color) !important;
+}
+
+.profileDropdown a{
+	color:var(--text-color)
+}

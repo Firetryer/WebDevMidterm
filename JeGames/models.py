@@ -1,22 +1,32 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-from JeGames import db
+from JeGames import db, login_manager
+from flask_login import UserMixin
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return AppUser.query.get(user_id)
+
 
 # Helpers
 def create_account(username, password):
-	hashed_password = bcrypt.generate_password_hash(password)
-	new_account = User(username=username, password=hashed_password)
-	db.session.add(new_account)
-	db.session.commit()
+    hashed_password = bcrypt.generate_password_hash(password)
+    new_account = User(username=username, password=hashed_password)
+    db.session.add(new_account)
+    db.session.commit()
 
 # Models
-class AppUser(db.Model):
+class AppUser(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), unique=True, nullable=False)
     password = db.Column(db.LargeBinary(90), unique=False, nullable=False)
     email = db.Column(db.String(60), unique=True, nullable=False)
     admin = db.Column(db.Boolean(), unique=False, nullable=False)
     register_date = db.Column(db.DateTime(), nullable=False)
+    def get_id(self):
+        return self.id
+
     def __repr__(self):
         return '<User %r>' % self.username
 

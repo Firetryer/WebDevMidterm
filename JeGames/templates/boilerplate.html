@@ -35,9 +35,26 @@
 							<div class="d-flex inputs">
 								<input class="mx-auto search_bar form-control" placeholder="Search" />
 							</div>
-							<div class="text-xl-end text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right" >
+							<div class="text-xl-end top_right_text text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right align-items-center" >
 								<i class="bi bi-cart"></i>
-								<a class="fw-bold me-4 text-decoration-none" href="{{ url_for('login_page') }}">Sign In</a>
+								{% if current_user.is_authenticated %}
+								<div class="dropstart">
+									<a class="me-4" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" href="#"> 
+										{{ current_user.username }}
+									</a>
+									<ul class="dropdown-menu profileDropdown" aria-labelledby="profileDropdown">
+										<li><a class="dropdown-item" href="#">Profile</a></li>
+										<li><a class="dropdown-item" href="#">Account</a></li>
+										<li><a class="dropdown-item me-4 align-center" href="{{ url_for('logout') }}">Logout</a>	</li>
+										
+										
+									</ul>
+								</div>
+								
+								
+								{% else %}
+								<a class="me-4 text-decoration-none" href="{{ url_for('login_page') }}">Sign In</a>
+								{% endif %}
 							</div>
 						</div>
 						<div class="container-fluid nav_bottom_bar">
