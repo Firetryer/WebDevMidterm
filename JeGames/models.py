@@ -15,6 +15,8 @@ class User(db.Model):
     username = db.Column(db.String(30), unique=True, nullable=False)
     password = db.Column(db.LargeBinary(90), unique=False, nullable=False)
     email = db.Column(db.String(60), unique=True, nullable=False)
+    admin = db.Column(db.Boolean(), unique=False, nullable=False)
+    register_date = db.Column(db.DateTime(), nullable=False)
     def __repr__(self):
         return '<User %r>' % self.username
 
