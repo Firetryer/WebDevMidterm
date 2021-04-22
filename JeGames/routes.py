@@ -1,4 +1,5 @@
 from flask import render_template, url_for, flash, redirect, request
+from JeGames.forms import RegisterForm
 from JeGames import app, db, bcrypt 
 
 
@@ -14,9 +15,19 @@ def browse_page():
 def login_page():
     return render_template("signin.html")
 
-@app.route("/create_account")
+@app.route("/create_account", methods=["POST", "GET"])
 def create_account_page():
-    return render_template("signup.html")
+    form = RegisterForm(request.form)
+    if form.validate_on_submit():
+        user = form.username.data
+        hashed = bcrypt.generate_password_hash(form.password.data)
+        #new_user = AppUser(username = user, password = hashed)
+        #db.session.add(new_user)
+        #db.session.commit()
+        print("WORKS!")
+        flash('Account created succesfully! Login now!', 'flash_success')
+        return redirect(url_for('login_page'))
+    return render_template("signup.html", form=form)
 
 @app.route("/support")
 def support_page():

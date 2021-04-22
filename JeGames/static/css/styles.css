@@ -98,3 +98,16 @@ a {
 	margin-right: 16px;
 	color: #e1f7ff;
 }
+
+.error_flash {
+	color: red;
+	font-size: 0.8em;
+	font-family: 'Poppins' !important;
+}
+
+.flash_success{
+	color: var(--text-color) !important;
+	font-family: 'Poppins-Light' !important;
+	font-size: 0.8em;
+
+}

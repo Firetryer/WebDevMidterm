@@ -11,7 +11,8 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/uploads'
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:F1retry3r@localhost/jegames"
-
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
 
 os.makedirs(os.path.join(app.instance_path, 'uploads'), exist_ok=True)
 

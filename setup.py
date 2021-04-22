@@ -10,7 +10,7 @@ setup(
         install_requires=[
             'flask',
             'Flask-WTF',
-            'WTforms',
+            'WTforms[email]',
             'flask-login',
             'flask_sqlalchemy',
             'flask_bcrypt',

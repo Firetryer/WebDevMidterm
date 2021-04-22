@@ -10,6 +10,7 @@
 {% block main_content %}
 <div class="mx-auto container signin_container">
 	<p id="signin_header" class="mx-auto text-center" >Sign In</p>
+	{% include 'other/flashes.html' %}
 	<div class="d-flex input_container">
 		<i class="bi bi-person"></i>
 		<input type="text" class="input_fields" placeholder="Username">
