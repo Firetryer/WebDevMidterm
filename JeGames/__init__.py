@@ -6,13 +6,17 @@ from flask_bcrypt import Bcrypt
 from flask_wtf import CSRFProtect
 
 import os
+import re
 
 
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/uploads'
 if 'IS_HEROKU' in os.environ:
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+    uri = os.getenv("DATABASE_URL")  # or other relevant config var
+    if uri.startswith("postgres://"):
+        uri = uri.replace("postgres://", "postgresql://", 1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = uri
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["db_uri"]
 SECRET_KEY = os.urandom(32)
