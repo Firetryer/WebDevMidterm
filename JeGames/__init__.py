@@ -3,6 +3,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
+from flask_wtf import CSRFProtect
+
 import os
 
 
@@ -18,7 +20,7 @@ os.makedirs(os.path.join(app.instance_path, 'uploads'), exist_ok=True)
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
-
+CSRFProtect(app)
 
 from JeGames import routes
 from JeGames.models import User, Game

@@ -10,35 +10,12 @@
 {% block main_content %}
 <div class="mx-auto container signin_container">
 	<form method="POST" action="{{ url_for('create_account_page') }}" accept-charset="UTF-8" role="form">
-		{{ form.csrf_token }}
-	
-	
+		{{ form.hidden_tag() }}
 		<p id="signin_header" class="mx-auto text-center" >Sign Up</p>
-		{% with errors = get_flashed_messages(category_filter=["error"]) %}
-	    	{% if errors %}
-			<div>
-				{% for error in errors %}
-					<p class="error_flash">
-						{{ error }}
-					</p><br>
-				{% endfor %}
-			</div>
-			{% endif %}
-	    {% endwith %}
-
-	    {% if form.errors %}
-			<div>
-				{% for field, error in form.errors.items() %}
-					<p class="error_flash">
-					{% for e in error %}
-						
-							{{ error[0] }}
-						
-					{% endfor %}
-					</p>
-				{% endfor %}
-			</div>
-	    {% endif %}
+		
+		{% include 'other/flashes.html' %}
+		{% include 'other/form_errors.html' %}
+		
 		<div class="d-flex input_container">
 			<i class="bi bi-person"></i>
 			{{ form.username(class="input_fields", placeholder="Username") }}

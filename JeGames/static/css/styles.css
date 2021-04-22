@@ -101,7 +101,7 @@ a {
 
 .error_flash {
 	color: red;
-	font-size: 0.8em;
+	font-size: 1em;
 	font-family: 'Poppins' !important;
 }
 
@@ -109,5 +109,10 @@ a {
 	color: var(--text-color) !important;
 	font-family: 'Poppins-Light' !important;
 	font-size: 0.8em;
+}
 
+.flash_error{
+	color: red !important;
+	font-family: 'Poppins' !important;
+	font-size: 1em;
 }

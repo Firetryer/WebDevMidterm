@@ -1,0 +1,13 @@
+{% if form.errors %}
+    <div>
+        {% for field, error in form.errors.items() %}
+            <p class="error_flash">
+            {% for e in error %}
+                
+                    {{ error[0] }}
+                
+            {% endfor %}
+            </p>
+        {% endfor %}
+    </div>
+{% endif %}

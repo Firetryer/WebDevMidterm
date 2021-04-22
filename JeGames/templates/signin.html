@@ -10,21 +10,27 @@
 {% block main_content %}
 <div class="mx-auto container signin_container">
 	<p id="signin_header" class="mx-auto text-center" >Sign In</p>
-	{% include 'other/flashes.html' %}
-	<div class="d-flex input_container">
-		<i class="bi bi-person"></i>
-		<input type="text" class="input_fields" placeholder="Username">
-	</div>
-	<div class="d-flex input_container">
-		<i class="bi bi-lock"></i>
-		<input type="text" class="input_fields" placeholder="Password">
-	</div>
-	<div class="d-grid gap-2">
-		<button type="button" class="btn btn-outline-primary">Sign In</button>
-	</div>
+	
+	<form method="POST" action="{{ url_for('login_page') }}" accept-charset="UTF-8" role="form">
+		{{ form.hidden_tag() }}
+		{% include 'other/flashes.html' %}
+		{% include 'other/form_errors.html' %}
+		<div class="d-flex input_container">
+			<i class="bi bi-person"></i>
+			{{ form.username(class="input_fields", placeholder="Username") }}
+		</div>
+		<div class="d-flex input_container">
+			<i class="bi bi-lock"></i>
+			{{ form.password(class="input_fields", placeholder="Password") }}
+		</div>
+		<div class="d-grid gap-2">
+			<button type="submit" name="submit" class="btn btn-outline-primary">Sign In</button>
+		</div>
+	</form>
 	<a href="{{ url_for('create_account_page') }}">
 		<p>Don't have an account? Sign Up Here!</p>
 	</a>
+
 </div>
 
 {% endblock %}
