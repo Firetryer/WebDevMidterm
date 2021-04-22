@@ -26,7 +26,8 @@ os.makedirs(os.path.join(app.instance_path, 'uploads'), exist_ok=True)
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
-CSRFProtect(app)
+csrf = CSRFProtect(app)
+csrf.init_app(app)
 
 from JeGames import routes
 from JeGames.models import AppUser, Game

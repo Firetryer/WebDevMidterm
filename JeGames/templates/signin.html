@@ -12,7 +12,7 @@
 	<p id="signin_header" class="mx-auto text-center" >Sign In</p>
 	
 	<form method="POST" action="{{ url_for('login_page') }}" accept-charset="UTF-8" role="form">
-		{{ form.hidden_tag() }}
+		{{ form.csrf_token }}
 		{% include 'other/flashes.html' %}
 		{% include 'other/form_errors.html' %}
 		<div class="d-flex input_container">
