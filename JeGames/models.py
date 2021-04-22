@@ -24,5 +24,6 @@ class Game(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(60), unique=False, nullable=False)
     description = db.Column(db.Text(), unique=False, nullable=False)
+    discount = db.Column(db.Numeric(2, 2), unique=False, nullable=False)
     price = db.Column(db.Numeric(2, 2), unique=False, nullable=False)
     

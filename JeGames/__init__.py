@@ -11,8 +11,10 @@ import os
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/uploads'
-#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:F1retry3r@localhost/jegames"
+if 'IS_HEROKU' in os.environ:
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["db_uri"]
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
