@@ -36,8 +36,10 @@
 - username
 - email
 - password
+- register_date
+- admin
 
-## owned_games (relationship table?)
+## owned_games
 - user_id
 - game_id
 
