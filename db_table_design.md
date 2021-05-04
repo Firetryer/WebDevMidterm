@@ -1,7 +1,9 @@
-## game
+## game (Implemented)
 - id
 - title
 - description
+- discount
+- price
 - developer
 - publisher
 - status
@@ -22,24 +24,27 @@
 - maxGraphics
 - languages
 
-## tags
+## tags (Implemented)
 - id
 - tag_title
+- tags (relationship)
 
-## game_tag
+
+## game_tag (implemented)
 - tag_id
 - game_id
 
 
-## user_table
+## user_table (implemented)
 - id
 - username
 - email
 - password
 - register_date
 - admin
+- owned_games (relationship)
 
-## owned_games
+## owned_games (implemented)
 - user_id
 - game_id
 
