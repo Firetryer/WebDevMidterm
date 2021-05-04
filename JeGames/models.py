@@ -73,7 +73,7 @@ class Game(db.Model):
     max_storage = db.Column(db.String(60), unique = False, nullable=False)
     max_graphics = db.Column(db.String(60), unique = False, nullable=False)
     languages = db.Column(db.String(60), unique = False, nullable=False)
-    platform = db.relationship("platform", secondary = game_platform)
+    platform = db.relationship("Platform", secondary = game_platform)
     tags = db.relationship("Tag", secondary = game_tag)
     reviews = db.relationship("Review", backref="game", lazy='dynamic')
 

@@ -1,14 +1,4 @@
-@media (max-width: 640px) {
-    .main_content {
-        padding-left: 1% !important;
-        padding-right: 1% !important;
-    }
-}
 
-body {
-    font-size: 16px;
-    background-color: var(--main-background-color);
-}
 
 .main_content{
     padding-left: 13.8em;

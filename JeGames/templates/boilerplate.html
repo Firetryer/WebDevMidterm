@@ -43,6 +43,9 @@
 										{{ current_user.username }}
 									</a>
 									<ul class="dropdown-menu profileDropdown" aria-labelledby="profileDropdown">
+										{% if current_user.admin == True %}
+										<li><a class="dropdown-item" href="#">Admin Page</a></li>
+										{% endif %}
 										<li><a class="dropdown-item" href="#">Profile</a></li>
 										<li><a class="dropdown-item" href="#">Account</a></li>
 										<li><a class="dropdown-item me-4 align-center" href="{{ url_for('logout') }}">Logout</a>	</li>

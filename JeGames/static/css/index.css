@@ -6,9 +6,6 @@
 	padding: 0;
 }
 
-body {
-	background: var(--Color2);
-}
 
 .header,
 section {
@@ -71,8 +68,6 @@ section {
 
 .main {
 	font-family: var(--Poppins);
-	margin-left: 12vw;
-	margin-right: 12vw;
 	color: var(--textColor);
 	background: var(--Color2);
 }

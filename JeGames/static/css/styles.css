@@ -13,7 +13,25 @@
 	src: url('../fonts/Poppins-Light.ttf') format('truetype');
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+body {
+    font-size: 16px;
+    background-color: var(--main-background-color);
+}
+
+@media (max-width: 640px) {
+    .main_content {
+        padding-left: 1% !important;
+        padding-right: 1% !important;
+    }
+}
+
+.main_content{
+    padding-left: 11.8%;
+	padding-right: 11.8%;
+	padding-top: 1.625rem;
+	background-color: var(--main-background-color);
+}
+
 
 :root {
 	--primary-color: #0c2d484d;

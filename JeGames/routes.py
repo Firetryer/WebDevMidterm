@@ -73,3 +73,11 @@ def support_page():
 @app.route("/game_page")
 def game_page():
     return render_template("game_page.html")
+
+@app.route("/admin_page")
+@login_required
+def admin_page():
+    if current_user.admin == False:
+        return redirect(url_for("index"))
+    else:
+        return render_template("admin_page.html")
