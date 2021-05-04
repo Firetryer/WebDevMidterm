@@ -1,5 +1,5 @@
 from flask_wtf import Form
-from wtforms import TextField, PasswordField, TextAreaField
+from wtforms import TextField, PasswordField, TextAreaField, DecimalField
 from wtforms.validators import Required, Email, EqualTo, ValidationError
 from JeGames.models import AppUser
 
@@ -40,6 +40,16 @@ class RegisterForm(Form):
 
 # Admin Stuff
 class AddGameForm(Form):
-    title = TextField('Username', [Required(message='Username Required')])
-    description = TextField('Description', [Required(message='Description Required')])
+    title = TextField('Username', [Required(message='Title Required')])
+    description = TextAreaField('Description', [Required(message='Description Required')])
+    price = DecimalField('Price',[
+        Required(message='A Price is required')
+    ], places=2)
+    developer = TextField('Developer')
+    publisher = TextField('Publisher')
+    status = TextField('Status')
+    rating = DecimalField('Rating')
+    features = TextAreaField('Features')
+    other_details = TextAreaField('Other Details')
+    languages = TextAreaField('Languages')
 

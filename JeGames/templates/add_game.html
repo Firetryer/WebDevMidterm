@@ -1,0 +1,196 @@
+{% extends "boilerplate.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game_page.css') }}" />
+{% endblock %}
+
+{% block above_main_content %}
+{% endblock %}
+
+{% block main_content %}
+<form method="POST" action="{{ url_for('admin_add_game') }}" accept-charset="UTF-8" role="form">
+<div class="d-flex mb-5">
+    <h3 class="text-white me-auto">Add Game</h3>
+    <button type="submit" name="submit" class="btn btn-success">Submit</button>
+</div>
+<div class="justify-content-center d-flex trailer_container">
+    <video controls>
+        <source src="static/videos/Dota2_Trailer.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video> 
+</div>
+
+<!-- ========= DESCRIPTION SECTION ======== -->
+
+    {{ form.csrf_token }}
+	{% include 'other/flashes.html' %}
+	{% include 'other/form_errors.html' %}
+<div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column section_1 section_all">
+    <div class="d-flex justify-content-center text-lg-center text-md-center">
+        <img src="static/img/dota 2.jpg" alt="">
+    </div>
+    <div class="d-flex flex-column game_desc_container">
+        {{ form.title(class="input_fields", placeholder="Title") }}
+        {{ form.description(id='game_desc', class="overflow-auto", placeholder="Description") }}
+        
+
+    </div>
+    <div class="game_price d-flex flex-column">
+        <div >
+            
+            {{ form.price(class="text-lg-center text-md-center text-sm-center", placeholder="Price") }}
+        </div>
+        
+    </div>
+</div>
+
+<!-- ========= ABOUT SECTION ======== -->
+
+<div class="container-fluid section_all section_2 d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
+    <div class="game_page_section_header">
+        <p>About</p>
+    </div>
+    <div class="section_container">
+       <div class="row">
+            <div class="col">
+                <p id="detail_header">Developer</p>
+                {{ form.developer(class="detail_info", placeholder="Developer Name") }}
+                
+            </div>
+            <div class="col">
+                <p id="detail_header">Publisher</p>
+                {{ form.publisher(class="detail_info", placeholder="Publisher Name") }}
+            </div>
+            <div class="col">
+                <p id="detail_header">Status</p>
+                {{ form.status(class="detail_info", placeholder="Status") }}
+            </div>
+       </div>
+       <div class="row">
+            <div class="col">
+                <p id="detail_header">Tags</p>
+                <p id="detail_info"> Genres</p>
+            </div>
+            <div class="col">
+                <p id="detail_header">Rating</p>
+                <p id="detail_info"> 9.6</p>
+            </div>
+            <div class="col">
+                <p id="detail_header">Platforms</p>
+                <div class="d-flex">
+
+                </div>
+            </div>
+       </div>
+       <div class="row d-flex flex-row features">
+           <p id="detail_header">Features</p>
+           {{ form.features(placeholder="Features") }}
+       </div>
+       <div class="row d-flex flex-row">
+           <p id="detail_header">Other Details</p>
+           {{ form.other_details(id="detail_info", placeholder="Features") }}
+       </div>
+    </div>
+</div>
+
+<!-- ========= SYSTEM REQUIREMENTS SECTION ======== -->
+
+<div class="section_3 section_all d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
+    <div class="game_page_section_header">
+        <p>System Requirements</p>
+    </div>
+    <div class="section_container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item " role="presentation">
+                <button class="nav-link active" id="xbox-tab" data-bs-toggle="tab" data-bs-target="#Xbox" type="button" role="tab" aria-controls="Xbox" aria-selected="true">Xbox</button>
+            </li>
+            <li class="nav-item " role="presentation">
+                <button class="nav-link" id="windows-tab" data-bs-toggle="tab" data-bs-target="#Windows" type="button" role="tab" aria-controls="Windows" aria-selected="false">Windows</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="linux-tab" data-bs-toggle="tab" data-bs-target="#Linux" type="button" role="tab" aria-controls="Linux" aria-selected="false">Linux</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="macos-tab" data-bs-toggle="tab" data-bs-target="#MacOS" type="button" role="tab" aria-controls="MacOS" aria-selected="false">MacOS</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="requirements-content">
+            <div class="tab-pane fade show active" id="Xbox" role="tabpanel" aria-labelledby="xbox-tab">
+                <div class="d-flex">
+                    <div class="requirement_section d-flex flex-column">
+                        <div>
+                            <p id="detail_header">
+                                Minimum
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> Windows 7 Or Later</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> Intel Core I5</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> 2GB</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> 745MB</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> Nvidia Geforce GTX 550/equivalent or higher</p>
+                        </div>
+                    </div>
+
+                    <div class="requirement_section d-flex flex-column">
+                        <div>
+                            <p id="detail_header">
+                                Recommended
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> Windows 10</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> High-range Intel Core i5</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> 4GB</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> 3GB</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> Nvidia Geforce GTX 760/equivalent or higher</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="Windows" role="tabpanel" aria-labelledby="windows-tab">
+                <p>This is windows</p>
+            </div>
+            <div class="tab-pane fade show" id="Linux" role="tabpanel" aria-labelledby="linux-tab">
+                <p>Linux</p>
+            </div>
+            <div class="tab-pane fade show" id="MacOS" role="tabpanel" aria-labelledby="macos-tab">
+                <p>This is macos</p>
+            </div>
+            <div>
+                <p id="detail_header">Languages Supported</p>
+                {{ form.languages(id="detail_info", placeholder="Supported Languages") }}
+            </div>
+        </div>
+        
+    </div>
+</div>
+</form>
+{% endblock %}
+

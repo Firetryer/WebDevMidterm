@@ -1,9 +1,10 @@
 import datetime
 from flask import render_template, url_for, flash, redirect, request, session
 from flask_login import login_user, logout_user, current_user, login_required
-from JeGames.forms import RegisterForm, LoginForm
-from JeGames.models import AppUser
+from JeGames.forms import RegisterForm, LoginForm, AddGameForm
+from JeGames.models import AppUser, Game
 from JeGames import app, db, bcrypt 
+
 
 
 @app.route("/")
@@ -70,14 +71,39 @@ def create_account_page():
 def support_page():
     return render_template("support.html")
 
-@app.route("/game_page")
-def game_page():
-    return render_template("game_page.html")
+@app.route("/game/<game_id>", methods=["GET"])
+def game_page(game_id):
+    game = Game.query.filter_by(id=game_id).first()
+    return render_template("game_page.html", game=game)
 
-@app.route("/admin_page")
+@app.route("/admin/add_game", methods=["POST", "GET"])
+@login_required
+def admin_add_game():
+    if current_user.admin == False:
+        return redirect(url_for("index"))
+    form = AddGameForm(request.form)
+    if form.validate_on_submit():
+        print(type(form.price.data))
+        new_game = Game(
+            title = form.title.data,
+            description = form.description.data,
+            price = form.price.data,
+            developer = form.developer.data,
+            publisher = form.publisher.data,
+            status = form.status.data,
+            rating = form.rating.data,
+            other_details = form.other_details.data,
+            languages = form.languages.data,
+        )
+        db.session.add(new_game)
+        db.session.commit()
+        flash('Game created succesfully!', 'flash_success')
+        return redirect(url_for('admin_page'))
+    return render_template('add_game.html',form = form)
+
+@app.route("/admin/functions")
 @login_required
 def admin_page():
     if current_user.admin == False:
         return redirect(url_for("index"))
-    else:
-        return render_template("admin_page.html")
+    return render_template("admin_page.html")

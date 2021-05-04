@@ -60,6 +60,7 @@
 .game_desc_container{
     max-height: 19.5rem;
     min-width: 12.5rem;
+    width: 45rem;
 }
 
 #game_desc{

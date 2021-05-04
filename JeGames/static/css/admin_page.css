@@ -1,0 +1,12 @@
+
+.center_container {
+    margin-top: 100px;
+    margin-bottom: 250px;
+    padding: 40px;
+    padding-left:70px;
+    padding-right: 70px;
+    width: 650px;
+    background-color: #232f36;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);;
+    
+}

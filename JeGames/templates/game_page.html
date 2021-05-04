@@ -1,12 +1,12 @@
 {% extends "boilerplate.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="static/css/game_page.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game_page.css') }}" />
 {% endblock %}
 
 {% block above_main_content %}
     <div class="game_top_nav text-white">
-        <p>Browse > New Release > Game Title</p>
+        <p>Browse > New Release > {{ game.title }}</p>
     </div>
 {% endblock %}
 
@@ -25,13 +25,13 @@
         <img src="static/img/dota 2.jpg" alt="">
     </div>
     <div class="d-flex flex-column game_desc_container">
-        <p id="game_title">Dota 2</p>
-        <p class="overflow-auto" id="game_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales tristique urna, et convallis enim volutpat vitae. Quisque eget turpis pharetra, pretium nunc non, varius urna. Morbi volutpat vitae erat vitae mattis. Cras dignissim lorem neque, sit amet aliquet nunc mattis lobortis. Donec sit amet efficitur nulla. Aenean vel magna est. Pellentesque venenatis lacus leo, eu euismod nisl aliquam vitae. Cras quam risus, pulvinar vitae euismod sed, facilisis viverra neque.</p>
+        <p id="game_title">{{ game.title }}</p>
+        <p class="overflow-auto" id="game_desc">{{ game.description }}</p>
 
     </div>
     <div class="game_price d-flex flex-column">
         <div >
-            <p class="text-lg-center text-md-center text-sm-center ">Price</p>
+            <p class="text-lg-center text-md-center text-sm-center ">{{ game.price }}</p>
         </div>
         <div class="d-flex">
             <button class="btn btn-block mx-auto">
@@ -53,15 +53,15 @@
        <div class="row">
             <div class="col">
                 <p id="detail_header">Developer</p>
-                <p id="detail_info"> Developer Name</p>
+                <p id="detail_info"> {{ game.developer }}</p>
             </div>
             <div class="col">
-                <p id="detail_header">Publusher</p>
-                <p id="detail_info"> Publusher Name</p>
+                <p id="detail_header">Publisher</p>
+                <p id="detail_info"> {{ game.publisher }}</p>
             </div>
             <div class="col">
                 <p id="detail_header">Status</p>
-                <p id="detail_info"> Coming Soon</p>
+                <p id="detail_info"> {{ game.status }}</p>
             </div>
        </div>
        <div class="row">
@@ -175,10 +175,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <p id="detail_header">Languages Supported</p>
-                    <p id="detail_info"> AUDIO: English, French, German, Japanese, Polish, Russian, Chinese - Simplified, TEXT: English, French, German, Japanese, Polish, Russian, Chinese - Simplified</p>
-                </div>
+                
             </div>
             <div class="tab-pane fade show" id="Windows" role="tabpanel" aria-labelledby="windows-tab">
                 <p>This is windows</p>
@@ -188,6 +185,10 @@
             </div>
             <div class="tab-pane fade show" id="MacOS" role="tabpanel" aria-labelledby="macos-tab">
                 <p>This is macos</p>
+            </div>
+            <div>
+                <p id="detail_header">Languages Supported</p>
+                <p id="detail_info"> AUDIO: English, French, German, Japanese, Polish, Russian, Chinese - Simplified, TEXT: English, French, German, Japanese, Polish, Russian, Chinese - Simplified</p>
             </div>
         </div>
     </div>

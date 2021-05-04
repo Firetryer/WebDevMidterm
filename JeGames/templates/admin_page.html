@@ -1,14 +1,19 @@
 {% extends "boilerplate.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="static/css/admin_page.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_page.css') }}" />
 {% endblock %}
 
 {% block above_main_content %}
 {% endblock %}
 
 {% block main_content %}
-asdasd
+<div class="d-flex-column container center_container">
+    <h3 class="text-white text-center">Admin Functions</h3>
+	<div class="d-grid gap-2">
+        <a href="{{ url_for('admin_add_game') }}" class="btn btn-primary" type="button">Add Game</a>
+      </div>
 
+</div>
 {% endblock %}
 
