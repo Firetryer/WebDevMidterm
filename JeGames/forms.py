@@ -96,3 +96,10 @@ class AddGameForm(Form):
     mac_max_memory = TextField('Recommended Memory')
     mac_max_storage = TextField('Recommended Storage')
     mac_max_graphics = TextField('Recommended Graphics')
+
+class SetFeaturedForm(Form):
+    f1 = IntegerField("Featured 1")
+    f2 = IntegerField("Featured 2")
+    f3 = IntegerField("Featured 3")
+    f4 = IntegerField("Featured 4")
+    f5 = IntegerField("Featured 5")

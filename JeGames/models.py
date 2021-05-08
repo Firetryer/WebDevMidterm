@@ -101,4 +101,10 @@ class Platform(db.Model):
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(60), unique=True, nullable = False)
-    
+
+
+class WebsiteSetting(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    setting_name = db.Column(db.String(32), unique=True, nullable=False)
+    setting_value = db.Column(db.String(32), unique=False, nullable=True)
+    setting_group = db.Column(db.String(32), unique=False, nullable=True)

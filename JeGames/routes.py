@@ -3,8 +3,8 @@ import os
 import JeGames.misc_functions as misc
 from flask import render_template, url_for, flash, redirect, request, session, send_from_directory
 from flask_login import login_user, logout_user, current_user, login_required
-from JeGames.forms import RegisterForm, LoginForm, AddGameForm
-from JeGames.models import AppUser, Game, Platform, owned_games
+from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm
+from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting
 from JeGames import app, db, bcrypt 
 from sqlalchemy import func, desc
 
@@ -20,23 +20,22 @@ def index():
     most_popular = Game.query.join(owned_games).group_by(Game.id).order_by(desc(func.count(Game.id))).limit(5).all()
     coming_soon = Game.query.filter_by(status = "coming soon").limit(5).all()
     top_rated = Game.query.order_by(desc(Game.rating)).limit(4).all()
+    limited_offer = Game.query.filter(Game.discount_expirable == True and Game.discount_end_date > func.now() and Game.discount > 0).order_by(Game.discount_end_date).limit(4).all()
+    discount = Game.query.filter(Game.discount_expirable == False and Game.discount > 0).limit(4).all()
+    featured_games_setting = WebsiteSetting.query.filter_by(setting_group="featured_games").all()
+    featured_games = []
+    for i in featured_games_setting:
+        featured_games.append(Game.query.filter_by(id=i.setting_value).first())
     return render_template(
         "index.html",
         new_release = new_release,
         most_popular = most_popular,
         coming_soon = coming_soon,
-        top_rated = top_rated)
+        top_rated = top_rated,
+        limited_offer = limited_offer,
+        discount = discount,
+        featured_games = featured_games)
 
-@app.route("/test_route")
-def test():
-    user = AppUser.query.filter_by(id=1).first()
-    g1 = Game.query.filter_by(id=1).first()
-    g2 = Game.query.filter_by(id=3).first()
-    g3 = Game.query.filter_by(id=4).first()
-    user.owned_games.append(g2)
-    user.owned_games.append(g2)
-    db.session.commit()
-    return None
 
 @app.route("/browse_games")
 def browse_page():
@@ -351,9 +350,47 @@ def admin_page():
         return redirect(url_for("index"))
     return render_template("admin_page.html")
 
+@app.route("/admin/edit_featured", methods=["POST", "GET"])
+@login_required
+def edit_featured():
+    if current_user.admin == False:
+        return redirect(url_for("index"))
+    form = SetFeaturedForm()
+    if form.validate_on_submit():
+        f1 = WebsiteSetting.query.filter("feature1" == WebsiteSetting.setting_name).first()
+        f2 = WebsiteSetting.query.filter("feature2" == WebsiteSetting.setting_name).first()
+        f3 = WebsiteSetting.query.filter("feature3" == WebsiteSetting.setting_name).first()
+        f4 = WebsiteSetting.query.filter("feature4" == WebsiteSetting.setting_name).first()
+        f5 = WebsiteSetting.query.filter("feature5" == WebsiteSetting.setting_name).first()
+
+        f1.setting_value = form.f1.data
+        f2.setting_value = form.f2.data
+        f3.setting_value = form.f3.data
+        f4.setting_value = form.f4.data
+        f5.setting_value = form.f5.data
+
+        db.session.commit()
+
+    elif request.method == "GET":
+        f1 = WebsiteSetting.query.filter("feature1" == WebsiteSetting.setting_name).first()
+        f2 = WebsiteSetting.query.filter("feature2" == WebsiteSetting.setting_name).first()
+        f3 = WebsiteSetting.query.filter("feature3" == WebsiteSetting.setting_name).first()
+        f4 = WebsiteSetting.query.filter("feature4" == WebsiteSetting.setting_name).first()
+        f5 = WebsiteSetting.query.filter("feature5" == WebsiteSetting.setting_name).first()
+
+        form.f1.data = f1.setting_value
+        form.f2.data = f2.setting_value
+        form.f3.data = f3.setting_value
+        form.f4.data = f4.setting_value
+        form.f5.data = f5.setting_value
+
+    return render_template("admin_featured_games.html", form = form)
+
 
 UPLOAD_FOLDER = '/games'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+

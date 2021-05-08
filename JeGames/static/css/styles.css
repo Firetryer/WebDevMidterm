@@ -162,8 +162,8 @@ a {
 
 .discount_tag {
     display: inline-block;
-    width: 4.3125rem;
-    height: 2.25rem;
+    width: 4.1125rem;
+    height: 1.95rem;
     background: #4C6B22 0% 0% no-repeat padding-box;
     border: 0.0625em solid #707070;
     height: fit-content;
@@ -173,7 +173,7 @@ a {
 
 .discount_tag p{
     color: #A4D015 !important; 
-    font-size: 1.5rem !important; 
+    font-size: 1.2rem !important; 
     margin:0px !important; 
     padding-bottom: 0.0625rem;
     padding-left: 0.4875rem;

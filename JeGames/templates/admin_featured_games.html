@@ -1,0 +1,31 @@
+{% extends "boilerplate.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_page.css') }}" />
+{% endblock %}
+
+{% block above_main_content %}
+{% endblock %}
+
+{% block main_content %}
+<div class="d-flex-column container center_container">
+    <h3 class="text-white text-center">Featured Games (Using Game ID))</h3>
+	<div class="d-grid gap-2">
+        <form method="POST" action="" accept-charset="UTF-8" role="form" enctype="multipart/form-data" > 
+            
+            {{ form.csrf_token }}
+	        {% include 'other/flashes.html' %}
+    	    {% include 'other/form_errors.html' %}
+            {{ form.f1(class="form-control mb-4", id="formFile", placeholder="Featured 1") }}
+            {{ form.f2(class="form-control mb-4", id="formFile", placeholder="Featured 2") }}
+            {{ form.f3(class="form-control mb-4", id="formFile", placeholder="Featured 3") }}
+            {{ form.f4(class="form-control mb-4", id="formFile", placeholder="Featured 4") }}
+            {{ form.f5(class="form-control", id="formFile", placeholder="Featured 5") }}
+            <div class="d-grid gap-2">
+                <button type="submit" name="submit" class="btn mt-4 btn-success">Submit</button>
+            </div>
+        </form>
+      </div>
+</div>
+{% endblock %}
+
