@@ -13,10 +13,11 @@ import re
 
 SECRET_KEY = os.urandom(32)
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = '/uploads'
+app.config['UPLOAD_FOLDER'] = 'games'
 app.config['SECRET_KEY'] = b'\xd5[\x01"\x96aF@#\x94\xc9"\xc3\xc43(7\xe8\x9f]\xd5\x9f\x17 \xff\xa3$\x18D\xfa\x95\xae'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
- 
+os.makedirs(os.path.join(app.instance_path, 'games'), exist_ok=True)
+
 if 'IS_HEROKU' in os.environ:
     uri = os.getenv("DATABASE_URL") 
     if uri.startswith("postgres://"):

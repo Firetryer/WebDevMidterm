@@ -12,34 +12,31 @@
 
 {% block main_content %}
 <div class="justify-content-center d-flex trailer_container">
-    <video controls>
-        <source src="static/videos/Dota2_Trailer.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video> 
+    <img src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt="">
 </div>
 
 <!-- ========= DESCRIPTION SECTION ======== -->
 
 <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column section_1 section_all">
     <div class="d-flex justify-content-center text-lg-center text-md-center">
-        <img src="static/img/dota 2.jpg" alt="">
+        <img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
     </div>
-    <div class="d-flex flex-column game_desc_container">
-        <p id="game_title">{{ game.title }}</p>
-        <p class="overflow-auto" id="game_desc">{{ game.description }}</p>
-
-    </div>
-    <div class="game_price d-flex flex-column">
-        <div >
-            <p class="text-lg-center text-md-center text-sm-center ">{{ game.price }}</p>
+    <div id="descprice" class="d-flex flex-lg-row flex-md-column">
+        <div class="d-flex flex-column game_desc_container">
+            <p id="game_title">{{ game.title }}</p>
+            <p class="overflow-auto" id="game_desc">{{ game.description }}</p>
         </div>
-        <div class="d-flex">
-            <button class="btn btn-block mx-auto">
-                Buy Now
-                <i class="bi bi-plus text-end"></i>
-            </button>
+        <div class="game_price d-flex flex-column">
+            <div class="d-flex">
+                <button class="btn btn-block mx-auto">
+                    Buy Now
+                    <i class="bi bi-plus text-end"></i>
+                </button>
+            </div>
+            <div >
+                <p class="text-lg-center text-md-center text-sm-center "> ₱ {{ game.price }}</p>
+            </div>
         </div>
-        
     </div>
 </div>
 
@@ -75,22 +72,28 @@
             </div>
             <div class="col">
                 <p id="detail_header">Platforms</p>
-                <div class="d-flex">
+                <p id="detail_info"> 
+                    {% for i in game.platforms.all() %}
+                        {{ i.name }}
+                        {% if i != game.platforms.all()[-1] %}
+                            , 
+                        {% endif %}
+                    {% endfor %}
 
-                </div>
+                </p>
             </div>
        </div>
        <div class="row d-flex flex-row features">
            <p id="detail_header">Features</p>
-           <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
-           <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
-           <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
-           <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
-           <p>* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
+           <p id="detail_info">
+           {{ game.features }}
+            </p>
        </div>
        <div class="row d-flex flex-row">
            <p id="detail_header">Other Details</p>
-           <p id="detail_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque non. Dictum non consectetur a erat nam at lectus urna duis. Elit sed vulputate mi sit amet mauris commodo. Massa tincidunt dui ut ornare lectus.</p>
+           <p id="detail_info">
+                {{ game.other_details }}
+            </p>
        </div>
     </div>
 </div>
@@ -103,21 +106,24 @@
     </div>
     <div class="section_container">
         <ul class="nav nav-tabs">
-            <li class="nav-item " role="presentation">
-                <button class="nav-link active" id="xbox-tab" data-bs-toggle="tab" data-bs-target="#Xbox" type="button" role="tab" aria-controls="Xbox" aria-selected="true">Xbox</button>
-            </li>
-            <li class="nav-item " role="presentation">
-                <button class="nav-link" id="windows-tab" data-bs-toggle="tab" data-bs-target="#Windows" type="button" role="tab" aria-controls="Windows" aria-selected="false">Windows</button>
-            </li>
+            {% if win_platform.available %}
+                <li class="nav-item " role="presentation">
+                    <button class="nav-link active" id="windows-tab" data-bs-toggle="tab" data-bs-target="#Windows" type="button" role="tab" aria-controls="Xbox" aria-selected="true">Windows</button>
+                </li>
+            {% endif %}
+            {% if linux_platform.available %}
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="linux-tab" data-bs-toggle="tab" data-bs-target="#Linux" type="button" role="tab" aria-controls="Linux" aria-selected="false">Linux</button>
             </li>
+            {% endif %}
+            {% if mac_platform.available %}
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="macos-tab" data-bs-toggle="tab" data-bs-target="#MacOS" type="button" role="tab" aria-controls="MacOS" aria-selected="false">MacOS</button>
             </li>
+            {% endif %}
         </ul>
         <div class="tab-content" id="requirements-content">
-            <div class="tab-pane fade show active" id="Xbox" role="tabpanel" aria-labelledby="xbox-tab">
+            <div class="tab-pane fade show active" id="Windows" role="tabpanel" aria-labelledby="windows-tab">
                 <div class="d-flex">
                     <div class="requirement_section d-flex flex-column">
                         <div>
@@ -127,23 +133,23 @@
                         </div>
                         <div>
                             <p id="detail_header">OS</p>
-                            <p id="detail_info"> Windows 7 Or Later</p>
+                            <p id="detail_info"> {{ win_platform.min_os }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Processor</p>
-                            <p id="detail_info"> Intel Core I5</p>
+                            <p id="detail_info"> {{ win_platform.min_processor }} </p>
                         </div>
                         <div>
                             <p id="detail_header">Memory</p>
-                            <p id="detail_info"> 2GB</p>
+                            <p id="detail_info"> {{ win_platform.min_memory }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Storage</p>
-                            <p id="detail_info"> 745MB</p>
+                            <p id="detail_info"> {{ win_platform.min_storage }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Graphics</p>
-                            <p id="detail_info"> Nvidia Geforce GTX 550/equivalent or higher</p>
+                            <p id="detail_info"> {{ win_platform.min_graphics }}</p>
                         </div>
                     </div>
 
@@ -155,59 +161,176 @@
                         </div>
                         <div>
                             <p id="detail_header">OS</p>
-                            <p id="detail_info"> Windows 10</p>
+                            <p id="detail_info"> {{ win_platform.max_os }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Processor</p>
-                            <p id="detail_info"> High-range Intel Core i5</p>
+                            <p id="detail_info"> {{ win_platform.max_processor }} </p>
                         </div>
                         <div>
                             <p id="detail_header">Memory</p>
-                            <p id="detail_info"> 4GB</p>
+                            <p id="detail_info"> {{ win_platform.max_memory }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Storage</p>
-                            <p id="detail_info"> 3GB</p>
+                            <p id="detail_info"> {{ win_platform.max_storage }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Graphics</p>
-                            <p id="detail_info"> Nvidia Geforce GTX 760/equivalent or higher</p>
+                            <p id="detail_info"> {{ win_platform.max_graphics }}</p>
                         </div>
                     </div>
                 </div>
-                
-            </div>
-            <div class="tab-pane fade show" id="Windows" role="tabpanel" aria-labelledby="windows-tab">
-                <p>This is windows</p>
             </div>
             <div class="tab-pane fade show" id="Linux" role="tabpanel" aria-labelledby="linux-tab">
-                <p>Linux</p>
+                <div class="d-flex">
+                    <div class="requirement_section d-flex flex-column">
+                        <div>
+                            <p id="detail_header">
+                                Minimum
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> {{ linux_platform.min_os }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> {{ linux_platform.min_processor }} </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> {{ linux_platform.min_memory }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> {{ linux_platform.min_storage }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> {{ linux_platform.min_graphics }}</p>
+                        </div>
+                    </div>
+
+                    <div class="requirement_section d-flex flex-column">
+                        <div>
+                            <p id="detail_header">
+                                Recommended
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> {{ linux_platform.max_os }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> {{ linux_platform.max_processor }} </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> {{ linux_platform.max_memory }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> {{ linux_platform.max_storage }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> {{ linux_platform.max_graphics }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane fade show" id="MacOS" role="tabpanel" aria-labelledby="macos-tab">
-                <p>This is macos</p>
+                <div class="d-flex">
+                    <div class="requirement_section d-flex flex-column">
+                        <div>
+                            <p id="detail_header">
+                                Minimum
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> {{ mac_platform.min_os }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> {{ mac_platform.min_processor }} </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> {{ mac_platform.min_memory }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> {{ mac_platform.min_storage }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> {{ mac_platform.min_graphics }}</p>
+                        </div>
+                    </div>
+
+                    <div class="requirement_section d-flex flex-column">
+                        <div>
+                            <p id="detail_header">
+                                Recommended
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> {{ mac_platform.max_os }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> {{ mac_platform.max_processor }} </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> {{ mac_platform.max_memory }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> {{ mac_platform.max_storage }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> {{ mac_platform.max_graphics }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div>
                 <p id="detail_header">Languages Supported</p>
-                <p id="detail_info"> AUDIO: English, French, German, Japanese, Polish, Russian, Chinese - Simplified, TEXT: English, French, German, Japanese, Polish, Russian, Chinese - Simplified</p>
+                <p id="detail_info">
+                    {{ game.languages }}
+                </p>
             </div>
         </div>
     </div>
 </div>
 <!-- ========= REVIEW SECTION ======== -->
 <div class="section_4 section_all d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
-    <div class="game_page_section_header">
+    <div class="game_page_section_header d-flex">
         <p>Reviews</p>
+        {% if has_game %}
+            <a class="btn btn-success ms-auto me-5 text-light" href="#">Add A Review</a>
+        {% endif %}
     </div>
     <div class="section_container">
         <div class="d-flex flex-column">
-            <!-- Review Card -->
+            {% if reviews|length == 0 %}
+                <p>It looks like theres no reviews yet :(</p>
+            {% endif %}
+            {% for review in reviews %}
+            <hr>
             <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column review_card">
                 <div class="d-flex flex-lg-column flex-md-row review_user">
                     <img src="static/img/default_profile_picture.jpg" alt="">
                     <div class="d-flex flex-column ms-md-2 ms-lg-0">
-                        <p class="review_user_username">Username</p>
-                        <p class="review_user_other">Games: 10</p>
-                        <p class="review_user_other">reviews: 1</p>
+                        <p class="review_user_username">{{ review.user.username }}</p>
+                        <p class="review_user_other">{{ review.user.owned_games.all()|length }}</p>
+                        <p class="review_user_other">{{ review.user.reviews.all()|length }}</p>
                     </div>
                 </div>
                 <div class="d-flex flex-column review_review">
@@ -218,74 +341,17 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
-                        <p class="review_title">Review Title</p>
+                        <p class="review_title">{{ review.review_title }}</p>
                     </div>
                     <div>
-                        <p>December 21st, 2014</p>
+                        <p>{{ review.date_published}} </p>
                     </div>
                     <div>
-                        <p>Amet commodo elit fugiat laboris sunt voluptate veniam officia non culpa Lorem tempor. Dolore mollit laboris anim sit voluptate mollit ea eiusmod ullamco irure consectetur pariatur consectetur aute. Dolore labore dolor commodo mollit. Esse laboris laborum ipsum veniam est sit ipsum magna magna qui occaecat adipisicing incididunt reprehenderit. Ullamco officia Lorem labore cupidatat voluptate elit aliqua ut consectetur.</p>
+                        <p>{{ review.review_text }}</p>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column review_card">
-                <div class="d-flex flex-lg-column flex-md-row review_user">
-                    <img src="static/img/default_profile_picture.jpg" alt="">
-                    <div class="d-flex flex-column ms-md-2 ms-lg-0">
-                        <p class="review_user_username">Username</p>
-                        <p class="review_user_other">Games: 10</p>
-                        <p class="review_user_other">reviews: 1</p>
-                    </div>
-                </div>
-                <div class="d-flex flex-column review_review">
-                    <!-- Review Stars and Title -->
-                    <div class="d-flex flex-row">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <p class="review_title">Review Title</p>
-                    </div>
-                    <div>
-                        <p>December 21st, 2014</p>
-                    </div>
-                    <div>
-                        <p>Amet commodo elit fugiat laboris sunt voluptate veniam officia non culpa Lorem tempor. Dolore mollit laboris anim sit voluptate mollit ea eiusmod ullamco irure consectetur pariatur consectetur aute. Dolore labore dolor commodo mollit. Esse laboris laborum ipsum veniam est sit ipsum magna magna qui occaecat adipisicing incididunt reprehenderit. Ullamco officia Lorem labore cupidatat voluptate elit aliqua ut consectetur.</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column review_card">
-                <div class="d-flex flex-lg-column flex-md-row review_user">
-                    <img src="static/img/default_profile_picture.jpg" alt="">
-                    <div class="d-flex flex-column ms-md-2 ms-lg-0">
-                        <p class="review_user_username">Username</p>
-                        <p class="review_user_other">Games: 10</p>
-                        <p class="review_user_other">reviews: 1</p>
-                    </div>
-                </div>
-                <div class="d-flex flex-column review_review">
-                    <!-- Review Stars and Title -->
-                    <div class="d-flex flex-row">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <p class="review_title">Review Title</p>
-                    </div>
-                    <div>
-                        <p>December 21st, 2014</p>
-                    </div>
-                    <div>
-                        <p>Amet commodo elit fugiat laboris sunt voluptate veniam officia non culpa Lorem tempor. Dolore mollit laboris anim sit voluptate mollit ea eiusmod ullamco irure consectetur pariatur consectetur aute. Dolore labore dolor commodo mollit. Esse laboris laborum ipsum veniam est sit ipsum magna magna qui occaecat adipisicing incididunt reprehenderit. Ullamco officia Lorem labore cupidatat voluptate elit aliqua ut consectetur.</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <!-- Review Card END -->
+            {% endfor %}
         </div>
     </div>
 </div>

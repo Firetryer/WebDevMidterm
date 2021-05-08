@@ -16,6 +16,7 @@
 body {
     font-size: 16px;
     background-color: var(--main-background-color);
+	
 }
 
 @media (max-width: 640px) {
@@ -37,6 +38,7 @@ body {
 	--primary-color: #0c2d484d;
 	--nav-color: #0a1a25;
 	--text-color: #e1f7ff;
+	--panel-color : #2B363B;
 	--main-background-color: #1b262c;
 	--max-width: 1100px;
 	--Poppins-Regular: 'Poppins';

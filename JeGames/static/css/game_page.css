@@ -14,7 +14,8 @@
     color: #E1F7FF
 }
 
-.trailer_container video{
+
+.trailer_container img{
     width:92.5rem;
     min-width: 37.5rem;
     height: 29.9375rem;
@@ -41,6 +42,11 @@
 
 .section_1{
     max-width: 1492.5rem;
+    background-color: var(--panel-color);
+    border-radius: 5px;
+    padding-bottom: 0px;
+    padding: 16px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 
 .section_1>div:not(:last-child){
@@ -57,10 +63,16 @@
     font-family: 'Poppins-Medium';
 }
 
+#descprice{
+    display:flex;
+    width: 100%;
+    
+}
+
 .game_desc_container{
     max-height: 19.5rem;
     min-width: 12.5rem;
-    width: 45rem;
+    flex-grow: 1;
 }
 
 #game_desc{
@@ -116,12 +128,17 @@
 .section_3 {
 }
 
-.section_4 {
+.image_container {
+    border: 0.0625em solid #707070;
+}
 
+.section_4 .game_page_section_header{
+    align-items: start;
 }
 
 .section_container {
     max-width: 62.5rem;
+    width: 62.5rem;
 }
 
 .section_container p{
@@ -145,6 +162,12 @@
 
 .requirement_container>div{
     margin-bottom: 1.5625rem;
+}
+
+
+
+.requirement_section {
+    width: 21em;
 }
 
 .requirement_section p:not(:last-child){

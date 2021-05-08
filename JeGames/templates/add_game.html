@@ -8,16 +8,19 @@
 {% endblock %}
 
 {% block main_content %}
-<form method="POST" action="{{ url_for('admin_add_game') }}" accept-charset="UTF-8" role="form">
+<form method="POST" action="" accept-charset="UTF-8" role="form" enctype="multipart/form-data" > 
 <div class="d-flex mb-5">
+    {% if modify == True %}
+    <h3 class="text-white me-auto">Modify Game</h3>
+    {% else %}
     <h3 class="text-white me-auto">Add Game</h3>
+    {% endif %}
+    
     <button type="submit" name="submit" class="btn btn-success">Submit</button>
 </div>
 <div class="justify-content-center d-flex trailer_container">
-    <video controls>
-        <source src="static/videos/Dota2_Trailer.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video> 
+    <p>Image Banner</p>
+    {{ form.image_banner(class="form-control", id="formFile", placeholder="main image") }}
 </div>
 
 <!-- ========= DESCRIPTION SECTION ======== -->
@@ -26,18 +29,22 @@
 	{% include 'other/flashes.html' %}
 	{% include 'other/form_errors.html' %}
 <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column section_1 section_all">
-    <div class="d-flex justify-content-center text-lg-center text-md-center">
-        <img src="static/img/dota 2.jpg" alt="">
+    <div class="d-flex-row justify-content-center text-lg-center text-md-center">
+        <p>Main Image</p>
+        {{ form.image_main(class="form-control", id="formFile", placeholder="main image") }}
+        <img src="" alt="">
+        
     </div>
     <div class="d-flex flex-column game_desc_container">
+        <p>Game Title</p>
         {{ form.title(class="input_fields", placeholder="Title") }}
+        <p>Game Description</p>
         {{ form.description(id='game_desc', class="overflow-auto", placeholder="Description") }}
-        
 
     </div>
     <div class="game_price d-flex flex-column">
         <div >
-            
+            <p>Price</p>
             {{ form.price(class="text-lg-center text-md-center text-sm-center", placeholder="Price") }}
         </div>
         
@@ -71,16 +78,6 @@
                 <p id="detail_header">Tags</p>
                 <p id="detail_info"> Genres</p>
             </div>
-            <div class="col">
-                <p id="detail_header">Rating</p>
-                <p id="detail_info"> 9.6</p>
-            </div>
-            <div class="col">
-                <p id="detail_header">Platforms</p>
-                <div class="d-flex">
-
-                </div>
-            </div>
        </div>
        <div class="row d-flex flex-row features">
            <p id="detail_header">Features</p>
@@ -102,10 +99,7 @@
     <div class="section_container">
         <ul class="nav nav-tabs">
             <li class="nav-item " role="presentation">
-                <button class="nav-link active" id="xbox-tab" data-bs-toggle="tab" data-bs-target="#Xbox" type="button" role="tab" aria-controls="Xbox" aria-selected="true">Xbox</button>
-            </li>
-            <li class="nav-item " role="presentation">
-                <button class="nav-link" id="windows-tab" data-bs-toggle="tab" data-bs-target="#Windows" type="button" role="tab" aria-controls="Windows" aria-selected="false">Windows</button>
+                <button class="nav-link active" id="windows-tab" data-bs-toggle="tab" data-bs-target="#Windows" type="button" role="tab" aria-controls="Windows" aria-selected="false">Windows</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="linux-tab" data-bs-toggle="tab" data-bs-target="#Linux" type="button" role="tab" aria-controls="Linux" aria-selected="false">Linux</button>
@@ -115,9 +109,11 @@
             </li>
         </ul>
         <div class="tab-content" id="requirements-content">
-            <div class="tab-pane fade show active" id="Xbox" role="tabpanel" aria-labelledby="xbox-tab">
+            <div class="tab-pane fade show active" id="Windows" role="tabpanel" aria-labelledby="windows-tab">
+                <label class="text-white" for="windows_available">Available for windows?</label>
+                {{ form.win_available(id="windows_available", placeholder="Is available?") }}
                 <div class="d-flex">
-                    <div class="requirement_section d-flex flex-column">
+                    <div class="requirement_section d-flex flex-column me-5">
                         <div>
                             <p id="detail_header">
                                 Minimum
@@ -125,23 +121,23 @@
                         </div>
                         <div>
                             <p id="detail_header">OS</p>
-                            <p id="detail_info"> Windows 7 Or Later</p>
+                            <p id="detail_info"> {{ form.win_min_os(id="detail_info", placeholder="Minimum OS") }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Processor</p>
-                            <p id="detail_info"> Intel Core I5</p>
+                            <p id="detail_info"> {{ form.win_min_processor(id="detail_info", placeholder="Minimum Processor") }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Memory</p>
-                            <p id="detail_info"> 2GB</p>
+                            <p id="detail_info"> {{ form.win_min_memory(id="detail_info", placeholder="Minimum Memory") }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Storage</p>
-                            <p id="detail_info"> 745MB</p>
+                            <p id="detail_info"> {{ form.win_min_storage(id="detail_info", placeholder="Minimum Storage") }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Graphics</p>
-                            <p id="detail_info"> Nvidia Geforce GTX 550/equivalent or higher</p>
+                            <p id="detail_info"> {{ form.win_min_graphics(id="detail_info", placeholder="Minimum Graphics") }}</p>
                         </div>
                     </div>
 
@@ -153,35 +149,148 @@
                         </div>
                         <div>
                             <p id="detail_header">OS</p>
-                            <p id="detail_info"> Windows 10</p>
+                            <p id="detail_info"> {{ form.win_max_os(id="detail_info", placeholder="Recommended OS") }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Processor</p>
-                            <p id="detail_info"> High-range Intel Core i5</p>
+                            <p id="detail_info"> {{ form.win_max_processor(id="detail_info", placeholder="Recommended Processor") }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Memory</p>
-                            <p id="detail_info"> 4GB</p>
+                            <p id="detail_info"> {{ form.win_max_memory(id="detail_info", placeholder="Recommended Memory") }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Storage</p>
-                            <p id="detail_info"> 3GB</p>
+                            <p id="detail_info"> {{ form.win_max_storage(id="detail_info", placeholder="Recommended Storage") }}</p>
                         </div>
                         <div>
                             <p id="detail_header">Graphics</p>
-                            <p id="detail_info"> Nvidia Geforce GTX 760/equivalent or higher</p>
+                            <p id="detail_info"> {{ form.win_max_graphics(id="detail_info", placeholder="Recommended Graphics") }}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade show" id="Windows" role="tabpanel" aria-labelledby="windows-tab">
-                <p>This is windows</p>
-            </div>
             <div class="tab-pane fade show" id="Linux" role="tabpanel" aria-labelledby="linux-tab">
-                <p>Linux</p>
+                <label class="text-white" for="linux_available">Available for Linux?</label>
+                {{ form.linux_available(id="linux_available", placeholder="Is available?") }}
+                <div class="d-flex">
+                    <div class="requirement_section d-flex flex-column me-5">
+                        <div>
+                            <p id="detail_header">
+                                Minimum
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> {{ form.linux_min_os(id="detail_info", placeholder="Minimum OS") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> {{ form.linux_min_processor(id="detail_info", placeholder="Minimum Processor") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> {{ form.linux_min_memory(id="detail_info", placeholder="Minimum Memory") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> {{ form.linux_min_storage(id="detail_info", placeholder="Minimum Storage") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> {{ form.linux_min_graphics(id="detail_info", placeholder="Minimum Graphics") }}</p>
+                        </div>
+                    </div>
+
+                    <div class="requirement_section d-flex flex-column">
+                        <div>
+                            <p id="detail_header">
+                                Recommended
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> {{ form.linux_max_os(id="detail_info", placeholder="Recommended OS") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> {{ form.linux_max_processor(id="detail_info", placeholder="Recommended Processor") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> {{ form.linux_max_memory(id="detail_info", placeholder="Recommended Memory") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> {{ form.linux_max_storage(id="detail_info", placeholder="Recommended Storage") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> {{ form.linux_max_graphics(id="detail_info", placeholder="Recommended Graphics") }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane fade show" id="MacOS" role="tabpanel" aria-labelledby="macos-tab">
-                <p>This is macos</p>
+                <label class="text-white" for="mac_available">Available for Mac?</label>
+                {{ form.mac_available(id="mac_available", placeholder="Is available?") }}
+                <div class="d-flex">
+                    <div class="requirement_section d-flex flex-column me-5">
+                        <div>
+                            <p id="detail_header">
+                                Minimum
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> {{ form.mac_min_os(id="detail_info", placeholder="Minimum OS") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> {{ form.mac_min_processor(id="detail_info", placeholder="Minimum Processor") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> {{ form.mac_min_memory(id="detail_info", placeholder="Minimum Memory") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> {{ form.mac_min_storage(id="detail_info", placeholder="Minimum Storage") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> {{ form.mac_min_graphics(id="detail_info", placeholder="Minimum Graphics") }}</p>
+                        </div>
+                    </div>
+
+                    <div class="requirement_section d-flex flex-column">
+                        <div>
+                            <p id="detail_header">
+                                Recommended
+                            </p>
+                        </div>
+                        <div>
+                            <p id="detail_header">OS</p>
+                            <p id="detail_info"> {{ form.mac_max_os(id="detail_info", placeholder="Recommended OS") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Processor</p>
+                            <p id="detail_info"> {{ form.mac_max_processor(id="detail_info", placeholder="Recommended Processor") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Memory</p>
+                            <p id="detail_info"> {{ form.mac_max_memory(id="detail_info", placeholder="Recommended Memory") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Storage</p>
+                            <p id="detail_info"> {{ form.mac_max_storage(id="detail_info", placeholder="Recommended Storage") }}</p>
+                        </div>
+                        <div>
+                            <p id="detail_header">Graphics</p>
+                            <p id="detail_info"> {{ form.mac_max_graphics(id="detail_info", placeholder="Recommended Graphics") }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div>
                 <p id="detail_header">Languages Supported</p>

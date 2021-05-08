@@ -1,6 +1,7 @@
 from flask_wtf import Form
-from wtforms import TextField, PasswordField, TextAreaField, DecimalField
-from wtforms.validators import Required, Email, EqualTo, ValidationError
+from flask_wtf.file import FileField
+from wtforms import TextField, PasswordField, TextAreaField, DecimalField, BooleanField, SelectField, IntegerField
+from wtforms.validators import Required, Email, EqualTo, ValidationError, NumberRange
 from JeGames.models import AppUser
 
 
@@ -47,9 +48,46 @@ class AddGameForm(Form):
     ], places=2)
     developer = TextField('Developer')
     publisher = TextField('Publisher')
-    status = TextField('Status')
-    rating = DecimalField('Rating')
+    status = SelectField(u'Field name', choices = ["coming soon", "available"])
+    rating = IntegerField('Rating', [NumberRange(min=1, max=10)])
     features = TextAreaField('Features')
     other_details = TextAreaField('Other Details')
     languages = TextAreaField('Languages')
+    image_main = FileField("Main Image")
+    image_banner = FileField("Banner Image")
 
+    win_available = BooleanField("Available")
+    win_min_os = TextField('Minimum OS')
+    win_min_processor = TextField('Minimum Processor')
+    win_min_memory = TextField('Minimum Memory')
+    win_min_storage = TextField('Minimum Storage')
+    win_min_graphics = TextField('Minimum Graphics')
+    win_max_os = TextField('Recommended OS')
+    win_max_processor = TextField('Recommended Processor')
+    win_max_memory = TextField('Recommended Memory')
+    win_max_storage = TextField('Recommended Storage')
+    win_max_graphics = TextField('Recommended Graphics')
+
+    linux_available = BooleanField("Available")
+    linux_min_os = TextField('Minimum OS')
+    linux_min_processor = TextField('Minimum Processor')
+    linux_min_memory = TextField('Minimum Memory')
+    linux_min_storage = TextField('Minimum Storage')
+    linux_min_graphics = TextField('Minimum Graphics')
+    linux_max_os = TextField('Recommended OS')
+    linux_max_processor = TextField('Recommended Processor')
+    linux_max_memory = TextField('Recommended Memory')
+    linux_max_storage = TextField('Recommended Storage')
+    linux_max_graphics = TextField('Recommended Graphics')
+
+    mac_available = BooleanField("Available")
+    mac_min_os = TextField('Minimum OS')
+    mac_min_processor = TextField('Minimum Processor')
+    mac_min_memory = TextField('Minimum Memory')
+    mac_min_storage = TextField('Minimum Storage')
+    mac_min_graphics = TextField('Minimum Graphics')
+    mac_max_os = TextField('Recommended OS')
+    mac_max_processor = TextField('Recommended Processor')
+    mac_max_memory = TextField('Recommended Memory')
+    mac_max_storage = TextField('Recommended Storage')
+    mac_max_graphics = TextField('Recommended Graphics')

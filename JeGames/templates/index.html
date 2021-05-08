@@ -91,41 +91,16 @@
 					</div>
 
 					<div class="games">
+						{% for game in new_release %}
 						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
+							<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
 							<div>
-								<p>Game Title</p>
-								<span>price</span>
+								<p>{{ game.title }}</p>
+								<span>₱{{ game.price }}</span>
 							</div>
 						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
+						{% endfor %}
+						
 					</div>
 				</div>
 				<div class="container">
@@ -136,41 +111,15 @@
 						</div>
 					</div>
 					<div class="games">
+						{% for game in most_popular %}
 						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
+							<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
 							<div>
-								<p>Game Title</p>
-								<span>price</span>
+								<p>{{ game.title }}</p>
+								<span>₱{{ game.price }}</span>
 							</div>
 						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 				<div class="container mr-0">
@@ -181,41 +130,15 @@
 						</div>
 					</div>
 					<div class="games">
+						{% for game in coming_soon %}
 						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
+							<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
 							<div>
-								<p>Game Title</p>
-								<span>price</span>
+								<p>{{ game.title }}</p>
+								<span>₱{{ game.price }}</span>
 							</div>
 						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="" alt="">
-							<div>
-								<p>Game Title</p>
-								<span>price</span>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -230,123 +153,61 @@
 			<div class="row px-2">
 				<div class="col-md-6">
 					<div class="d-flex flex-row featured-game-highlight">
-						<img class="mr-3" src="" alt=""/>
-						<div class="d-flex flex-column mx-auto pt-5">
-							<div class="featured-game-details mx-auto">
-								<h5 class="mt-0 mx-auto">RATING</h5>
-								<div class="featured-game-star mb-5">
-									&#9734; &#9734; &#9734; &#9734; &#9734;
+						<a href="{{ url_for('game_page', game_id=top_rated[0].id) }}">
+							<img class="mr-3" src="{{ url_for('game_media', game_id=top_rated[0].id, filename=top_rated[0].image_main) }}" alt=""/>
+						</a>
+							<div class="d-flex flex-column mx-auto pt-5">
+								<div class="featured-game-details mx-auto">
+									<a href="{{ url_for('game_page', game_id=top_rated[0].id) }}">
+										<h5 class="mx-auto text-white">{{ top_rated[0].title }}</h5>
+									</a>
+									<div class="rating d-flex justify-content-center mt-5 mx-0">
+										{% for i in range((top_rated[0].rating / 2) |int) %}
+											<i class="bi bi-star-fill text-warning"></i>
+										{% endfor %}
+										{% if (top_rated[0].rating % 2) == 1 %}
+											<i class="bi bi-star-half text-warning"></i>
+										{% endif %}
+									</div>
+									<div class="featured-game-price">₱{{ top_rated[0].price }}</div>
 								</div>
-								<div class="featured-game-title">Game Title</div>
-								<div class="featured-game-price">Price</div>
+								<span class="mx-auto">
+									{% for platform in top_rated[0].platforms %}
+										{% if platform.name == 'windows' %}
+											<i class="fab fa-windows"></i>
+										{% elif platform.name == 'mac' %}
+											<i class="fab fa-linux"></i>
+										{% elif platform.name == 'linux' %}
+											<i class="fab fa-apple"></i>
+										{% endif %}
+									{% endfor %}
+								</span>
+								<button class="btn btn-block mx-auto mt-4 buy_button">
+									Buy Now
+									<i class="bi bi-plus text-end"></i>
+								</button>
 							</div>
-							<span class="mx-auto"
-								><svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="174.058"
-									height="20.537"
-									viewBox="0 0 174.058 20.537"
-								>
-									<g id="platforms" transform="translate(37.732)">
-										<path
-											id="xbox_icon"
-											data-name="xbox icon"
-											d="M14.4,12.418c1.693,2.076,2.473,3.777,2.079,4.537a8.348,8.348,0,0,1-3.54,2.137,10.405,10.405,0,0,1-3.838.39,9.507,9.507,0,0,1-4.209-1.491c-1.066-.7-1.307-.982-1.307-1.552,0-1.143,1.258-3.146,3.41-5.432A17.145,17.145,0,0,1,10.1,8.233,30.079,30.079,0,0,1,14.4,12.418ZM7.467,5.752a11.111,11.111,0,0,0-3.3-2.423c-.581-.195-.623-.183-1.1.31a9.475,9.475,0,0,0-2.3,4.679A7.387,7.387,0,0,0,.6,10.63,9.785,9.785,0,0,0,2.15,15.251c.363.558.463.661.355.378a4.512,4.512,0,0,1,.363-2.446,29.206,29.206,0,0,1,4.6-7.431ZM19.378,8.179C18.732,5.121,16.8,3.2,16.527,3.2a3.567,3.567,0,0,0-1.376.531,16.553,16.553,0,0,0-2.458,2.018c1.621,2.037,3.907,5.329,4.7,7.733a4.58,4.58,0,0,1,.283,2c-.065.325-.065.325.054.176a11.587,11.587,0,0,0,.971-1.663,11.22,11.22,0,0,0,.711-2.244,12.417,12.417,0,0,0-.031-3.57ZM5.659,1.9c1.823-.1,4.193,1.319,4.369,1.353a7.607,7.607,0,0,0,.826-.371,7.029,7.029,0,0,1,4.105-.963,9.465,9.465,0,0,0-8.941-.447c-.894.424-.917.455-.359.428Z"
-											transform="translate(6.703 -0.559)"
-											fill="#e1f7ff"
-										/>
-										<g
-											id="windows_icon"
-											data-name="windows icon"
-											transform="translate(45.268 0)"
-										>
-											<path
-												id="Path_6"
-												data-name="Path 6"
-												d="M27.284,18.633H16.313v7.919l10.972,1.593V18.633Z"
-												transform="translate(-7.464 -8.325)"
-												fill="#e1f7ff"
-											/>
-											<path
-												id="Path_7"
-												data-name="Path 7"
-												d="M10.39,18.633H2.25v6.636l8.14,1.181V18.633Z"
-												transform="translate(-2.25 -8.325)"
-												fill="#e1f7ff"
-											/>
-											<path
-												id="Path_8"
-												data-name="Path 8"
-												d="M27.284,2.25,16.313,3.816V11.85H27.284V2.25Z"
-												transform="translate(-7.464 -2.25)"
-												fill="#e1f7ff"
-											/>
-											<path
-												id="Path_9"
-												data-name="Path 9"
-												d="M10.39,4.9,2.25,6.064v6.769h8.14V4.9Z"
-												transform="translate(-2.25 -3.233)"
-												fill="#e1f7ff"
-											/>
-										</g>
-										<path
-											id="linux_icon"
-											data-name="linux icon"
-											d="M8.6,4.566c.037.019.067.063.111.063s.1-.015.107-.056-.07-.085-.119-.107a.245.245,0,0,0-.2,0c-.015.007-.03.026-.022.041.011.048.085.041.126.063Zm-.811.063c.044,0,.074-.044.111-.063s.115-.015.13-.059c.007-.015-.007-.033-.022-.041a.245.245,0,0,0-.2,0c-.048.022-.126.056-.119.107s.067.056.1.052Zm8.188,10.325a1.8,1.8,0,0,1-.267-.73,1.435,1.435,0,0,0-.389-.83,1,1,0,0,0-.148-.107.822.822,0,0,0-.152-.074,4.288,4.288,0,0,0-.137-2.929,9.881,9.881,0,0,0-1.722-2.755,4.143,4.143,0,0,1-1.237-2.666C11.943,3.163,12.113,0,9.117,0,5.325-.007,6.273,3.829,6.232,5.007A4.3,4.3,0,0,1,5.4,7.4a11.826,11.826,0,0,0-2.152,3.581,4.257,4.257,0,0,0-.23,1.974c-.241.215-.422.544-.615.748a1.59,1.59,0,0,1-.63.307,1.146,1.146,0,0,0-.685.537.949.949,0,0,0-.1.459,2.913,2.913,0,0,0,.044.437,1.918,1.918,0,0,1,.03.77,1.5,1.5,0,0,0-.081,1.174,1,1,0,0,0,.744.456,7.824,7.824,0,0,1,2.2.463,3.1,3.1,0,0,0,2.07.385,1.342,1.342,0,0,0,.959-.748c.463,0,.974-.2,1.789-.244.552-.044,1.244.2,2.041.152a1.176,1.176,0,0,0,.093.248v0a1.485,1.485,0,0,0,1.492.852,2.7,2.7,0,0,0,1.789-1.033,6.485,6.485,0,0,1,1.885-1.192.9.9,0,0,0,.515-.678A1.672,1.672,0,0,0,15.976,14.954ZM8.706,3.233a.851.851,0,0,1,1.63-.015,1.474,1.474,0,0,1-.159,1.5,4.58,4.58,0,0,0-.467-.181.662.662,0,0,0,.144-.17c.178-.437-.007-1-.337-1.011-.27-.019-.515.4-.437.852A2.638,2.638,0,0,0,8.6,4.04a1.475,1.475,0,0,1,.107-.807ZM7.2,2.807c.374,0,.77.526.707,1.241a1.332,1.332,0,0,0-.378.17c.044-.33-.122-.744-.356-.726-.311.026-.363.785-.067,1.041.037.03.07-.007-.219.2C6.31,4.2,6.5,2.807,7.2,2.807ZM6.7,5.055c.23-.17.5-.37.522-.389A1.478,1.478,0,0,1,8.251,4.14a1.782,1.782,0,0,1,.959.33,6.2,6.2,0,0,0,.837.344c.311.13.507.359.389.674a1.288,1.288,0,0,1-.841.67c-.411.133-.733.593-1.415.552a1.032,1.032,0,0,1-.356-.078c-.3-.13-.452-.385-.741-.556a1.078,1.078,0,0,1-.544-.567A.4.4,0,0,1,6.7,5.055Zm.122,12.369c-.1,1.3-1.626,1.274-2.789.667-1.107-.585-2.541-.241-2.833-.811a1.292,1.292,0,0,1,.1-.978v-.007a1.989,1.989,0,0,0-.022-.885,1.247,1.247,0,0,1,.033-.741.848.848,0,0,1,.548-.418,1.665,1.665,0,0,0,.726-.367c.2-.211.352-.478.53-.667a.67.67,0,0,1,.656-.256,1.3,1.3,0,0,1,.811.593L5.3,14.873c.352.737,1.6,1.792,1.518,2.552Zm-.052-.959a7.949,7.949,0,0,0-.533-.726.6.6,0,0,0,.618-.33,1.04,1.04,0,0,0-.274-.922,5.444,5.444,0,0,0-1.418-1.2,2,2,0,0,1-.911-1.107,2.508,2.508,0,0,1-.011-1.3A7.7,7.7,0,0,1,5.244,8.681c.085-.063.03.119-.322.77a2.919,2.919,0,0,0-.1,3.052,6.4,6.4,0,0,1,.511-2.278A13.734,13.734,0,0,0,6.792,6.051c.041.03.17.119.23.152a4.3,4.3,0,0,1,.467.381,1.356,1.356,0,0,0,1.57.044A4.085,4.085,0,0,1,9.647,6.3a1.582,1.582,0,0,0,.826-.556A19.129,19.129,0,0,0,11.85,9.284a8.334,8.334,0,0,1,.874,2.392,1.473,1.473,0,0,1,.4.052,3.233,3.233,0,0,0-.863-3.144c-.174-.17-.181-.244-.1-.241a4.57,4.57,0,0,1,1.3,2.185,2.8,2.8,0,0,1,.015,1.322c.607.252,1.33.663,1.137,1.289-.081,0-.119,0-.156,0,.119-.374-.144-.652-.844-.967-.726-.318-1.333-.318-1.418.463a1.3,1.3,0,0,0-.793,1.011,8.175,8.175,0,0,0-.163,1.478A5.8,5.8,0,0,1,11,16.2a3.653,3.653,0,0,1-4.233.267Zm9.533-.426c-.033.622-1.526.737-2.341,1.722a2.473,2.473,0,0,1-1.615.944,1.211,1.211,0,0,1-1.248-.715,2.054,2.054,0,0,1,.041-1.344,9.178,9.178,0,0,0,.367-1.5,8.334,8.334,0,0,1,.156-1.433,1.119,1.119,0,0,1,.507-.781c.011-.007.026-.011.037-.019A1.135,1.135,0,0,0,12.9,14a1.736,1.736,0,0,0,1.422-.6,1.048,1.048,0,0,1,.837.189c.367.315.263,1.122.633,1.541C16.183,15.558,16.309,15.851,16.3,16.039ZM6.84,5.507c.074.07.174.167.3.263a1.638,1.638,0,0,0,1.011.393,2.625,2.625,0,0,0,1.178-.4,3.293,3.293,0,0,0,.548-.385c.144-.126.219-.233.115-.244s-.1.1-.222.189c-.163.119-.359.274-.515.363a2.524,2.524,0,0,1-1.107.378A1.485,1.485,0,0,1,7.221,5.7c-.115-.093-.211-.185-.285-.256-.056-.052-.07-.17-.159-.181-.052,0-.067.137.063.241Z"
-											transform="translate(83.377 0)"
-											fill="#e1f7ff"
-										/>
-										<path
-											id="apple_icon"
-											data-name="apple icon"
-											d="M14.543,12.845a4.171,4.171,0,0,1,2.266-3.8,4.886,4.886,0,0,0-3.839-2C11.362,6.928,9.6,7.98,8.96,7.98,8.28,7.98,6.721,7.1,5.5,7.1,2.969,7.138.281,9.09.281,13.06a11.033,11.033,0,0,0,.653,3.635c.58,1.643,2.674,5.671,4.858,5.6,1.142-.027,1.949-.8,3.435-.8,1.441,0,2.189.8,3.462.8,2.2-.031,4.1-3.693,4.65-5.34a4.428,4.428,0,0,1-2.8-4.114ZM11.978,5.5A4.18,4.18,0,0,0,13.066,2.25,4.826,4.826,0,0,0,9.989,3.812a4.251,4.251,0,0,0-1.16,3.218A3.823,3.823,0,0,0,11.978,5.5Z"
-											transform="translate(118.987 -2.25)"
-											fill="#e1f7ff"
-										/>
-										<path
-											id="FontAwsome_playstation_"
-											data-name="FontAwsome (playstation)"
-											d="M25.2,47.04a4.771,4.771,0,0,1-1.715,1.074l-9.065,3.253v-2.4l6.669-2.378c.756-.27.875-.654.256-.857a4.47,4.47,0,0,0-2.484.128l-4.442,1.569V44.936a15.669,15.669,0,0,1,3.346-.743,13.181,13.181,0,0,1,5.754.685C25.478,45.5,25.7,46.413,25.2,47.04Zm-9.918-4.088V36.809c0-.72-.133-1.383-.809-1.573-.517-.168-.84.314-.84,1.034V51.646L9.492,50.328V32a49.944,49.944,0,0,1,5.71,1.565c3.514,1.207,4.7,2.709,4.7,6.09,0,3.293-2.033,4.543-4.619,3.3Zm-13.4,5.763C-.125,48.15-.461,46.969.454,46.293a9.808,9.808,0,0,1,2.285-1.1L8.683,43.08v2.409L4.405,47.018c-.756.27-.871.654-.256.857a4.47,4.47,0,0,0,2.484-.128L8.683,47v2.157a13.448,13.448,0,0,1-6.8-.442Z"
-											transform="translate(-37.702 -31.108)"
-											fill="#e1f7ff"
-										/>
-									</g>
-								</svg>
-							</span>
-							<button class="btn btn-block mx-auto mt-auto buy_button">
-								Buy Now
-								<i class="bi bi-plus text-end"></i>
-							</button>
-						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<button type="button" class="button">View More</button>
 					<div class="small_top_game_container">
+						{% for game in top_rated[1:] %}
 						<div class="small_top_game">
-							<div class="rating">Rating</div>
-							<img
-								class="small_top_game_img"
-								src=""
-								alt=""
-							/>
+							<div class="rating d-flex my-auto">
+								{% for i in range((game.rating / 2) |int) %}
+									<i class="bi bi-star-fill"></i>
+								{% endfor %}
+								{% if (game.rating % 2) == 1 %}
+									<i class="bi bi-star-half"></i>
+								{% endif %}
+							</div>
+
+							<a href="{{ url_for('game_page', game_id=game.id) }}">
+								<img class="small_top_game_img" src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt=""/>
+							</a>
 						</div>
-						<div class="small_top_game">
-							<div class="rating">Rating</div>
-							<img
-								class="small_top_game_img"
-								src=""
-								alt=""
-							/>
-						</div>
-						<div class="small_top_game">
-							<div class="rating">Rating</div>
-							<img
-								class="small_top_game_img"
-								src=""
-								alt=""
-							/>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
