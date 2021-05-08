@@ -29,11 +29,6 @@ game_tag = db.Table('game_tag', db.Model.metadata,
     db.Column('game_id', db.Integer, db.ForeignKey('game.id'))
 )
 
-game_platform = db.Table('game_platform', db.Model.metadata,
-    db.Column('game_id', db.Integer, db.ForeignKey('game.id')),
-    db.Column('platform_id', db.Integer, db.ForeignKey('platform.id'))
-)
-
 #= Models
 class AppUser(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -59,21 +54,13 @@ class Game(db.Model):
     developer = db.Column(db.String(60), unique=False, nullable=True)
     publisher = db.Column(db.String(60), unique=False, nullable=True)
     status = db.Column(db.String(30), unique=False, nullable=True)
-    rating = db.Column(db.Numeric(2, 1), unique=False, nullable=True)
+    rating = db.Column(db.Integer, unique=False, nullable=True, default=0)
     features = db.Column(db.Text(), unique=False, nullable=True)
     other_details = db.Column(db.Text(), unique=False, nullable=True)
-    min_os = db.Column(db.String(60), unique = False, nullable=True)
-    min_processor = db.Column(db.String(60), unique = False, nullable=True)
-    min_memory = db.Column(db.String(60), unique = False, nullable=True)
-    min_storage = db.Column(db.String(60), unique = False, nullable=True)
-    min_graphics = db.Column(db.String(60), unique = False, nullable=True)
-    max_os = db.Column(db.String(60), unique = False, nullable=True)
-    max_processor = db.Column(db.String(60), unique = False, nullable=True)
-    max_memory = db.Column(db.String(60), unique = False, nullable=True)
-    max_storage = db.Column(db.String(60), unique = False, nullable=True)
-    max_graphics = db.Column(db.String(60), unique = False, nullable=True)
     languages = db.Column(db.String(60), unique = False, nullable=True)
-    platform = db.relationship("Platform", secondary = game_platform)
+    image_main = db.Column(db.String(120), unique=False, nullable=True)
+    image_banner = db.Column(db.String(120), unique=False, nullable=True)
+    platforms = db.relationship("Platform", backref="game", lazy='dynamic')
     tags = db.relationship("Tag", secondary = game_tag)
     reviews = db.relationship("Review", backref="game", lazy='dynamic')
 
@@ -89,8 +76,20 @@ class Review(db.Model):
 
 class Platform(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(60), unique=True, nullable=False)
-    
+    game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
+    available = db.Column(db.Boolean, unique=False, nullable=True)
+    name = db.Column(db.String(60), unique=False, nullable=True)
+    min_os = db.Column(db.String(60), unique = False, nullable=True)
+    min_processor = db.Column(db.String(60), unique = False, nullable=True)
+    min_memory = db.Column(db.String(60), unique = False, nullable=True)
+    min_storage = db.Column(db.String(60), unique = False, nullable=True)
+    min_graphics = db.Column(db.String(60), unique = False, nullable=True)
+    max_os = db.Column(db.String(60), unique = False, nullable=True)
+    max_processor = db.Column(db.String(60), unique = False, nullable=True)
+    max_memory = db.Column(db.String(60), unique = False, nullable=True)
+    max_storage = db.Column(db.String(60), unique = False, nullable=True)
+    max_graphics = db.Column(db.String(60), unique = False, nullable=True)
+
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(60), unique=True, nullable = False)
