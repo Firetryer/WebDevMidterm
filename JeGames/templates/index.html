@@ -92,13 +92,26 @@
 
 					<div class="games">
 						{% for game in new_release %}
+						<a href="{{ url_for('game_page', game_id=game.id) }}">
 						<div class="d-flex flex-row game-card align-items-center">
 							<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
 							<div>
 								<p>{{ game.title }}</p>
-								<span>₱{{ game.price }}</span>
+								<div class=" game-price-container" >
+									{% if game.discount > 0 %}
+									<div class="discount_tag text-center">
+										<p>{{ game.discount }}%</p>
+									</div>
+									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
+									<span>P {{ game.get_discount_price() }}</span>
+									{% else %}
+									<span>P{{ game.price }}</span>
+									{% endif %}
+					
+								</div>
 							</div>
 						</div>
+						</a>
 						{% endfor %}
 						
 					</div>
@@ -112,13 +125,26 @@
 					</div>
 					<div class="games">
 						{% for game in most_popular %}
+						<a href="{{ url_for('game_page', game_id=game.id) }}">
 						<div class="d-flex flex-row game-card align-items-center">
 							<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
 							<div>
 								<p>{{ game.title }}</p>
-								<span>₱{{ game.price }}</span>
+								<div class=" game-price-container" >
+									{% if game.discount > 0 %}
+									<div class="discount_tag text-center">
+										<p>{{ game.discount }}%</p>
+									</div>
+									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
+									<span>P {{ game.get_discount_price() }}</span>
+									{% else %}
+									<span>P{{ game.price }}</span>
+									{% endif %}
+					
+								</div>
 							</div>
 						</div>
+						</a>
 						{% endfor %}
 					</div>
 				</div>
@@ -131,13 +157,26 @@
 					</div>
 					<div class="games">
 						{% for game in coming_soon %}
+						<a href="{{ url_for('game_page', game_id=game.id) }}">
 						<div class="d-flex flex-row game-card align-items-center">
 							<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
 							<div>
 								<p>{{ game.title }}</p>
-								<span>₱{{ game.price }}</span>
+								<div class=" game-price-container" >
+									{% if game.discount > 0 %}
+									<div class="discount_tag text-center">
+										<p>{{ game.discount }}%</p>
+									</div>
+									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
+									<span>P {{ game.get_discount_price() }}</span>
+									{% else %}
+									<span>P{{ game.price }}</span>
+									{% endif %}
+					
+								</div>
 							</div>
 						</div>
+						</a>
 						{% endfor %}
 					</div>
 				</div>
@@ -169,7 +208,7 @@
 											<i class="bi bi-star-half text-warning"></i>
 										{% endif %}
 									</div>
-									<div class="featured-game-price">₱{{ top_rated[0].price }}</div>
+									
 								</div>
 								<span class="mx-auto">
 									{% for platform in top_rated[0].platforms %}
@@ -182,6 +221,18 @@
 										{% endif %}
 									{% endfor %}
 								</span>
+								<div class=" game-price-container" >
+									{% if top_rated[0].discount > 0 %}
+									<div class="discount_tag text-center">
+										<p>{{ top_rated[0].discount }}%</p>
+									</div>
+									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ top_rated[0].price }}</p>
+									<span>P {{ top_rated[0].get_discount_price() }}</span>
+									{% else %}
+									<span>P{{ top_rated[0].price }}</span>
+									{% endif %}
+					
+								</div>
 								<button class="btn btn-block mx-auto mt-4 buy_button">
 									Buy Now
 									<i class="bi bi-plus text-end"></i>

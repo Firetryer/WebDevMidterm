@@ -136,3 +136,64 @@ a {
 	font-family: 'Poppins' !important;
 	font-size: 1em;
 }
+
+.discount-strike {
+	color: #AEBABE !important;
+	font-size: 1em !important;
+	text-decoration: line-through !important;
+	font-family: 'Poppins-Light' !important;
+}
+
+.discount-new-price {
+	color: var(--text-color);
+	font-family: 'Poppins';
+	font-size: 1.25em;
+}
+
+.game-price-container {
+    margin-top: 6px;
+}
+
+.game-price-container p{
+    display: inline;
+    vertical-align:middle
+}
+
+
+.discount_tag {
+    display: inline-block;
+    width: 4.3125rem;
+    height: 2.25rem;
+    background: #4C6B22 0% 0% no-repeat padding-box;
+    border: 0.0625em solid #707070;
+    height: fit-content;
+    margin:0px;
+    padding: 0px;
+}
+
+.discount_tag p{
+    color: #A4D015 !important; 
+    font-size: 1.5rem !important; 
+    margin:0px !important; 
+    padding-bottom: 0.0625rem;
+    padding-left: 0.4875rem;
+    padding-right: 0.4875rem;
+}
+
+a:link, a:active, a:hover{
+	color: RGB(220, 220 ,255)
+}
+
+
+#countdown-data-container p{
+	font-size: 1.4em;
+	margin-bottom: 0;
+}
+
+.discount_container {
+	margin-top: 5px;
+	background-color: #232c30;
+	border-radius: 5px;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+	padding: 2px;
+}

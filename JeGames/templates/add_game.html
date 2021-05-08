@@ -18,19 +18,20 @@
     
     <button type="submit" name="submit" class="btn btn-success">Submit</button>
 </div>
+{{ form.csrf_token }}
+	{% include 'other/flashes.html' %}
+	{% include 'other/form_errors.html' %}
 <div class="justify-content-center d-flex trailer_container">
-    <p>Image Banner</p>
+    <p class="text-white">Image Banner</p>
     {{ form.image_banner(class="form-control", id="formFile", placeholder="main image") }}
 </div>
 
 <!-- ========= DESCRIPTION SECTION ======== -->
 
-    {{ form.csrf_token }}
-	{% include 'other/flashes.html' %}
-	{% include 'other/form_errors.html' %}
+    
 <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column section_1 section_all">
-    <div class="d-flex-row justify-content-center text-lg-center text-md-center">
-        <p>Main Image</p>
+    <div class="d-flex-row">
+        <p class="me-auto">Main Image</p>
         {{ form.image_main(class="form-control", id="formFile", placeholder="main image") }}
         <img src="" alt="">
         
@@ -47,7 +48,22 @@
             <p>Price</p>
             {{ form.price(class="text-lg-center text-md-center text-sm-center", placeholder="Price") }}
         </div>
-        
+        <div >
+            <p>Discount</p>
+            {{ form.discount(class="text-lg-center text-md-center text-sm-center", placeholder="Percentage Discount") }}
+        </div>
+        <div >
+            <label class= "text-white"for="expirable">Discount Expirable?</label>
+            {{ form.discount_expirable(id="expirable", class="text-lg-center text-md-center text-sm-center", placeholder="Percentage Discount") }}
+        </div>
+        <div >
+            <p>Discount Start</p>
+            {{ form.discount_start_date(class="text-lg-center text-md-center text-sm-center", placeholder="Y-m-d H:M:S") }}
+        </div>
+        <div >
+            <p>Discount End</p>
+            {{ form.discount_end_date(class="text-lg-center text-md-center text-sm-center", placeholder="Y-m-d H:M:S") }}
+        </div>
     </div>
 </div>
 

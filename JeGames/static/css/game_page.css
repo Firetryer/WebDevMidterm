@@ -10,9 +10,6 @@
 }
 
 
-.main_content p{
-    color: #E1F7FF
-}
 
 
 .trailer_container img{
@@ -21,6 +18,12 @@
     height: 29.9375rem;
     margin-bottom: 4rem;
     background-color:black;
+    object-fit: cover;
+}
+
+.section_all p{
+    font-family: var(--Poppins-Regular);
+    color: var(--text-color)
 }
 
 .section_all {
@@ -39,6 +42,7 @@
     font-family: 'Poppins';
     text-align: left;
 }
+
 
 .section_1{
     max-width: 1492.5rem;
@@ -85,13 +89,9 @@
     margin-bottom: 0.625rem;
 }
 
-.game_price p{
-    font-size: 1.25rem;
-    font-family: 'Poppins';
-}
 
 .section_1 .game_price button{
-    width: 14.4375rem;
+    width: 14.4375em;
     height: 3.25rem;
     color: #E1F7FF;
     background-color: #9AC100;
@@ -100,6 +100,7 @@
 .section_1 img {
     height: 19.5625rem;
     width: 25.125rem;
+    object-fit: cover;
 }
 
 
@@ -271,25 +272,6 @@ hr {
 }
 
 
-.discount_tag {
-    display: inline-block;
-    width: 4.3125rem;
-    height: 2.25rem;
-    background: #4C6B22 0% 0% no-repeat padding-box;
-    border: 0.0625em solid #707070;
-    height: fit-content;
-    margin:0px;
-    padding: 0px;
-}
-
-.discount_tag p{
-    color: #A4D015;
-    font-size: 1.5rem;
-    margin:0px;
-    padding-bottom: 0.0625rem;
-    padding-left: 0.6875rem;
-    padding-right: 0.6875rem;
-}
 
 .striked_price {
     color: #D1CECE;

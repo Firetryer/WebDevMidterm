@@ -1,6 +1,6 @@
 from flask_wtf import Form
 from flask_wtf.file import FileField
-from wtforms import TextField, PasswordField, TextAreaField, DecimalField, BooleanField, SelectField, IntegerField
+from wtforms import TextField, PasswordField, TextAreaField, DecimalField, BooleanField, SelectField, IntegerField, DateTimeField
 from wtforms.validators import Required, Email, EqualTo, ValidationError, NumberRange
 from JeGames.models import AppUser
 
@@ -46,10 +46,15 @@ class AddGameForm(Form):
     price = DecimalField('Price',[
         Required(message='A Price is required')
     ], places=2)
+
+    discount = IntegerField("Discount", [NumberRange(min = 0, max = 100, message = "Discount must be between 0-100")])
+    discount_expirable = BooleanField("Expirable")
+    discount_end_date = DateTimeField("End Date")
+    discount_start_date = DateTimeField("Start Date")
+
     developer = TextField('Developer')
     publisher = TextField('Publisher')
     status = SelectField(u'Field name', choices = ["coming soon", "available"])
-    rating = IntegerField('Rating', [NumberRange(min=1, max=10)])
     features = TextAreaField('Features')
     other_details = TextAreaField('Other Details')
     languages = TextAreaField('Languages')

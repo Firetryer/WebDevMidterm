@@ -2,6 +2,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from JeGames import db, login_manager
 from flask_login import UserMixin
+import decimal
+
 
 
 @login_manager.user_loader
@@ -50,6 +52,9 @@ class Game(db.Model):
     title = db.Column(db.String(60), unique=False, nullable=False)
     description = db.Column(db.Text(), unique=False, nullable=True)
     discount = db.Column(db.Integer, unique=False, nullable=True)
+    discount_end_date = db.Column(db.DateTime(), nullable=True)
+    discount_start_date = db.Column(db.DateTime(), nullable=True)
+    discount_expirable = db.Column(db.Boolean, unique=False, nullable=True)
     price = db.Column(db.Numeric(38, 2), unique=False, nullable=True)
     developer = db.Column(db.String(60), unique=False, nullable=True)
     publisher = db.Column(db.String(60), unique=False, nullable=True)
@@ -63,6 +68,9 @@ class Game(db.Model):
     platforms = db.relationship("Platform", backref="game", lazy='dynamic')
     tags = db.relationship("Tag", secondary = game_tag)
     reviews = db.relationship("Review", backref="game", lazy='dynamic')
+
+    def get_discount_price(self):
+        return (self.price - (self.price * decimal.Decimal(self.discount / 100))).quantize(decimal.Decimal('.01'), decimal.ROUND_HALF_UP)
 
 class Review(db.Model):
     id = db.Column(db.Integer, primary_key = True)

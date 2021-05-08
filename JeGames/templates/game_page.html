@@ -33,8 +33,48 @@
                     <i class="bi bi-plus text-end"></i>
                 </button>
             </div>
-            <div >
-                <p class="text-lg-center text-md-center text-sm-center "> ₱ {{ game.price }}</p>
+            <div class = "discount_container">
+                <div class=" game-price-container" >
+                    {% if game.discount > 0 %}
+                    <div class="discount_tag">
+                        <p>20%</p>
+                    </div>
+                    <p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
+                    <p class="text-lg-center text-md-center text-sm-center discount-new-price">P {{ game.get_discount_price() }}</p>
+                    
+                    {% else %}
+                    <p class="text-lg-center text-md-center text-sm-center "> P {{ game.price }}</p>
+                    {% endif %}
+
+                </div>
+                {% if game.discount_expirable %}
+                    <div class="countdown">
+                        <p class="p-0 m-0">Discount ends in</p>
+                        <div id="countdown-data-container" class="row">
+                            <div class="col text-center">
+                                <p id="countdown-hour">4</p>
+                            </div>
+                            <div class="col text-center">
+                                <p id="countdown-minute">4</p>
+                            </div>
+                            <div class="col text-center">
+                                <p id="countdown-second">4</p>
+                            </div>
+                        </div>
+                        <div class=" p-0 row">
+                            <div class="col text-center">
+                                <p>Hours</p>
+                            </div>
+                            <div class="col text-center">
+                                <p>Minutes</p>
+                            </div>
+                            <div class="col text-center">
+                                <p>Seconds</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -450,5 +490,8 @@
         </div>
     </div>
 </div>
-
+<script src="{{ url_for('static',filename='js/countdown.js') }}"></script>
+<script type="text/javascript">
+initializeClock({{ game.discount_end_date|tojson }});
+</script>
 {% endblock %}

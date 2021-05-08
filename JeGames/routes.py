@@ -217,6 +217,10 @@ def modify_game_page(game_id):
         game.title = form.title.data
         game.description = form.description.data
         game.price = form.price.data
+        game.discount = form.discount.data
+        game.discount_expirable = form.discount_expirable.data
+        game.discount_start_date = form.discount_start_date.data
+        game.discount_end_date = form.discount_end_date.data
         game.developer = form.developer.data
         game.publisher = form.publisher.data
         game.status = form.status.data
@@ -229,10 +233,13 @@ def modify_game_page(game_id):
 
     elif request.method == "GET":
         game = Game.query.filter_by(id=game_id).first()
-        #platforms = game.platfoms.all()
         form.title.data = game.title
         form.description.data = game.description
         form.price.data = game.price
+        form.discount.data = game.discount
+        form.discount_expirable.data = game.discount_expirable
+        form.discount_start_date.data = game.discount_start_date
+        form.discount_end_date.data = game.discount_end_date
         form.developer.data = game.developer
         form.publisher.data = game.publisher
         form.status.data = game.status
