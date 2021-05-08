@@ -49,7 +49,7 @@ class Game(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(60), unique=False, nullable=False)
     description = db.Column(db.Text(), unique=False, nullable=True)
-    discount = db.Column(db.Numeric(2, 2), unique=False, nullable=True)
+    discount = db.Column(db.Integer, unique=False, nullable=True)
     price = db.Column(db.Numeric(38, 2), unique=False, nullable=True)
     developer = db.Column(db.String(60), unique=False, nullable=True)
     publisher = db.Column(db.String(60), unique=False, nullable=True)
