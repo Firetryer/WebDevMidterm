@@ -151,9 +151,6 @@ section {
 	font-size: 1em;
 }
 
-.more_game_card {
-	
-}
 
 .more_game_card img {
 	height: 30.8125rem;
@@ -169,10 +166,23 @@ section {
 	padding-top: 0.3125rem;
 }
 
+.custom_button {
+	border-radius: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 1em;
+}
+
+.custom_button_dark {
+	border-color: None !important;
+	background-color: #2b363b;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
 .more_game_title {
-	font-size: 1.125rem;
+	font-size: 1.225rem;
 	font-family: 'Poppins';
-	margin-top: 1.75rem;
+	margin-top: 0.8rem;
 	margin-bottom: 0.4rem;
 }
 

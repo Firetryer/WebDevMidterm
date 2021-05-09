@@ -34,10 +34,10 @@
                 </button>
             </div>
             <div class = "discount_container">
-                <div class="game-price-container d-flex" >
+                <div class="game-price-container d-flex justify-content-between p-2" >
                     {% if game.has_discount %}
-                    <div class="discount_tag">
-                        <p>20%</p>
+                    <div class="discount_tag d-flex">
+                        <p class="mx-auto">{{ game.discount }}%</p>
                     </div>
                     <p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
                     <p class="text-lg-center text-md-center text-sm-center discount-new-price">P {{ game.discount_price }}</p>

@@ -56,7 +56,7 @@
 					<div class="row mt-2">
 						<div class="col-md-8 mt-2 mb-3">New Releases</div>
 						<div class="col-md-4">
-							<button type="button" class="btn btn-outline-light">View More</button>
+							<a href="{{ url_for('browse_page', cs='new_release') }}" type="button" class="custom_button btn btn-outline-light">View More</a>
 						</div>
 					</div>
 
@@ -90,7 +90,7 @@
 					<div class="row mt-2">
 						<div class="col-md-8 mt-2">Top Selling</div>
 						<div class="col-md-4">
-							<button type="button" class="btn btn-outline-light">View More</button>
+							<a href="{{ url_for('browse_page', cs='top_selling') }}" type="button" class="custom_button btn btn-outline-light">View More</a>
 						</div>
 					</div>
 					<div class="games">
@@ -122,7 +122,7 @@
 					<div class="row mt-2">
 						<div class="col-md-8 mt-2">Coming Soon</div>
 						<div class="col-md-4">
-							<button type="button" class="btn btn-outline-light">View More</button>
+							<a href="{{ url_for('browse_page', cs='upcoming') }}" type="button" class="custom_button btn btn-outline-light">View More</a>
 						</div>
 					</div>
 					<div class="games">
@@ -203,18 +203,20 @@
 									{% endif %}
 					
 								</div>
-								<button class="btn btn-block mx-auto mt-4 buy_button">
+								<button class="custom_button btn btn-block mx-auto mt-4 buy_button">
 									Buy Now
 									<i class="bi bi-plus text-end"></i>
 								</button>
 							</div>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<button type="button" class="button">View More</button>
-					<div class="small_top_game_container">
+				<div class="col-md-6 d-flex-column align-content-end ">
+					<div class="d-flex ">
+						<a href="{{ url_for('browse_page', cs='top_rated') }}" type="button" class="custom_button ms-auto btn btn-dark mb-4 custom_button_dark">View More</a>
+					</div>
+					<div class="small_top_game_container d-flex-column">
 						{% for game in top_rated[1:] %}
-						<div class="small_top_game">
+						<div class="ms-auto small_top_game">
 							<div class="rating d-flex my-auto">
 								{% for i in range((game.rating / 2) |int) %}
 									<i class="bi bi-star-fill"></i>
@@ -238,11 +240,12 @@
 		<div class="section_header d-flex">
 			<div class="header_box"></div>
 			<p>Limited Offers</p>
+			<a href="{{ url_for('browse_page', cs='limited_offer') }}" type="button" class="custom_button ms-auto btn btn-dark mb-4 custom_button_dark">View More</a>
 		</div>
 		<div class="section_container">
 			<div class="d-flex flex-row more_game_container overflow-auto">
 				{% for game in limited_offer %}
-				<div class="d-flex flex-column more_game_card">
+				<div class="d-flex flex-column more_game_card panel">
 					<a href="{{ url_for('game_page', game_id=game.id) }}">
 						<img class="small_top_game_img" src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt=""/>
 					</a>
@@ -269,6 +272,7 @@
 		<div class="section_header d-flex">
 			<div class="header_box"></div>
 			<p>Discounts</p>
+			<a href="{{ url_for('browse_page', cs='onsale') }}" type="button" class="custom_button ms-auto btn btn-dark mb-4 custom_button_dark">View More</a>
 		</div>
 		<div class="section_container">
 			<div class="d-flex flex-row more_game_container overflow-auto">

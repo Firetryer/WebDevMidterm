@@ -147,7 +147,7 @@ a {
 .discount-new-price {
 	color: var(--text-color);
 	font-family: 'Poppins';
-	font-size: 1.25em;
+	font-size: 1em;
 }
 
 .game-price-container {
@@ -159,22 +159,26 @@ a {
     vertical-align:middle
 }
 
+.panel {
+	background-color: var(--panel-color);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
 
 .discount_tag {
     display: inline-block;
-    width: 4.1125rem;
+    width: 3.8125rem;
     height: 1.95rem;
     background: #4C6B22 0% 0% no-repeat padding-box;
     border: 0.0625em solid #707070;
     height: fit-content;
-    margin:0px;
     padding: 0px;
 }
 
 .discount_tag p{
     color: #A4D015 !important; 
     font-size: 1.2rem !important; 
-    margin:0px !important; 
     padding-bottom: 0.0625rem;
     padding-left: 0.4875rem;
     padding-right: 0.4875rem;

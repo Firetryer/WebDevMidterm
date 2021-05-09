@@ -28,11 +28,7 @@
 }
 
 .filter_container{
-    padding: 10px;
-    padding-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--panel-color);
+    background-color: var(--main-background-color);
     width: 14.937em;
     margin-right: 3.8125em;
 }
@@ -43,7 +39,7 @@
 }
 
 .accordion-item {
-    background-color: var(--panel-color);
+    background-color: var(--main-background-color);
     border-width: 0px;
 }
 
@@ -51,7 +47,7 @@
     font-size: 0.9rem;
     font-family: 'Poppins';
     padding: 0px;
-    background-color: var(--panel-color);
+    background-color: var(--main-background-color);
     color: #E1F7FF;
 }
 
@@ -71,7 +67,7 @@
 }
 
 .accordion-button:not(.collapsed){
-    background-color: var(--panel-color);
+    background-color: var(--main-background-color);
     color: var(--text-color);
     outline: 0px;
 }
@@ -84,6 +80,14 @@
     margin-right:0.741rem;
 }
 
+.more_game_card {
+    margin-bottom: 1em;
+    background-color: var(--panel-color);
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
 .more_game_card img{
     height: 15.375em;
     width: 14.125em;
@@ -91,12 +95,11 @@
 
 .more_game_price *{
     margin-right: 0.5625rem;
-    
 }
 
 
 .more_game_title{
-    font-size: 0.75em;
+    font-size: 0.95em;
     font-family: 'Poppins';
     margin-top: 0.7rem;
     margin-bottom: 0;
@@ -129,7 +132,7 @@
 .price {
     color:#E1F7FF;
     font-family: 'Poppins';
-    font-size:0.75em;
+    font-size:0.85em;
 }
 
 hr {

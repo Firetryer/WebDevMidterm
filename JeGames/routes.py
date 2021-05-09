@@ -64,35 +64,52 @@ def browse_page():
     sports = request.args.get('sports', False, type=bool)
     strategy = request.args.get('strategy', False, type=bool)
 
-    if query == '':
-        db_query = Game.query.join(Platform)
+    cs = request.args.get('cs', "", type=str)
+
+    if cs == "new_release":
+        db_query = Game.query
+
+    elif cs == "top_selling":
+        db_query = Game.query.join(owned_games).group_by(Game.id).order_by(desc(func.count(Game.id)))
+
+    elif cs == "upcoming":
+        db_query = Game.query.filter_by(status = "coming soon")
+
+    elif cs == "top_rated":
+        db_query = Game.query.order_by(desc(Game.rating))
+
+    elif cs == "limited_offer":
+        db_query =  Game.query.filter(Game.discount_expirable == True, Game.discount_end_date > datetime.now(), Game.discount > 0).order_by(Game.discount_end_date)
+    elif cs == "onsale":
+        db_query =  Game.query.filter(Game.discount_expirable == False, Game.discount > 0)
+
     else:
-        db_query = Game.query.filter(Game.title.like(query))
+        if query == '':
+            db_query = Game.query.join(Platform)
+        else:
+            db_query = Game.query.filter(Game.title.ilike("%" + query + "%"))
 
-    if lo:
-        db_query = db_query.filter(Game.has_discount)
+        if lo:
+            db_query = db_query.filter(Game.has_discount)
 
-    if uf:
-        db_query = db_query.filter(Game.discount_price <= 400)
+        if uf:
+            db_query = db_query.filter(Game.discount_price <= 400)
 
-    if ut:
-        db_query = db_query.filter(Game.discount_price <= 200)
+        if ut:
+            db_query = db_query.filter(Game.discount_price <= 200)
+            
+        if windows: 
+            db_query = db_query.filter(Game.platforms.any(name="windows", available = True))
+
+        if mac: 
+            db_query = db_query.filter(Game.platforms.any(name="mac", available = True))
         
-    if windows: 
-        db_query = db_query.filter(Game.platforms.any(name="windows", available = True))
-
-    if mac: 
-        db_query = db_query.filter(Game.platforms.any(name="mac", available = True))
+        if linux: 
+            db_query = db_query.filter(Game.platforms.any(name="linux", available = True))
     
-    print(db_query.all())
-    if linux: 
-        db_query = db_query.filter(Game.platforms.any(name="linux", available = True))
-
-    print(db_query.all())
-    record_count = db_query.count()
     games = db_query.paginate(page=page, per_page=items_per_page)
+    pagination = misc.Pagination(page, items_per_page, db_query.count())
 
-    pagination = misc.Pagination(page, items_per_page, record_count)
     return render_template(
         "game_browse.html",
         pagination = pagination,
@@ -106,7 +123,8 @@ def browse_page():
         lo = lo,
         windows = windows,
         mac = mac,
-        linux = linux
+        linux = linux,
+        cs = cs
         )
 
 @app.route("/login", methods=["POST", "GET"])
