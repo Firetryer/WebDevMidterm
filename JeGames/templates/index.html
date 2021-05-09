@@ -5,21 +5,24 @@
 {% endblock %}
 
 {% block above_main_content %}
+{% set page = 'index' %}
 <div class="header">
 	<div id="featured-game-carousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			{% for game in featured_games[:1] %}
 			<div class="carousel-item active">
-				<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt="">
+				<a href="{{ url_for('game_page', game_id=game.id) }}">
+					<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt="">
+				</a>
 			</div>
 			{% endfor %}
-
 			{% for game in featured_games[1:] %}
-				<div class="carousel-item">
+			<div class="carousel-item">
+				<a href="{{ url_for('game_page', game_id=game.id) }}">
 					<img class="d-block w-100" src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt="">
-				</div>
+				</a>
+			</div>
 			{% endfor %}
-			
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#featured-game-carousel" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -61,24 +64,24 @@
 					<div class="games">
 						{% for game in new_release %}
 						<a href="{{ url_for('game_page', game_id=game.id) }}">
-						<div class="d-flex flex-row game-card align-items-center">
-							<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
-							<div>
-								<p>{{ game.title }}</p>
-								<div class=" game-price-container" >
-									{% if game.discount > 0 %}
-									<div class="discount_tag text-center">
-										<p>{{ game.discount }}%</p>
+							<div class="d-flex flex-row game-card align-items-center">
+								<img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
+								<div>
+									<p>{{ game.title }}</p>
+									<div class=" game-price-container" >
+										{% if game.discount > 0 %}
+										<div class="discount_tag text-center">
+											<p>{{ game.discount }}%</p>
+										</div>
+										<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
+										<span>P {{ game.get_discount_price() }}</span>
+										{% else %}
+										<span>P{{ game.price }}</span>
+										{% endif %}
+						
 									</div>
-									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
-									<span>P {{ game.get_discount_price() }}</span>
-									{% else %}
-									<span>P{{ game.price }}</span>
-									{% endif %}
-					
 								</div>
 							</div>
-						</div>
 						</a>
 						{% endfor %}
 						

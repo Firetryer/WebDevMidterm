@@ -180,8 +180,12 @@ a {
     padding-right: 0.4875rem;
 }
 
-a:link, a:active, a:hover{
-	color: RGB(220, 220 ,255)
+a:hover > div.game-card{
+	background-color: #21292c
+}
+
+a:link, a:active, a:hover {
+	color: var(--text-color)
 }
 
 
