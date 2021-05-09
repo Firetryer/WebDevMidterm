@@ -9,38 +9,39 @@
 
 {% block main_content %}
 <form method="POST" action="" accept-charset="UTF-8" role="form" enctype="multipart/form-data" > 
-<div class="d-flex mb-5">
+<div class="mb-1">
     {% if modify == True %}
     <h3 class="text-white me-auto">Modify Game</h3>
+    <a href="{{ url_for('game_page', game_id=game_id) }}" class="btn btn-outline-warning mb-4"> Back to Game Page</a>
     {% else %}
     <h3 class="text-white me-auto">Add Game</h3>
     {% endif %}
     
-    <button type="submit" name="submit" class="btn btn-success">Submit</button>
+    <button type="submit" name="submit" class="btn btn-outline-success mb-4">Submit</button>
 </div>
 {{ form.csrf_token }}
 	{% include 'other/flashes.html' %}
 	{% include 'other/form_errors.html' %}
 <div class="justify-content-center d-flex trailer_container">
-    <p class="text-white">Image Banner</p>
-    {{ form.image_banner(class="form-control", id="formFile", placeholder="main image") }}
+    
 </div>
 
 <!-- ========= DESCRIPTION SECTION ======== -->
 
     
 <div class="container-fluid d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column section_1 section_all">
+    
     <div class="d-flex-row">
-        <p class="me-auto">Main Image</p>
+        <p>Main Image</p>
         {{ form.image_main(class="form-control", id="formFile", placeholder="main image") }}
-        <img src="" alt="">
-        
+        <p>Image Banner</p>
+        {{ form.image_banner(class="form-control", id="formFile", placeholder="main image") }}
     </div>
     <div class="d-flex flex-column game_desc_container">
         <p>Game Title</p>
         {{ form.title(class="input_fields", placeholder="Title") }}
         <p>Game Description</p>
-        {{ form.description(id='game_desc', class="overflow-auto", placeholder="Description") }}
+        {{ form.description(id='game_desc', class="overflow-auto", placeholder="Description", rows=20) }}
 
     </div>
     <div class="game_price d-flex flex-column">

@@ -1,0 +1,62 @@
+{% extends "boilerplate.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_page.css') }}" />
+{% endblock %}
+
+{% block above_main_content %}
+{% endblock %}
+
+{% block main_content %}
+<div class="d-flex-column container mb-5 d-flex">
+    <div class="container panel me-4 p-4">
+        <h3 class="text-default">All Tags</h3>
+        <div class="d-flex-column">
+            <table class="table table-secondary">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tag in tags %}
+                    <tr>
+                        <th scope="row">{{ loop.index }}</th>
+                        <td>{{ tag.title }}</td>
+                        <td>
+                            <div class="d-flex">
+                                <a href="{{ url_for('edit_tags', modify_id=tag.id) }}" class="text-secondary">Edit</a>
+                                <a href="{{ url_for('delete_tag', tag_id=tag.id) }}" class="text-danger ms-2">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+	<div class="panel p-4">
+        {% if modifying %}
+        <h3 class="text-default">Editing {{ modify_id }}</h3>
+        {% else %}
+        <h3 class="text-default">New Tag</h3>
+        {% endif %}
+        
+        <form method="POST" action="" accept-charset="UTF-8" role="form" enctype="multipart/form-data" > 
+
+            {{ form.csrf_token }}
+	        {% include 'other/flashes.html' %}
+    	    {% include 'other/form_errors.html' %}
+            {{ form.title(class="form-control", id="formFile", placeholder="Tag name") }}
+            <div class="d-grid gap-2">
+                <button type="submit" name="submit" class="btn mt-4 btn-success">
+                    {{ 'Add' if not modifying else 'Edit' }}
+                </button>
+            </div>
+        </form>
+      </div>
+</div>
+{% endblock %}
+

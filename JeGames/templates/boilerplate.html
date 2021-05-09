@@ -64,40 +64,8 @@
 								<div class="nav_bar_links">
 									<a class="{{ 'active' if active_page == 'index'}}" href="{{ url_for('index') }}" > Games </a>
 								</div>
-								<div class="dropdown_container nav_bar_links">
-									<a class="nav_hover_dropdown_button {{ 'active' if active_page == 'browse' }}" href="{{ url_for('browse_page') }}"> Browse </a>
-									<div class="nav_hover_dropdown_content nav_bar_dropdown">
-										<div class="d-flex flex-row">
-											<div class="d-flex me-5 flex-column">
-												<div class="d-flex flex-column">
-													<p class="browse_category_header">Browse By Price</p>
-													<p>New Releases</p>
-													<p>Best Sellers</p>
-													<p>On Sale Now</p>
-													<p>Limited Offers</p>
-													<p>Free</p>
-												</div>
-												<div class="d-flex flex-column">
-													<p class="browse_category_header">Browse By Platform</p>
-													<p>Xbox</p>
-													<p>Play Station</p>
-													<p>Linux</p>
-													<p>iOS</p>
-													<p>Windows</p>
-												</div>
-											</div>
-											<div class="d-flex flex-column">
-												<p class="browse_category_header">Browse By Tags</p>
-												<p>Action</p>
-												<p>Adventure</p>
-												<p>Casual</p>
-												<p>Racing</p>
-												<p>RPG</p>
-												<p>Sports</p>
-												<p>Simulation</p>
-											</div>
-										</div>
-									</div>
+								<div class="nav_bar_links">
+									<a class="{{ 'active' if active_page == 'browse' }}" href="{{ url_for('browse_page') }}"> Browse </a>
 								</div>
 								<div class="nav_bar_links">
 									<a class="{{ 'active' if active_page == 'support' }}" href="{{ url_for('support_page') }}"> Support </a>

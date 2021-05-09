@@ -2,7 +2,7 @@ from flask_wtf import Form
 from flask_wtf.file import FileField
 from wtforms import TextField, PasswordField, TextAreaField, DecimalField, BooleanField, SelectField, IntegerField, DateTimeField
 from wtforms.validators import Required, Email, EqualTo, ValidationError, NumberRange
-from JeGames.models import AppUser
+from JeGames.models import AppUser, Tag
 
 
 class Unique(object):
@@ -103,3 +103,9 @@ class SetFeaturedForm(Form):
     f3 = IntegerField("Featured 3")
     f4 = IntegerField("Featured 4")
     f5 = IntegerField("Featured 5")
+
+
+class AddTagForm(Form):
+    title = TextField('title', [
+        Required(message='Field Required'),
+        Unique(Tag, Tag.title, "Tag already exists")])

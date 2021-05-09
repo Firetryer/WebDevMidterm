@@ -3,8 +3,8 @@ import os
 import JeGames.misc_functions as misc
 from flask import render_template, url_for, flash, redirect, request, session, send_from_directory
 from flask_login import login_user, logout_user, current_user, login_required
-from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm
-from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting
+from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm, AddTagForm
+from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting, Tag
 from JeGames import app, db, bcrypt 
 from sqlalchemy import func, desc, or_, and_
 from datetime import datetime
@@ -194,8 +194,9 @@ def game_page(game_id):
     mac_platform = game.platforms.filter(Platform.name == "mac").filter(Platform.game_id == game.id).first()
 
     has_game = False
-    if game in current_user.owned_games:
-        has_game = True
+    if current_user.is_authenticated:
+        if game in current_user.owned_games:
+            has_game = True
     else:
         has_game = False
 
@@ -234,6 +235,7 @@ def modify_game_page(game_id):
             form.image_banner.data.save(path)
             game.image_banner = new_image_name
 
+        # Theres probably a more efficient way to write this mess
 
         if form.win_available.data:
             platform_name = "windows"
@@ -250,7 +252,6 @@ def modify_game_page(game_id):
             windows.min_memory = form.win_min_memory.data
             windows.min_storage = form.win_min_storage.data
             windows.min_graphics = form.win_min_graphics.data
-            
             windows.max_os = form.win_max_os.data
             windows.max_processor = form.win_max_processor.data
             windows.max_memory = form.win_max_memory.data
@@ -272,7 +273,6 @@ def modify_game_page(game_id):
             linux.min_memory = form.linux_min_memory.data
             linux.min_storage = form.linux_min_storage.data
             linux.min_graphics = form.linux_min_graphics.data
-            
             linux.max_os = form.linux_max_os.data
             linux.max_processor = form.linux_max_processor.data
             linux.max_memory = form.linux_max_memory.data
@@ -320,6 +320,47 @@ def modify_game_page(game_id):
 
     elif request.method == "GET":
         game = Game.query.filter_by(id=game_id).first()
+
+        windows = game.platforms.filter(Platform.name == "windows", Platform.game_id == game.id).first()
+        linux = game.platforms.filter(Platform.name == "linux", Platform.game_id == game.id).first()
+        mac = game.platforms.filter(Platform.name == "mac", Platform.game_id == game.id).first()
+
+        form.win_available.data = windows.available
+        form.win_min_os.data = windows.min_os
+        form.win_min_processor.data = windows.min_processor
+        form.win_min_memory.data = windows.min_memory
+        form.win_min_storage.data = windows.min_storage
+        form.win_min_graphics.data = windows.min_graphics
+        form.win_max_os.data = windows.max_os
+        form.win_max_processor.data = windows.max_processor
+        form.win_max_memory.data = windows.max_memory
+        form.win_max_storage.data = windows.max_storage
+        form.win_max_graphics.data = windows.max_graphics
+
+        form.linux_available.data = linux.available
+        form.linux_min_os.data = linux.min_os
+        form.linux_min_processor.data = linux.min_processor
+        form.linux_min_memory.data = linux.min_memory
+        form.linux_min_storage.data = linux.min_storage
+        form.linux_min_graphics.data = linux.min_graphics
+        form.linux_max_os.data = linux.max_os
+        form.linux_max_processor.data = linux.max_processor
+        form.linux_max_memory.data = linux.max_memory
+        form.linux_max_storage.data = linux.max_storage
+        form.linux_max_graphics.data = linux.max_graphics
+
+        form.mac_available.data = mac.available
+        form.mac_min_os.data = mac.min_os
+        form.mac_min_processor.data = mac.min_processor
+        form.mac_min_memory.data = mac.min_memory
+        form.mac_min_storage.data = mac.min_storage
+        form.mac_min_graphics.data = mac.min_graphics
+        form.mac_max_os.data = mac.max_os
+        form.mac_max_processor.data = mac.max_processor
+        form.mac_max_memory.data = mac.max_memory
+        form.mac_max_storage.data = mac.max_storage
+        form.mac_max_graphics.data = mac.max_graphics
+
         form.title.data = game.title
         form.description.data = game.description
         form.price.data = game.price
@@ -341,7 +382,40 @@ def modify_game_page(game_id):
     return render_template(
         'add_game.html',
         form = form, 
-        modify=True)
+        modify=True,
+        game_id=game_id)
+
+@app.route("/admin/tags/<tag_id>/delete", methods=["GET", "POST"])
+@login_required
+def delete_tag(tag_id):
+    tag = Tag.query.filter(Tag.id == tag_id).delete()
+    db.session.commit()
+    return redirect(url_for("edit_tags"))
+
+@app.route("/admin/tags", methods=["GET", "POST"])
+@login_required
+def edit_tags():
+    modify_id = request.args.get('modify_id', -1, type=int)
+    form = AddTagForm()
+    modifying=False
+    if form.validate_on_submit():
+        if modify_id == -1:
+            new_tag = Tag(title = form.title.data)
+            db.session.add(new_tag)
+
+        else:
+            tag = Tag.query.filter(Tag.id == modify_id).first()
+            tag.title = form.title.data
+        db.session.commit()
+        return redirect(url_for("edit_tags"))
+
+    elif request.method == "GET":
+        if modify_id != -1:
+            modifying = True
+        all_tags = Tag.query.all()
+
+    return render_template("edit_tags.html", form = form, tags = all_tags, modifying = modifying, modify_id = modify_id)
+
 
 @app.route("/admin/add_game", methods=["POST", "GET"])
 @login_required
@@ -354,12 +428,16 @@ def admin_add_game():
             title = form.title.data,
             description = form.description.data,
             price = form.price.data,
+            discount = form.discount.data,
+            discount_expirable = form.discount_expirable.data,
+            discount_start_date = form.discount_start_date.data,
+            discount_end_date = form.discount_end_date.data,
             developer = form.developer.data,
             publisher = form.publisher.data,
             status = form.status.data,
-            rating = form.rating.data,
+            features = form.features.data,
             other_details = form.other_details.data,
-            languages = form.languages.data,
+            languages = form.languages.data
         )
         
         db.session.add(new_game)

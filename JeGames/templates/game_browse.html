@@ -15,7 +15,12 @@
     <!-- Filter Section -->
     <form class="p-0 m-0" action="{{ url_for('browse_page') }}">
         <div class="d-flex flex-column filter_container">
-            <input name="q"  class="mb-2 mx-auto form-control" value='{{ q }}' placeholder="Search" />
+            
+            <div class="input-group mb-3">
+                <input name="q"  class="form-control" value='{{ q }}' placeholder="Search" />
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </div>
+            
             <p>Filters</p>
             <div class="d-flex flex-column">
                 <div class="accordion" id="accordionExample">
