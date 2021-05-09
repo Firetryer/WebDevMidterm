@@ -51,6 +51,9 @@ def browse_page():
     uf = request.args.get('uf', False, type=bool)
     ut = request.args.get('ut', False, type=bool)
 
+    windows = request.args.get('windows', False, type=bool)
+    mac = request.args.get('mac', False, type=bool)
+    linux = request.args.get('linux', False, type=bool)
     # To implement
     action = request.args.get('action', False, type=bool)
     adventure = request.args.get('adventure', False, type=bool)
@@ -61,22 +64,31 @@ def browse_page():
     sports = request.args.get('sports', False, type=bool)
     strategy = request.args.get('strategy', False, type=bool)
 
-    ut = request.args.get('ut', False, type=bool)
-    ut = request.args.get('ut', False, type=bool)
-
     if query == '':
-        db_query = Game.query
+        db_query = Game.query.join(Platform)
     else:
         db_query = Game.query.filter(Game.title.like(query))
+
+    if lo:
+        db_query = db_query.filter(Game.has_discount)
 
     if uf:
         db_query = db_query.filter(Game.discount_price <= 400)
 
     if ut:
         db_query = db_query.filter(Game.discount_price <= 200)
+        
+    if windows: 
+        db_query = db_query.filter(Game.platforms.any(name="windows", available = True))
 
+    if mac: 
+        db_query = db_query.filter(Game.platforms.any(name="mac", available = True))
     
+    print(db_query.all())
+    if linux: 
+        db_query = db_query.filter(Game.platforms.any(name="linux", available = True))
 
+    print(db_query.all())
     record_count = db_query.count()
     games = db_query.paginate(page=page, per_page=items_per_page)
 
@@ -91,7 +103,10 @@ def browse_page():
         q = query,
         uf = uf,
         ut = ut,
-        lo = lo
+        lo = lo,
+        windows = windows,
+        mac = mac,
+        linux = linux
         )
 
 @app.route("/login", methods=["POST", "GET"])

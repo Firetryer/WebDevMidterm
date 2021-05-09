@@ -87,6 +87,13 @@ class Game(db.Model):
                 return True
         return False
 
+    @has_discount.expression
+    def has_discount(cls):
+        return case(
+            [
+                ((cls.discount > 0) & (cls.discount_expirable == False), True),
+                ((cls.discount > 0) & (cls.discount_expirable == True) & (cls.discount_end_date > datetime.now()), True)], else_=False)
+
     @hybrid_property
     def discount_price(self):
         if self.discount > 0:
