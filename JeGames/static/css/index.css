@@ -124,7 +124,7 @@ section {
 .featured-game-highlight img {
 	height: 28.6875em;
 	width: 23.3125em;
-	
+	object-fit: cover;
 }
 
 .featured-game-details {
@@ -266,6 +266,7 @@ section {
 	width: 86px;
 	height: 112px;
 	margin-right: 18px;
+	object-fit: cover;
 }
 
 .game-card {
