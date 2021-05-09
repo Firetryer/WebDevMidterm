@@ -34,20 +34,20 @@
                 </button>
             </div>
             <div class = "discount_container">
-                <div class=" game-price-container" >
-                    {% if game.discount > 0 %}
+                <div class="game-price-container d-flex" >
+                    {% if game.has_discount %}
                     <div class="discount_tag">
                         <p>20%</p>
                     </div>
                     <p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
-                    <p class="text-lg-center text-md-center text-sm-center discount-new-price">P {{ game.get_discount_price() }}</p>
+                    <p class="text-lg-center text-md-center text-sm-center discount-new-price">P {{ game.discount_price }}</p>
                     
                     {% else %}
-                    <p class="text-lg-center text-md-center text-sm-center "> P {{ game.price }}</p>
+                    <p class="text-lg-center text-md-center text-sm-center discount-new-price mx-auto"> P {{ game.price }}</p>
                     {% endif %}
 
                 </div>
-                {% if game.discount_expirable %}
+                {% if game.has_discount and game.discount_expirable %}
                     <div class="countdown">
                         <p class="p-0 m-0">Discount ends in</p>
                         <div id="countdown-data-container" class="row">

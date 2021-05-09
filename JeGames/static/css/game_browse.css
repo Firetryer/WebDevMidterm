@@ -28,6 +28,11 @@
 }
 
 .filter_container{
+    padding: 10px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--panel-color);
     width: 14.937em;
     margin-right: 3.8125em;
 }
@@ -38,15 +43,15 @@
 }
 
 .accordion-item {
-    background-color: var(--main-background-color);
+    background-color: var(--panel-color);
     border-width: 0px;
 }
 
 .accordion-button, .accordion-button:hover {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: 'Poppins';
     padding: 0px;
-    background-color: var(--main-background-color);
+    background-color: var(--panel-color);
     color: #E1F7FF;
 }
 
@@ -66,7 +71,7 @@
 }
 
 .accordion-button:not(.collapsed){
-    background-color: var(--main-background-color);
+    background-color: var(--panel-color);
     color: var(--text-color);
     outline: 0px;
 }
@@ -93,7 +98,8 @@
 .more_game_title{
     font-size: 0.75em;
     font-family: 'Poppins';
-    margin-top: 1.75rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0;
 }
 
 

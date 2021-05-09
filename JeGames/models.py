@@ -1,7 +1,10 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import case
+from sqlalchemy.ext.hybrid import hybrid_property, hybrid_method
 from flask_bcrypt import Bcrypt
 from JeGames import db, login_manager
 from flask_login import UserMixin
+from datetime import datetime
 import decimal
 
 
@@ -69,8 +72,37 @@ class Game(db.Model):
     tags = db.relationship("Tag", secondary = game_tag)
     reviews = db.relationship("Review", backref="game", lazy='dynamic')
 
-    def get_discount_price(self):
+    @hybrid_property
+    def has_discount(self):
+        if self.discount > 0:
+            if self.discount_expirable == True:
+                if self.discount_end_date != None:
+                    if self.discount_end_date < datetime.now():
+                        return False
+                    else:
+                        return True
+                else:
+                    return False
+            else:
+                return True
+        return False
+
+    @hybrid_property
+    def discount_price(self):
+        if self.discount > 0:
+            if self.discount_expirable == True:
+                if self.discount_end_date != None:
+                    if self.discount_end_date < datetime.now():
+                        return self.price
         return (self.price - (self.price * decimal.Decimal(self.discount / 100))).quantize(decimal.Decimal('.01'), decimal.ROUND_HALF_UP)
+
+    @discount_price.expression
+    def discount_price(cls):
+        discount = cls.price - (cls.price * cls.discount / 100)
+        return case([((cls.discount > 0) & (cls.discount_expirable == True) & (cls.discount_end_date < datetime.now()), cls.price)],else_=discount)
+    
+
+
 
 class Review(db.Model):
     id = db.Column(db.Integer, primary_key = True)

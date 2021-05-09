@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block above_main_content %}
-{% set page = 'index' %}
 <div class="header">
 	<div id="featured-game-carousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
@@ -69,12 +68,12 @@
 								<div>
 									<p>{{ game.title }}</p>
 									<div class=" game-price-container" >
-										{% if game.discount > 0 %}
+										{% if game.has_discount == True %}
 										<div class="discount_tag text-center">
 											<p>{{ game.discount }}%</p>
 										</div>
 										<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
-										<span>P {{ game.get_discount_price() }}</span>
+										<span>P {{ game.discount_price }}</span>
 										{% else %}
 										<span>P{{ game.price }}</span>
 										{% endif %}
@@ -102,12 +101,12 @@
 							<div>
 								<p>{{ game.title }}</p>
 								<div class=" game-price-container" >
-									{% if game.discount > 0 %}
+									{% if game.has_discount %}
 									<div class="discount_tag text-center">
 										<p>{{ game.discount }}%</p>
 									</div>
 									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
-									<span>P {{ game.get_discount_price() }}</span>
+									<span>P {{ game.discount_price }}</span>
 									{% else %}
 									<span>P{{ game.price }}</span>
 									{% endif %}
@@ -134,12 +133,12 @@
 							<div>
 								<p>{{ game.title }}</p>
 								<div class=" game-price-container" >
-									{% if game.discount > 0 %}
+									{% if game.has_discount %}
 									<div class="discount_tag text-center">
 										<p>{{ game.discount }}%</p>
 									</div>
 									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
-									<span>P {{ game.get_discount_price() }}</span>
+									<span>P {{ game.discount_price }}</span>
 									{% else %}
 									<span>P{{ game.price }}</span>
 									{% endif %}
@@ -193,12 +192,12 @@
 									{% endfor %}
 								</span>
 								<div class=" game-price-container" >
-									{% if top_rated[0].discount > 0 %}
+									{% if top_rated[0].has_discount %}
 									<div class="discount_tag text-center">
 										<p>{{ top_rated[0].discount }}%</p>
 									</div>
 									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ top_rated[0].price }}</p>
-									<span>P {{ top_rated[0].get_discount_price() }}</span>
+									<span>P {{ top_rated[0].discount_price }}</span>
 									{% else %}
 									<span>P{{ top_rated[0].price }}</span>
 									{% endif %}
@@ -249,12 +248,12 @@
 					</a>
 					<p class="more_game_title">{{ game.title }}</p>
 					<div class=" game-price-container" >
-						{% if game.discount > 0 %}
+						{% if game.has_discount %}
 						<div class="discount_tag text-center">
 							<p>{{ game.discount }}%</p>
 						</div>
 						<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
-						<span>P {{ game.get_discount_price() }}</span>
+						<span>P {{ game.discount_price }}</span>
 						
 						{% else %}
 						<span>P{{ game.price }}</span>
@@ -283,9 +282,9 @@
 						<div class="discount_tag text-center">
 							<p>{{ game.discount }}%</p>
 						</div>
-						{% if game.discount > 0 %}
+						{% if game.has_discount %}
 						<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
-						<span>P {{ game.get_discount_price() }}</span>
+						<span>P {{ game.discount_price }}</span>
 						
 						{% else %}
 						<span>P{{ game.price }}</span>

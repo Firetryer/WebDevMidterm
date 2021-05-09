@@ -14,15 +14,7 @@
 	<body>
 		<nav class="navbar navbar-expand-lg navigation pb-0">
 			<div class="container-fluid">
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbar_items"
-					aria-controls="navbar_items"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_items" aria-controls="navbar_items" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="bi bi-list text-white"></i>
 				</button>
 				<div class="w-100 collapse navbar-collapse" id="navbar_items">
@@ -31,10 +23,14 @@
 							<div class="d-flex">
 								<a class="top_nav_logo" href="{{ url_for('index') }}">
 									<img class="top_nav_img" src="{{ url_for('static',filename='img/JE_GAMES.png') }}" alt="">	
-									Je Games</a>
+									Je Games
+								</a>
 							</div>
+							
 							<div class="d-flex inputs">
-								<input class="mx-auto search_bar form-control" placeholder="Search" />
+								<form class="p-0 m-0 mx-auto" action="{{ url_for('browse_page') }}">
+									<input name="q"  class="mx-auto search_bar form-control" value='{{ q }}' placeholder="Search" />
+								</form>
 							</div>
 							<div class="text-xl-end top_right_text text-lg-end text-md-start text-sm-start d-flex flex-lg-row-reverse nav-right align-items-center" >
 								<i class="bi bi-cart"></i>
@@ -66,10 +62,10 @@
 								class="d-flex flex-lg-row flex-md-column flex-sm-column bottom_bar_links mb-lg-0 mb-md-2 mb-sm-2 mb-xs-2"
 							>
 								<div class="nav_bar_links">
-									<a class="" href="{{ url_for('index') }}"> Games </a>
+									<a class="{{ 'active' if active_page == 'index'}}" href="{{ url_for('index') }}" > Games </a>
 								</div>
 								<div class="dropdown_container nav_bar_links">
-									<a class="nav_hover_dropdown_button active" href="{{ url_for('browse_page') }}"> Browse </a>
+									<a class="nav_hover_dropdown_button {{ 'active' if active_page == 'browse' }}" href="{{ url_for('browse_page') }}"> Browse </a>
 									<div class="nav_hover_dropdown_content nav_bar_dropdown">
 										<div class="d-flex flex-row">
 											<div class="d-flex me-5 flex-column">
@@ -104,7 +100,7 @@
 									</div>
 								</div>
 								<div class="nav_bar_links">
-									<a href="{{ url_for('support_page') }}"> Support </a>
+									<a class="{{ 'active' if active_page == 'support' }}" href="{{ url_for('support_page') }}"> Support </a>
 								</div>
 							</div>
 						</div>

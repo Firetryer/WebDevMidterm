@@ -6,7 +6,8 @@ from flask_login import login_user, logout_user, current_user, login_required
 from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm
 from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting
 from JeGames import app, db, bcrypt 
-from sqlalchemy import func, desc
+from sqlalchemy import func, desc, or_, and_
+from datetime import datetime
 
 @app.route('/game/<game_id>/<path:filename>')
 def game_media(game_id, filename):
@@ -20,14 +21,15 @@ def index():
     most_popular = Game.query.join(owned_games).group_by(Game.id).order_by(desc(func.count(Game.id))).limit(5).all()
     coming_soon = Game.query.filter_by(status = "coming soon").limit(5).all()
     top_rated = Game.query.order_by(desc(Game.rating)).limit(4).all()
-    limited_offer = Game.query.filter(Game.discount_expirable == True and Game.discount_end_date > func.now() and Game.discount > 0).order_by(Game.discount_end_date).limit(4).all()
-    discount = Game.query.filter(Game.discount_expirable == False and Game.discount > 0).limit(4).all()
+    limited_offer = Game.query.filter(Game.discount_expirable == True, Game.discount_end_date > datetime.now(), Game.discount > 0).order_by(Game.discount_end_date).limit(4).all()
+    discount = Game.query.filter(Game.discount_expirable == False, Game.discount > 0).limit(4).all()
     featured_games_setting = WebsiteSetting.query.filter_by(setting_group="featured_games").all()
     featured_games = []
     for i in featured_games_setting:
         featured_games.append(Game.query.filter_by(id=i.setting_value).first())
     return render_template(
         "index.html",
+        active_page = "index",
         new_release = new_release,
         most_popular = most_popular,
         coming_soon = coming_soon,
@@ -39,7 +41,58 @@ def index():
 
 @app.route("/browse_games")
 def browse_page():
-    return render_template("game_browse.html")
+    items_per_page = 16
+    query = request.args.get('q', '', type=str)
+    page = request.args.get('page', 1, type=int)
+    is_free = request.args.get('free', False, type=bool)
+
+    
+    lo = request.args.get('lo', False, type=bool)
+    uf = request.args.get('uf', False, type=bool)
+    ut = request.args.get('ut', False, type=bool)
+
+    # To implement
+    action = request.args.get('action', False, type=bool)
+    adventure = request.args.get('adventure', False, type=bool)
+    casual = request.args.get('casual', False, type=bool)
+    racing = request.args.get('racing', False, type=bool)
+    rpg = request.args.get('rpg', False, type=bool)
+    simulation = request.args.get('simulation', False, type=bool)
+    sports = request.args.get('sports', False, type=bool)
+    strategy = request.args.get('strategy', False, type=bool)
+
+    ut = request.args.get('ut', False, type=bool)
+    ut = request.args.get('ut', False, type=bool)
+
+    if query == '':
+        db_query = Game.query
+    else:
+        db_query = Game.query.filter(Game.title.like(query))
+
+    if uf:
+        db_query = db_query.filter(Game.discount_price <= 400)
+
+    if ut:
+        db_query = db_query.filter(Game.discount_price <= 200)
+
+    
+
+    record_count = db_query.count()
+    games = db_query.paginate(page=page, per_page=items_per_page)
+
+    pagination = misc.Pagination(page, items_per_page, record_count)
+    return render_template(
+        "game_browse.html",
+        pagination = pagination,
+        games = games,
+        active_page = "browse",
+        is_free = is_free,
+        page = page,
+        q = query,
+        uf = uf,
+        ut = ut,
+        lo = lo
+        )
 
 @app.route("/login", methods=["POST", "GET"])
 def login_page():
@@ -95,7 +148,9 @@ def create_account_page():
 
 @app.route("/support")
 def support_page():
-    return render_template("support.html")
+    return render_template(
+        "support.html",
+        active_page = "support")
 
 @app.route("/game/<game_id>", methods=["GET"])
 def game_page(game_id):
@@ -237,7 +292,11 @@ def modify_game_page(game_id):
         form.price.data = game.price
         form.discount.data = game.discount
         form.discount_expirable.data = game.discount_expirable
-        form.discount_start_date.data = game.discount_start_date
+        if game.discount_start_date == None:
+            form.discount_start_date.data = datetime.now()
+        else:
+            form.discount_start_date.data = game.discount_start_date
+
         form.discount_end_date.data = game.discount_end_date
         form.developer.data = game.developer
         form.publisher.data = game.publisher
