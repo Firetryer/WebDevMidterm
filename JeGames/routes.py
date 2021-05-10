@@ -1,12 +1,12 @@
 import datetime
 import os
-import JeGames.misc_functions as misc
 from flask import render_template, url_for, flash, redirect, request, session, send_from_directory, abort
 from flask_login import login_user, logout_user, current_user, login_required
+from JeGames import app, db, bcrypt 
+import JeGames.misc_functions as misc
 from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm, AddTagForm, TagField, ReviewForm
 from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting, Tag, game_tag, Review
-from JeGames import app, db, bcrypt 
-from sqlalchemy import func, desc, or_, and_
+from sqlalchemy import func, desc, or_, and_, nullslast
 from datetime import datetime
 
 @app.route('/game/<game_id>/<path:filename>')
@@ -20,7 +20,7 @@ def index():
     new_release = Game.query.order_by(desc(Game.id)).limit(5).all()
     most_popular = Game.query.join(owned_games).group_by(Game.id).order_by(func.count(Game.id)).limit(5).all()
     coming_soon = Game.query.filter_by(status = "coming soon").limit(5).all()
-    top_rated = Game.query.order_by(Game.rating).limit(4).all()
+    top_rated = Game.query.order_by(nullslast(desc(Game.rating))).limit(4).all()
     limited_offer = Game.query.filter(Game.discount_expirable == True, Game.discount_end_date > datetime.now(), Game.discount > 0).order_by(Game.discount_end_date).limit(4).all()
     discount = Game.query.filter(Game.discount_expirable == False, Game.discount > 0).limit(4).all()
     featured_games_setting = WebsiteSetting.query.filter_by(setting_group="featured_games").all()
