@@ -162,7 +162,7 @@ def create_account_page():
     if form.validate_on_submit():
         username = form.username.data
         email = form.email.data
-        register_date = datetime.datetime.now()
+        register_date = datetime.now()
         hashed = bcrypt.generate_password_hash(form.password.data)
 
         new_user = AppUser(
