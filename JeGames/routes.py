@@ -17,7 +17,7 @@ def game_media(game_id, filename):
 
 @app.route("/")
 def index():
-    new_release = Game.query.limit(5).all()
+    new_release = Game.query.order_by(desc(Game.id)).limit(5).all()
     most_popular = Game.query.join(owned_games).group_by(Game.id).order_by(func.count(Game.id)).limit(5).all()
     coming_soon = Game.query.filter_by(status = "coming soon").limit(5).all()
     top_rated = Game.query.order_by(Game.rating).limit(4).all()
