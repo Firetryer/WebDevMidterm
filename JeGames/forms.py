@@ -1,8 +1,10 @@
 from flask_wtf import Form
 from flask_wtf.file import FileField
-from wtforms import TextField, PasswordField, TextAreaField, DecimalField, BooleanField, SelectField, IntegerField, DateTimeField
+from wtforms import widgets, TextField, PasswordField, TextAreaField, DecimalField, BooleanField, SelectField, IntegerField, DateTimeField, FieldList, FormField, HiddenField
+from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
 from wtforms.validators import Required, Email, EqualTo, ValidationError, NumberRange
-from JeGames.models import AppUser, Tag
+from JeGames.models import AppUser, Tag, Game, game_tag
+from JeGames import db
 
 
 class Unique(object):
@@ -39,8 +41,16 @@ class RegisterForm(Form):
     confirm_password = PasswordField('Confirm Password', [Required(message='Password Required')])
 
 
+
+class TagField(Form):
+    tag = BooleanField()
+
 # Admin Stuff
 class AddGameForm(Form):
+    def __init__(self, game_id, *args, **kwargs):
+        super(AddGameForm, self).__init__(*args, **kwargs)
+        self.game_id = game_id
+
     title = TextField('Username', [Required(message='Title Required')])
     description = TextAreaField('Description', [Required(message='Description Required')])
     price = DecimalField('Price',[
@@ -96,6 +106,16 @@ class AddGameForm(Form):
     mac_max_memory = TextField('Recommended Memory')
     mac_max_storage = TextField('Recommended Storage')
     mac_max_graphics = TextField('Recommended Graphics')
+
+    tags = QuerySelectMultipleField(
+        'Tag',
+        query_factory = lambda: Tag.query.all(),
+        widget = widgets.ListWidget(html_tag="ol", prefix_label=False),
+        option_widget = widgets.CheckboxInput(),
+        get_label='title',
+        default = lambda: Tag.query.join(game_tag).filter(Tag.id == game_tag.c.tag_id).all()
+        #default = lambda a: db.session.query(game_tag).filter(game_tag.c.tag_id==a).one()
+    )
 
 class SetFeaturedForm(Form):
     f1 = IntegerField("Featured 1")

@@ -151,6 +151,7 @@
 
 .section_container #detail_info{
     margin-bottom: 0px;
+    font-family: 'Poppins-Light';
 }
 
 .section_container>.row{
@@ -251,6 +252,12 @@ hr {
 .more_game_card img{
     height: 30.8125rem;
     width: 22.3125rem;
+    object-fit: cover;
+}
+
+.tag-group li{
+    display: inline;
+    margin-right: 10px
 }
 
 .more_game_price *{

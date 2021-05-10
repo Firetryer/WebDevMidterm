@@ -5,9 +5,6 @@
 {% endblock %}
 
 {% block above_main_content %}
-    <div class="game_top_nav text-white">
-        <p>Browse > New Release > {{ game.title }}</p>
-    </div>
 {% endblock %}
 
 {% block main_content %}
@@ -110,7 +107,11 @@
        <div class="row">
             <div class="col">
                 <p id="detail_header">Tags</p>
-                <p id="detail_info"> Genres</p>
+                <p id="detail_info">
+                    {% for i in game.tags %}
+                        <span class="badge bg-secondary">{{ i.title }}</span>
+                    {% endfor %}
+                </p>
             </div>
             <div class="col">
                 <p id="detail_header">Rating</p>
@@ -120,10 +121,7 @@
                 <p id="detail_header">Platforms</p>
                 <p id="detail_info"> 
                     {% for i in game.platforms.all() %}
-                        {{ i.name }}
-                        {% if i != game.platforms.all()[-1] %}
-                            , 
-                        {% endif %}
+                        <span class="badge bg-secondary">{{ i.name }}</span>
                     {% endfor %}
 
                 </p>

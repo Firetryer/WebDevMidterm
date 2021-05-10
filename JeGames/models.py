@@ -68,9 +68,9 @@ class Game(db.Model):
     languages = db.Column(db.String(60), unique = False, nullable=True)
     image_main = db.Column(db.String(120), unique=False, nullable=True)
     image_banner = db.Column(db.String(120), unique=False, nullable=True)
-    platforms = db.relationship("Platform", backref="game", lazy='dynamic')
-    tags = db.relationship("Tag", secondary = game_tag)
-    reviews = db.relationship("Review", backref="game", lazy='dynamic')
+    platforms = db.relationship("Platform", backref="games", lazy='dynamic')
+    tags = db.relationship("Tag", backref = "games", secondary = game_tag)
+    reviews = db.relationship("Review", backref="games", lazy='dynamic')
 
     @hybrid_property
     def has_discount(self):

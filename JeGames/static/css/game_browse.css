@@ -91,6 +91,7 @@
 .more_game_card img{
     height: 15.375em;
     width: 14.125em;
+    object-fit: cover;
 }
 
 .more_game_price *{

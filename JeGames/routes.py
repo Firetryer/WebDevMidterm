@@ -3,8 +3,8 @@ import os
 import JeGames.misc_functions as misc
 from flask import render_template, url_for, flash, redirect, request, session, send_from_directory
 from flask_login import login_user, logout_user, current_user, login_required
-from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm, AddTagForm
-from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting, Tag
+from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm, AddTagForm, TagField
+from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting, Tag, game_tag
 from JeGames import app, db, bcrypt 
 from sqlalchemy import func, desc, or_, and_
 from datetime import datetime
@@ -216,7 +216,8 @@ def modify_game_page(game_id):
     if current_user.admin == False:
         return redirect(url_for("index"))
     
-    form = AddGameForm()
+    form = AddGameForm(game_id=game_id)
+
 
     if form.validate_on_submit():
         game = Game.query.filter_by(id=game_id).first()
@@ -300,6 +301,13 @@ def modify_game_page(game_id):
             mac.max_memory = form.mac_max_memory.data
             mac.max_storage = form.mac_max_storage.data
             mac.max_graphics = form.mac_max_graphics.data
+
+        print([tag.title for tag in form.tags.data])
+
+        # Clear game tags  
+        game.tags.clear()
+        for tag in form.tags.data:
+            game.tags.append(tag)
 
         game.title = form.title.data
         game.description = form.description.data

@@ -5,9 +5,7 @@
 {% endblock %}
 
 {% block above_main_content %}
-    <div class="game_top_nav text-white">
-        <p>Browse > New Release > Game Title</p>
-    </div>
+
 {% endblock %}
 
 {% block main_content %}
@@ -166,7 +164,7 @@
         
         <div class="d-flex flex-column more_game_card">
             <a href="{{ url_for('game_page', game_id=game.id) }}">
-            <img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
+                <img class="more_game_image" src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
             <p class="more_game_title"> {{ game.title }}</p>
             <div class="d-flex flex-row more_game_price">
                 <div class=" game-price-container" >
