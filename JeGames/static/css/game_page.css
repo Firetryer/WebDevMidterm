@@ -94,6 +94,9 @@
     width: 14.4375em;
     height: 3.25rem;
     color: #E1F7FF;
+}
+
+.section_1 .game_price button .btn-block{
     background-color: #9AC100;
 }
 
@@ -219,7 +222,7 @@
 }
 
 .review_title {
-    font-size: 1.125rem;
+    font-size: 1.225rem;
     font-family: 'Poppins-Medium';
 }
 

@@ -1,0 +1,51 @@
+{% extends "boilerplate.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/library.css') }}" />
+{% endblock %}
+
+{% block above_main_content %}
+{% endblock %}
+
+{% block main_content %}
+<div class="d-flex container-fluid top-container">
+    <div id="library-section" class="panel review-review">
+        <form method="POST" action="" accept-charset="UTF-8" role="form" enctype="multipart/form-data" > 
+            {{ form.csrf_token }}
+            {% include 'other/flashes.html' %}
+            {% include 'other/form_errors.html' %}
+            <div class="d-flex mt-4">
+                <h4 class="text-default me-4">New Review</h4>
+                <button class="btn btn-success"> Publish </button>
+            </div>
+            <div class="d-flex">
+                <div class="form-floating mt-4 me-2">
+                    {{ form.rating(class="form-control", placeholder="Review Titles", id="review-rating") }}
+                    <label for="review-rating">Rating</label>
+                </div>
+            
+                <div class="form-floating mt-4 w-100">
+                    {{ form.title(class="form-control", placeholder="Review Titles", id="review-title") }}
+                    <label for="review-title">Title</label>
+                </div>
+            </div>
+            <div class="form-floating mt-4">
+                {{ form.body(class="form-control", placeholder="Review Titles", id="review-body") }}
+                <label for="review-body">Body</label>
+            </div>
+        </form>
+    </div>
+    <div id="profile-section" class="panel">
+        <img class="me-3" src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt="">
+        <p id="username" class="text-default mt-4">
+            {{ game.title }}
+        </p>
+        <hr>
+        <p id="join_date" class="text-default">
+            {{ game.description }}
+        </p>
+        
+    </div>
+</div>
+{% endblock %}
+

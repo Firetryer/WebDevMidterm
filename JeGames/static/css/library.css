@@ -1,0 +1,83 @@
+.btn-bright-green {
+    background-color: #9AC100;
+}
+
+#library-section {
+    padding: 1.4em;
+    width: 60.5em;
+    min-height: 46em;
+    margin-right: 1.8em;
+}
+
+#profile-section {
+    padding: 1.4em;
+    width: 22.5em;
+    margin-right: 4em;
+}
+
+#profile-section img {
+    width: 100%;
+    height: 5em;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.top-container {
+    margin-bottom: 50px;
+}
+
+.game-card {
+    padding-left: 0;
+
+    background-color: var(--panel-light-color);
+}
+
+.game-card img {
+    width: 10em;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-card > div{
+    align-items: center;
+}
+
+.game-card > .right-section {
+    padding-left :0 !important;
+}
+
+.game-title {
+    font-size: 1.2em;
+    margin-bottom: 0px;
+    font-family: 'Poppins';
+}
+
+#username {
+    font-size: 1.4em;
+}
+
+.user-details {
+    font-family: 'Poppins-Light';
+}
+
+.review_section {
+    background-color: gray;
+    padding: 12px;
+}
+
+#review-body {
+    margin-top: 1em;
+    height: 5.2em;
+}
+
+#review-rating {
+    width: 5em;
+}
+
+.review-review {
+    min-height:15em !important;
+}
+
+.review-function-button {
+    width: 144px;
+}

@@ -38,7 +38,9 @@ body {
 	--primary-color: #0c2d484d;
 	--nav-color: #0a1a25;
 	--text-color: #e1f7ff;
+	--green-color: #A4D015;
 	--panel-color : #2B363B;
+	--panel-light-color : #3d494e;
 	--main-background-color: #1b262c;
 	--max-width: 1100px;
 	--Poppins-Regular: 'Poppins';
@@ -208,4 +210,17 @@ a:link, a:active, a:hover {
 
 .text-default {
 	color: var(--text-color);
+}
+
+.bg-bgreen {
+	background-color: var(--green-color) !important;
+}
+
+.no-outline {
+	outline: 0;
+	border: 0;
+}
+
+.default-shadow {
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }

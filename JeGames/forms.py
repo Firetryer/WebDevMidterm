@@ -129,3 +129,10 @@ class AddTagForm(Form):
     title = TextField('title', [
         Required(message='Field Required'),
         Unique(Tag, Tag.title, "Tag already exists")])
+
+
+class ReviewForm(Form):
+    game_id = HiddenField()
+    title = TextField('Title', [Required(message='Title Required')])
+    body = TextAreaField('Description', [Required(message='Review Required')])
+    rating = SelectField("Rating", choices=[(a, a) for a in range(1, 11)], default=10)

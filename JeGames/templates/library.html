@@ -1,0 +1,89 @@
+{% extends "boilerplate.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/library.css') }}" />
+{% endblock %}
+
+{% block above_main_content %}
+{% endblock %}
+
+{% block main_content %}
+<div class="d-flex container-fluid top-container">
+    <div id="library-section" class="panel">
+        <h2 class="text-default">Library</h2>
+        <hr>
+        
+
+        {% for game in user.owned_games %}
+        <div class="d-flex game-card ">
+            <div class="d-flex">
+                <img class="me-3" src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt="">
+            </div>
+            <div class="container-fluid d-flex right-section">
+                <h3 class="text-default game-title me-auto ">{{ game.title }}</h3>
+                <div>
+                    
+                    {% if current_user.reviewed_game(game.id) %}
+                    <a href="{{ url_for('modify_review', game_id=game.id) }}">
+                    <button class="btn btn-dark review-function-button" type="button">
+                        Modify Review
+                    </button>    
+                    </a>
+                    {% else %}
+                    <a href="{{ url_for('add_review', game_id=game.id) }}">
+                    <button class="btn btn-dark review-function-button" type="button">
+                        Add A Review
+                    </button>
+                    </a>
+                    {% endif %}
+                    <button class="btn btn-danger">
+                        Remove from library
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </form>
+        {% endfor %}
+        
+    </div>
+    <div id="profile-section" class="panel">
+        <p id="username" class="text-default">
+            {{ user.username }}
+        </p>
+        <p id="join_date" class="text-default text-secondary">
+            <i class="bi bi-calendar3"></i>
+            Joined 
+            {{ user.register_date.date() }}
+        </p>
+        <hr>
+        <p class="text-default user-details">
+            Owned Games: 
+            {{ user.owned_games|length }}
+        </p>
+        <p class="text-default user-details">
+            Reviews: 
+            {{ user.reviews|length }}
+        </p>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="reviewmodal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

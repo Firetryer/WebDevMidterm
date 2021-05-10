@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import case
+from sqlalchemy import case, func, select
 from sqlalchemy.ext.hybrid import hybrid_property, hybrid_method
 from flask_bcrypt import Bcrypt
 from JeGames import db, login_manager
@@ -34,6 +34,7 @@ game_tag = db.Table('game_tag', db.Model.metadata,
     db.Column('game_id', db.Integer, db.ForeignKey('game.id'))
 )
 
+
 #= Models
 class AppUser(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -43,7 +44,14 @@ class AppUser(db.Model, UserMixin):
     admin = db.Column(db.Boolean(), unique=False, nullable=False)
     register_date = db.Column(db.DateTime(), nullable=False)
     owned_games = db.relationship("Game", secondary = owned_games)
-    reviews = db.relationship("Review", backref="app_user", lazy='dynamic')
+    reviews = db.relationship("Review", backref="users")
+
+    def reviewed_game(self, game_id):
+        if game_id in [review.game_id for review in self.reviews]:
+            return True
+        else:
+            return False
+
     def get_id(self):
         return self.id
 
@@ -62,7 +70,6 @@ class Game(db.Model):
     developer = db.Column(db.String(60), unique=False, nullable=True)
     publisher = db.Column(db.String(60), unique=False, nullable=True)
     status = db.Column(db.String(30), unique=False, nullable=True)
-    rating = db.Column(db.Integer, unique=False, nullable=True, default=0)
     features = db.Column(db.Text(), unique=False, nullable=True)
     other_details = db.Column(db.Text(), unique=False, nullable=True)
     languages = db.Column(db.String(60), unique = False, nullable=True)
@@ -70,7 +77,18 @@ class Game(db.Model):
     image_banner = db.Column(db.String(120), unique=False, nullable=True)
     platforms = db.relationship("Platform", backref="games", lazy='dynamic')
     tags = db.relationship("Tag", backref = "games", secondary = game_tag)
-    reviews = db.relationship("Review", backref="games", lazy='dynamic')
+    reviews = db.relationship("Review", backref="games")
+
+    @hybrid_property
+    def rating(self):
+        return sum([review.rating for review in self.reviews])
+
+    @rating.expression
+    def rating(cls):
+        return (
+            select([func.sum(Review.rating)]).
+            where(Review.game_id == cls.id)
+        )
 
     @hybrid_property
     def has_discount(self):
@@ -112,9 +130,8 @@ class Game(db.Model):
 
 
 class Review(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
-    user_id = db.Column(db.Integer, db.ForeignKey('app_user.id'))
+    game_id = db.Column(db.Integer, db.ForeignKey('game.id'), primary_key = True)
+    user_id = db.Column(db.Integer, db.ForeignKey('app_user.id'), primary_key = True)
     review_title = db.Column(db.String(60), unique=False, nullable=False)
     review_text = db.Column(db.String(4000), unique=False, nullable=False)
     rating = db.Column(db.Integer, unique=False, nullable=False)

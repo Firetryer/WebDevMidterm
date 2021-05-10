@@ -30,24 +30,36 @@
             <p class="overflow-auto" id="game_desc">{{ game.description }}</p>
         </div>
         <div class="game_price d-flex flex-column">
+            {% if game in current_user.owned_games %}
+            <div class="d-grip gap-2">
+                <button  class="btn btn-dark" type="button" disabled>
+                    Already Owned
+                </button>
+            </div>
+            {% else %}
             <div class="d-flex">
-                <button class="btn btn-block mx-auto">
+                <a href="{{ url_for('buy_game', game_id=game.id) }}">
+                <button  class="btn btn-block bg-bgreen mx-auto">
                     Buy Now
                     <i class="bi bi-plus text-end"></i>
                 </button>
+            </a>
             </div>
+            {% endif %}
             <div class = "discount_container">
                 <div class="game-price-container d-flex justify-content-between p-2" >
-                    {% if game.has_discount %}
-                    <div class="discount_tag d-flex">
-                        <p class="mx-auto">{{ game.discount }}%</p>
-                    </div>
-                    <p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
-                    <p class="text-lg-center text-md-center text-sm-center discount-new-price">P {{ game.discount_price }}</p>
                     
-                    {% else %}
-                    <p class="text-lg-center text-md-center text-sm-center discount-new-price mx-auto"> P {{ game.price }}</p>
-                    {% endif %}
+                        {% if game.has_discount %}
+                        <div class="discount_tag d-flex">
+                            <p class="mx-auto">{{ game.discount }}%</p>
+                        </div>
+                        <p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ game.price }}</p>
+                        <p class="text-lg-center text-md-center text-sm-center discount-new-price">P {{ game.discount_price }}</p>
+                        
+                        {% else %}
+                        <p class="text-lg-center text-md-center text-sm-center discount-new-price mx-auto"> P {{ game.price }}</p>
+                        {% endif %}
+                    
 
                 </div>
                 {% if game.has_discount and game.discount_expirable %}
@@ -115,7 +127,7 @@
             </div>
             <div class="col">
                 <p id="detail_header">Rating</p>
-                <p id="detail_info"> 9.6</p>
+                <p id="detail_info"> {{ game.rating }} / 10</p>
             </div>
             <div class="col">
                 <p id="detail_header">Platforms</p>
@@ -357,9 +369,6 @@
 <div class="section_4 section_all d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
     <div class="game_page_section_header d-flex">
         <p>Reviews</p>
-        {% if has_game %}
-            <a class="btn btn-success ms-auto me-5 text-light" href="#">Add A Review</a>
-        {% endif %}
     </div>
     <div class="section_container">
         <div class="d-flex flex-column">
@@ -370,28 +379,29 @@
             <hr>
             <div class="d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column review_card">
                 <div class="d-flex flex-lg-column flex-md-row review_user">
-                    <img src="static/img/default_profile_picture.jpg" alt="">
+                    <img src="{{ url_for('static', filename='img/default_profile_picture.jpg') }}" alt="">
                     <div class="d-flex flex-column ms-md-2 ms-lg-0">
-                        <p class="review_user_username">{{ review.user.username }}</p>
-                        <p class="review_user_other">{{ review.user.owned_games.all()|length }}</p>
-                        <p class="review_user_other">{{ review.user.reviews.all()|length }}</p>
+                        <p class="review_user_username">{{ review.users.username }}</p>
+                        <p class="review_user_other">Games Owned: {{ review.users.owned_games|length }}</p>
+                        <p class="review_user_other">Reviews Written: {{ review.users.reviews|length }}</p>
                     </div>
                 </div>
                 <div class="d-flex flex-column review_review">
                     <!-- Review Stars and Title -->
-                    <div class="d-flex flex-row">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <p class="review_title">{{ review.review_title }}</p>
+                    <div class="d-flex flex-row" >
+                        {% for i in range((game.rating / 2) |int) %}
+									<i class="bi bi-star-fill"></i>
+								{% endfor %}
+								{% if (game.rating % 2) == 1 %}
+									<i class="bi bi-star-half"></i>
+								{% endif %}
                     </div>
                     <div>
-                        <p>{{ review.date_published}} </p>
+                        <p class="text-secondary mt-0">Date Posted: {{ review.date_published.date()}} </p>
                     </div>
                     <div>
-                        <p>{{ review.review_text }}</p>
+                        <p class="review_title mt-0 mb-0">{{ review.review_title }}</p>
+                        <p class="review_title mt-0">{{ review.review_text }}</p>
                     </div>
                 </div>
             </div>
@@ -400,37 +410,6 @@
     </div>
 </div>
 
-<!-- ========= NEWS AND UPDATES SECTION ======== -->
-<div class="section_all d-flex flex-lg-row flex-md-column flex-sm-column flex-xs-column">
-    <div class="game_page_section_header">
-        <p>News and Updates</p>
-    </div>
-    <div class="section_container">
-        <div class="d-flex flex-row overflow-auto">
-            <!-- Update Cards -->
-            <div class="d-flex flex-column update_card">
-                <img src="" alt="">
-                <p class="update_title" >Update Title</p>
-                <p class="update_time">Time of Update</p>
-            </div>
-
-            <!-- Update Cards -->
-            <div class="d-flex flex-column update_card">
-                <img src="" alt="">
-                <p class="update_title" >Update Title</p>
-                <p class="update_time">Time of Update</p>
-            </div>
-
-            <!-- Update Cards -->
-            <div class="d-flex flex-column update_card">
-                <img src="" alt="">
-                <p class="update_title" >Update Title</p>
-                <p class="update_time">Time of Update</p>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <!-- ========= SUGGESTION SECTION ======== -->
 <div class="section_all section_6 flex-column">

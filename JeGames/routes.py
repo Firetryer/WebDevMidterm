@@ -1,10 +1,10 @@
 import datetime
 import os
 import JeGames.misc_functions as misc
-from flask import render_template, url_for, flash, redirect, request, session, send_from_directory
+from flask import render_template, url_for, flash, redirect, request, session, send_from_directory, abort
 from flask_login import login_user, logout_user, current_user, login_required
-from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm, AddTagForm, TagField
-from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting, Tag, game_tag
+from JeGames.forms import RegisterForm, LoginForm, AddGameForm, SetFeaturedForm, AddTagForm, TagField, ReviewForm
+from JeGames.models import AppUser, Game, Platform, owned_games, WebsiteSetting, Tag, game_tag, Review
 from JeGames import app, db, bcrypt 
 from sqlalchemy import func, desc, or_, and_
 from datetime import datetime
@@ -18,9 +18,9 @@ def game_media(game_id, filename):
 @app.route("/")
 def index():
     new_release = Game.query.limit(5).all()
-    most_popular = Game.query.join(owned_games).group_by(Game.id).order_by(desc(func.count(Game.id))).limit(5).all()
+    most_popular = Game.query.join(owned_games).group_by(Game.id).order_by(func.count(Game.id)).limit(5).all()
     coming_soon = Game.query.filter_by(status = "coming soon").limit(5).all()
-    top_rated = Game.query.order_by(desc(Game.rating)).limit(4).all()
+    top_rated = Game.query.order_by(Game.rating).limit(4).all()
     limited_offer = Game.query.filter(Game.discount_expirable == True, Game.discount_end_date > datetime.now(), Game.discount > 0).order_by(Game.discount_end_date).limit(4).all()
     discount = Game.query.filter(Game.discount_expirable == False, Game.discount > 0).limit(4).all()
     featured_games_setting = WebsiteSetting.query.filter_by(setting_group="featured_games").all()
@@ -188,7 +188,7 @@ def support_page():
 @app.route("/game/<game_id>", methods=["GET"])
 def game_page(game_id):
     game = Game.query.filter_by(id=game_id).first()
-    reviews = game.reviews.all()
+    reviews = game.reviews
     windows_platform = game.platforms.filter(Platform.name == "windows").filter(Platform.game_id == game.id).first()
     linux_platform = game.platforms.filter(Platform.name == "linux").filter(Platform.game_id == game.id).first()
     mac_platform = game.platforms.filter(Platform.name == "mac").filter(Platform.game_id == game.id).first()
@@ -210,6 +210,83 @@ def game_page(game_id):
         mac_platform = mac_platform
         )
 
+@app.route("/game/<game_id>/buy", methods=["GET", "POST"])
+@login_required
+def buy_game(game_id):
+    game = Game.query.filter(Game.id == game_id).first()
+    if game:
+        if game not in current_user.owned_games:
+            current_user.owned_games.append(game)
+            db.session.commit()
+
+    return redirect(url_for('game_page', game_id = game_id))
+
+
+@app.route("/game/<game_id>/review/add", methods=["GET", "POST"])
+@login_required
+def add_review(game_id):
+    game = Game.query.filter_by(id = game_id).first()
+    if not game:
+        abort(404)
+
+    form = ReviewForm()
+
+    if form.validate_on_submit():
+        new_review = Review(
+            user_id = current_user.id,
+            game_id = game_id,
+            review_title = form.title.data,
+            review_text = form.body.data,
+            rating = form.rating.data,
+            date_published = datetime.now()
+        )
+        db.session.add(new_review)
+
+        game.reviews.append(new_review)
+        current_user.reviews.append(new_review)
+        
+        db.session.commit()
+        return redirect(url_for("profile", username=current_user.username))
+
+    elif request.method == "GET":
+        pass
+
+    return render_template("add_review.html", form = form, game = game)
+
+
+@app.route("/game/<game_id>/review/modify", methods=["GET", "POST"])
+@login_required
+def modify_review(game_id):
+    game = Game.query.filter_by(id = game_id).first()
+    if not game:
+        abort(404)
+
+    form = ReviewForm()
+    review = Review.query.filter_by(game_id=game_id, user_id=current_user.id).first()
+    if form.validate_on_submit():
+        review.review_title = form.title.data
+        review.review_text = form.body.data
+        
+        db.session.commit()
+        return redirect(url_for("profile", username=current_user.username))
+
+    elif request.method == "GET":
+        form.title.data = review.review_title
+        form.body.data = review.review_text
+
+    return render_template("add_review.html", form = form, game = game)
+
+
+
+@app.route("/profiles/<username>", methods=["GET", "POST"])
+@login_required
+def profile(username):
+    user = AppUser.query.filter_by(username = username).first()
+    if not user:
+        abort(404)
+
+    return render_template("library.html", user = user)
+
 @app.route("/game/<game_id>/modify", methods=["GET", "POST"])
 @login_required
 def modify_game_page(game_id):
@@ -217,6 +294,9 @@ def modify_game_page(game_id):
         return redirect(url_for("index"))
     
     form = AddGameForm(game_id=game_id)
+
+    if not Game.query.filter_by(id=game_id).first():
+        abort(404)
 
 
     if form.validate_on_submit():
@@ -572,3 +652,6 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404

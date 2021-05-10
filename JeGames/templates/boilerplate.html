@@ -43,7 +43,7 @@
 										{% if current_user.admin == True %}
 										<li><a class="dropdown-item" href="{{ url_for('admin_page') }}">Admin Page</a></li>
 										{% endif %}
-										<li><a class="dropdown-item" href="#">Profile</a></li>
+										<li><a class="dropdown-item" href="{{ url_for('profile', username=current_user.username) }}">Library</a></li>
 										<li><a class="dropdown-item" href="#">Account</a></li>
 										<li><a class="dropdown-item me-4 align-center" href="{{ url_for('logout') }}">Logout</a>	</li>
 										
@@ -87,7 +87,7 @@
 
         <!-- FOOTER -->
 		<footer id="main-footer" class="py-2">
-			<div class="container footer-container">
+			<div class="container footer-container pt-5">
 				<div>
 					<img src="{{ url_for('static',filename='img/JE_GAMES.png') }}" alt="JE GAMES">
 					<p>Follow Our Accounts</p>
