@@ -72,7 +72,7 @@ class Game(db.Model):
     status = db.Column(db.String(30), unique=False, nullable=True)
     features = db.Column(db.Text(), unique=False, nullable=True)
     other_details = db.Column(db.Text(), unique=False, nullable=True)
-    languages = db.Column(db.String(60), unique = False, nullable=True)
+    languages = db.Column(db.String(160), unique = False, nullable=True)
     image_main = db.Column(db.String(120), unique=False, nullable=True)
     image_banner = db.Column(db.String(120), unique=False, nullable=True)
     platforms = db.relationship("Platform", backref="games", lazy='dynamic')
