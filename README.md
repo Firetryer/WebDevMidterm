@@ -12,13 +12,6 @@ Napay, Josh
 Saylag, Kobe
 
 ## Branches
-master branch -> frontend/midterms
+master branch -> Finals/Backend + Frontend
 
-flask branch -> backend/finals
-
-
-## Production Website
-
-[https://jegames.herokuapp.com/](https://jegames.herokuapp.com/) (Still in development) 
-
-
+midterm branch -> Midterms/Frontend only
