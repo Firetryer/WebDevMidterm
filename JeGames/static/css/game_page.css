@@ -273,9 +273,10 @@ hr {
 }
 
 .more_game_title{
-    font-size: 1.125rem;
+    font-size: 1.225rem !important;
     font-family: 'Poppins';
-    margin-top: 1.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 

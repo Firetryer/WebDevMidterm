@@ -193,6 +193,8 @@ def game_page(game_id):
     linux_platform = game.platforms.filter(Platform.name == "linux").filter(Platform.game_id == game.id).first()
     mac_platform = game.platforms.filter(Platform.name == "mac").filter(Platform.game_id == game.id).first()
 
+    related_games = Game.query.filter(Tag.id.in_([tag.id for tag in game.tags])).limit(4).all()
+
     has_game = False
     if current_user.is_authenticated:
         if game in current_user.owned_games:
@@ -207,7 +209,8 @@ def game_page(game_id):
         has_game=has_game,
         win_platform = windows_platform,
         linux_platform = linux_platform,
-        mac_platform = mac_platform
+        mac_platform = mac_platform,
+        related_games = related_games
         )
 
 @app.route("/game/<game_id>/buy", methods=["GET", "POST"])
@@ -228,6 +231,10 @@ def add_review(game_id):
     game = Game.query.filter_by(id = game_id).first()
     if not game:
         abort(404)
+    print(game_id)
+
+    if current_user.reviewed_game(game.id):
+        return redirect(url_for("modify_review", game_id = game_id))
 
     form = ReviewForm()
 
@@ -261,17 +268,23 @@ def modify_review(game_id):
     if not game:
         abort(404)
 
+    if not current_user.reviewed_game(game.id):
+        return redirect(url_for("add_review", game_id = game_id))
+
     form = ReviewForm()
     review = Review.query.filter_by(game_id=game_id, user_id=current_user.id).first()
     if form.validate_on_submit():
         review.review_title = form.title.data
         review.review_text = form.body.data
-        
+        review.rating = form.rating.data
+
         db.session.commit()
         return redirect(url_for("profile", username=current_user.username))
 
     elif request.method == "GET":
+        form = ReviewForm(rating = review.rating)
         form.title.data = review.review_title
+        form.body.data = review.review_text
         form.body.data = review.review_text
 
     return render_template("add_review.html", form = form, game = game)
@@ -293,7 +306,7 @@ def modify_game_page(game_id):
     if current_user.admin == False:
         return redirect(url_for("index"))
     
-    form = AddGameForm(game_id=game_id)
+    form = AddGameForm()
 
     if not Game.query.filter_by(id=game_id).first():
         abort(404)
@@ -382,7 +395,6 @@ def modify_game_page(game_id):
             mac.max_storage = form.mac_max_storage.data
             mac.max_graphics = form.mac_max_graphics.data
 
-        print([tag.title for tag in form.tags.data])
 
         # Clear game tags  
         game.tags.clear()
@@ -408,10 +420,12 @@ def modify_game_page(game_id):
 
     elif request.method == "GET":
         game = Game.query.filter_by(id=game_id).first()
-
+        
         windows = game.platforms.filter(Platform.name == "windows", Platform.game_id == game.id).first()
         linux = game.platforms.filter(Platform.name == "linux", Platform.game_id == game.id).first()
         mac = game.platforms.filter(Platform.name == "mac", Platform.game_id == game.id).first()
+
+        form = AddGameForm(tags=game.tags)
 
         form.win_available.data = windows.available
         form.win_min_os.data = windows.min_os

@@ -17,10 +17,14 @@
         {% for game in user.owned_games %}
         <div class="d-flex game-card ">
             <div class="d-flex">
-                <img class="me-3" src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt="">
+                <a href="{{ url_for('game_page', game_id=game.id) }}">
+                    <img class="me-3" src="{{ url_for('game_media', game_id=game.id, filename=game.image_banner) }}" alt="">
+                </a>
             </div>
             <div class="container-fluid d-flex right-section">
-                <h3 class="text-default game-title me-auto ">{{ game.title }}</h3>
+                <a class="me-auto" href="{{ url_for('game_page', game_id=game.id) }}">
+                    <h3 class="text-default game-title  ">{{ game.title }}</h3>
+                </a>
                 <div>
                     
                     {% if current_user.reviewed_game(game.id) %}

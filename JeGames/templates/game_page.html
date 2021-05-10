@@ -416,60 +416,31 @@
     <div class="game_page_section_header">
         <p>You May Also Like This</p>
     </div>
-    <div class="section_container">
-        <div class="d-flex flex-row more_game_container overflow-auto">
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
+    <div class="w-100 section_container">
+        <div class="d-flex flex-row more_game_container">
+            {% for game in  related_games %}
+            
+            <div class="d-flex flex-column more_game_card panel">
+                <a href="{{ url_for('game_page', game_id=game.id) }}">
+                <img src="{{ url_for('game_media', game_id=game.id, filename=game.image_main) }}" alt="">
+                <p class="more_game_title"> {{ game.title }}</p>
+                <div class="game-price-container d-flex" >
+                    
+                    {% if game.has_discount %}
+                    <div class="discount_tag d-flex me-2">
+                        <p class="mx-auto">{{ game.discount }}%</p>
                     </div>
+                    <p class="text-lg-center text-md-center text-sm-center discount-strike me-2 ">P {{ game.price }}</p>
+                    <p class="text-lg-center text-md-center text-sm-center discount-new-price me-2">P {{ game.discount_price }}</p>
+                    
+                    {% else %}
+                    <p class="discount-new-price"> P {{ game.price }}</p>
+                    {% endif %}
                 </div>
+            </a>
             </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column more_game_card">
-                <img src="" alt="">
-                <p class="more_game_title"> Game Title</p>
-                <div class="d-flex flex-row more_game_price">
-
-                    <p class="striked_price align-center">Price</p>
-                    <p class="price">New Price</p>
-
-                    <div class="discount_tag">
-                        <p>20%</p>
-                    </div>
-                </div>
-            </div>
+            
+            {% endfor %}
         </div>
     </div>
 </div>

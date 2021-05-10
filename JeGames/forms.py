@@ -47,10 +47,6 @@ class TagField(Form):
 
 # Admin Stuff
 class AddGameForm(Form):
-    def __init__(self, game_id, *args, **kwargs):
-        super(AddGameForm, self).__init__(*args, **kwargs)
-        self.game_id = game_id
-
     title = TextField('Username', [Required(message='Title Required')])
     description = TextAreaField('Description', [Required(message='Description Required')])
     price = DecimalField('Price',[
@@ -112,9 +108,7 @@ class AddGameForm(Form):
         query_factory = lambda: Tag.query.all(),
         widget = widgets.ListWidget(html_tag="ol", prefix_label=False),
         option_widget = widgets.CheckboxInput(),
-        get_label='title',
-        default = lambda: Tag.query.join(game_tag).filter(Tag.id == game_tag.c.tag_id).all()
-        #default = lambda a: db.session.query(game_tag).filter(game_tag.c.tag_id==a).one()
+        get_label='title'
     )
 
 class SetFeaturedForm(Form):
@@ -132,7 +126,6 @@ class AddTagForm(Form):
 
 
 class ReviewForm(Form):
-    game_id = HiddenField()
     title = TextField('Title', [Required(message='Title Required')])
     body = TextAreaField('Description', [Required(message='Review Required')])
     rating = SelectField("Rating", choices=[(a, a) for a in range(1, 11)], default=10)
