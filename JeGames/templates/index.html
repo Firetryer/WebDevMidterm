@@ -153,6 +153,9 @@
 			</div>
 		</div>
 	</div>
+	{% if top_rated | length != 0 %}
+
+	
 	<div class="section-2">
 		<div>
 			<div class="section_header d-flex">
@@ -162,26 +165,26 @@
 			<div class="row px-2">
 				<div class="col-md-6">
 					<div class="d-flex flex-row featured-game-highlight">
-						<a href="{{ url_for('game_page', game_id=top_rated[0:1].id) }}">
-							<img class="mr-3" src="{{ url_for('game_media', game_id=top_rated[0:1].id, filename=top_rated[0:1].image_main) }}" alt=""/>
+						<a href="{{ url_for('game_page', game_id=top_rated[0].id) }}">
+							<img class="mr-3" src="{{ url_for('game_media', game_id=top_rated[0].id, filename=top_rated[0].image_main) }}" alt=""/>
 						</a>
 							<div class="d-flex flex-column mx-auto pt-5">
 								<div class="featured-game-details mx-auto">
-									<a href="{{ url_for('game_page', game_id=top_rated[0:1].id) }}">
-										<h5 class="mx-auto text-white">{{ top_rated[0:1].title }}</h5>
+									<a href="{{ url_for('game_page', game_id=top_rated[0].id) }}">
+										<h5 class="mx-auto text-white">{{ top_rated[0].title }}</h5>
 									</a>
 									<div class="rating d-flex justify-content-center mt-5 mx-0">
-										{% for i in range((top_rated[0:1].rating / 2) |int) %}
+										{% for i in range((top_rated[0].rating / 2) |int) %}
 											<i class="bi bi-star-fill text-warning"></i>
 										{% endfor %}
-										{% if (top_rated[0:1].rating % 2) == 1 %}
+										{% if (top_rated[0].rating % 2) == 1 %}
 											<i class="bi bi-star-half text-warning"></i>
 										{% endif %}
 									</div>
 									
 								</div>
 								<span class="mx-auto">
-									{% for platform in top_rated[0:1].platforms %}
+									{% for platform in top_rated[0].platforms %}
 										{% if platform.name == 'windows' %}
 											<i class="fab fa-windows"></i>
 										{% elif platform.name == 'mac' %}
@@ -192,14 +195,14 @@
 									{% endfor %}
 								</span>
 								<div class=" game-price-container" >
-									{% if top_rated[0:1].has_discount %}
+									{% if top_rated[0].has_discount %}
 									<div class="discount_tag text-center">
-										<p>{{ top_rated[0:1].discount }}%</p>
+										<p>{{ top_rated[0].discount }}%</p>
 									</div>
-									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ top_rated[0:1].price }}</p>
-									<span>P {{ top_rated[0:1].discount_price }}</span>
+									<p class="text-lg-center text-md-center text-sm-center discount-strike ">P {{ top_rated[0].price }}</p>
+									<span>P {{ top_rated[0].discount_price }}</span>
 									{% else %}
-									<span>P{{ top_rated[0:1].price }}</span>
+									<span>P{{ top_rated[0].price }}</span>
 									{% endif %}
 					
 								</div>
@@ -236,6 +239,7 @@
 			</div>
 		</div>
 	</div>
+	{% endif %}
 	<section class="section-3">
 		<div class="section_header d-flex">
 			<div class="header_box"></div>
