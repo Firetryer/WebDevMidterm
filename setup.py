@@ -9,8 +9,8 @@ setup(
         zip_safe=False,
         install_requires=[
             'flask',
-            'Flask-WTF',
-            'WTforms[email]',
+            'Flask-WTF==0.15.1',
+            'WTforms[email]==2.3.3',
             'flask-login',
             'flask_sqlalchemy',
             'flask_bcrypt',

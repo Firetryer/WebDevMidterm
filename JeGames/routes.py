@@ -318,12 +318,16 @@ def modify_game_page(game_id):
 
         # Storing image
         if form.image_main.data:
+            if not allowed_file(form.image_main.data.filename):
+                return redirect(url_for('modify_game_page', game_id=game.id))
             new_image_name = str(game.id) + "_main_image.jpg"
             path = os.path.join(complete_path, new_image_name)
             form.image_main.data.save(path)
             game.image_main = new_image_name
 
         if form.image_banner.data:
+            if not allowed_file(form.image_banner.data.filename):
+                return redirect(url_for('modify_game_page', game_id=game.id))
             new_image_name = str(game.id) + "_banner_image.jpg"
             path = os.path.join(complete_path, new_image_name)
             form.image_banner.data.save(path)
@@ -660,7 +664,7 @@ def edit_featured():
 
 
 UPLOAD_FOLDER = '/games'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
